@@ -28,12 +28,12 @@
 <a name="thanhvien"></a>
 | STT | Họ và tên | MSSV | Email | Chức vụ |
 |:-----:|:-------:|:-------:|:-------:|
-| 1 | [Lê Văn Khoa](https://github.com/Levankhoa150102)| 20521467 | 20521467@gm.uit.edu.vn | Nhóm trưởng
-| 2 | [Phạm Thiện Bảo](https://github.com/beetibao)| 20521107 | 20521107@gm.uit.edu.vn | Thành viên
-| 3 | [Lê Nguyễn Tiến Đạt](https://github.com/lenguyentiendat)| 20521167 | 20521167@gm.uit.edu.vn | Thành viên
-| 4 | [Hoàng Đình Hữu](https://github.com/IvanDominis)| 20521384 | 20521384@gm.uit.edu.vn | Thành viên
-| 5 | [Nguyễn Anh Dũng](https://github.com/NguyenDung278)| 20521209 | 20521209@gm.uit.edu.vn | Thành viên
-
+| 1 | [Lê Văn Khoa](https://github.com/Levankhoa150102)| 20521467 | 20521467@gm.uit.edu.vn | Nhóm trưởng |
+| 2 | [Phạm Thiện Bảo](https://github.com/beetibao)| 20521107 | 20521107@gm.uit.edu.vn | Thành viên |
+| 3 | [Lê Nguyễn Tiến Đạt](https://github.com/lenguyentiendat)| 20521167 | 20521167@gm.uit.edu.vn | Thành viên |
+| 4 | [Hoàng Đình Hữu](https://github.com/IvanDominis)| 20521384 | 20521384@gm.uit.edu.vn | Thành viên |
+| 5 | [Nguyễn Anh Dũng](https://github.com/NguyenDung278)| 20521209 | 20521209@gm.uit.edu.vn | Thành viên |
+ 
 ## ĐỒ ÁN MÔN HỌC
 <a name="doan"></a>
 + 📣**Đề tài**: TrenZ - Online Shopping Website (Website bán sản phẩm thời trang).

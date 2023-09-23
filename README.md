@@ -36,5 +36,5 @@
  
 ## ĐỒ ÁN MÔN HỌC
 <a name="doan"></a>
-+ 📣**Đề tài**: TrenZ - Online Shopping Website (Website bán sản phẩm thời trang).
++ 📣**Đề tài**: TrenZ - Website bán sản phẩm thời trang.
 + 📝**Báo cáo chi tiết**: [Report]()

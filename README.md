@@ -27,7 +27,7 @@
 ## DANH SÁCH THÀNH VIÊN
 <a name="thanhvien"></a>
 | STT | Họ và tên | MSSV | Email | Chức vụ |
-|:-----:|:-------:|:-------:|:-------:|
+|:-----:|:-------:|:-------:|:-------:|:-------:|
 | 1 | [Lê Văn Khoa](https://github.com/Levankhoa150102)| 20521467 | 20521467@gm.uit.edu.vn | Nhóm trưởng |
 | 2 | [Phạm Thiện Bảo](https://github.com/beetibao)| 20521107 | 20521107@gm.uit.edu.vn | Thành viên |
 | 3 | [Lê Nguyễn Tiến Đạt](https://github.com/lenguyentiendat)| 20521167 | 20521167@gm.uit.edu.vn | Thành viên |

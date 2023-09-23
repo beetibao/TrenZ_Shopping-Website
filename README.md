@@ -17,7 +17,7 @@
 + **Môn học**: Internet và Công nghệ Web (Internet and Web Technology)
 + **Giảng viên hướng dẫn**: ThS.**Võ Tấn Khoa** - *khoavt@uit.edu.vn*
 + **Nội dung môn học**:
-Môn học này cung cấp các kiến thức quan trọng về 02 nội dung chính:
+   Môn học này cung cấp các kiến thức quan trọng về 02 nội dung chính:
    + Internet: Hệ thống mạng Internet và các vấn đề liên quan.
    + Công nghệ Web: Cách thức triển khai một Website trên mạng Internet.
    + Thiết kế giao diện Web: HTML, CSS, ...

@@ -1,0 +1,17 @@
+* {
+    box-sizing: inherit;
+}
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --primary-color: #0077C0;
+}
+
+
+html {
+    font-size: 62.5%; /* tương đương 1rem = 10px */
+    line-height: 1.6rem;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}

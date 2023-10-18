@@ -104,8 +104,8 @@
 }
 /*Vận chuyển & Hoàn trả*/
 .product-info-detail-shipping {
-    width: 80%;
-    padding: 10px;
+    /* width: 80%; */
+    padding: 10px 10px 0 10px;
     border: 1px solid #E4E4E4;
     border-radius: 14px;
 
@@ -120,19 +120,19 @@
     border-bottom: 1px solid #E4E4E4;
 }
 .product-info-detail-content {
-    font-size: 16px;
+    font-size: 2rem;
     font-weight: 600;
     color: #1D364D;
 }
 .shipping-icon {
     color: var(--primary-color);
-    line-height: 20px;
-    font-size: 16px;
+    font-size: 2rem;
 }
 .product-info-detail-description{
-    font-size: 10px;
+    font-size: 1.6rem;
     color: #726C6C;
-    margin-left: 20px;
+    padding: 6px 0;
+    margin-left: 3rem;
     margin-top: 4px;
 }
 /*Image side*/

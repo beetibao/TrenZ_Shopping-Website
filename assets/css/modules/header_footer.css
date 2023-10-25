@@ -1,4 +1,10 @@
 /*HEADER*/
+.header_sticky{
+    position: sticky;
+    top:0;
+    background-color: var(--white-color);
+    z-index: 1;
+}
 #header{
     display: flex;
     align-items: center;
@@ -112,7 +118,7 @@ a i:hover{
     display: flex;
     justify-content: space-evenly;
     padding: 2rem;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     background-color: #EBE9E9;
     font-family: 'Kanit', sans-serif;
 }

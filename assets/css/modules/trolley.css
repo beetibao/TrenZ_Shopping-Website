@@ -66,8 +66,8 @@ table tr td {
     border: none;
     cursor: pointer;
 }
-.cart_list_item_delete:hover {
-    color: var(--primary-color)
+.delete_btn{
+    color: red;
 }
 /*CART PAYMENT*/
 .cart_payment h4 {

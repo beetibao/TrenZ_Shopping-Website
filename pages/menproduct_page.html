@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrenZ_Header</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/modules/menproduct_page.css">
+    <link rel="stylesheet" href="/assets/css/modules/header_footer.css">
+    <link rel="stylesheet" href="/assets/css/icon/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;500&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER SESSION -->
+    <div class="header_sticky">
+        <div id="header">
+            <div class="header_logo">
+                <a href="#"><img src="/assets/css/images/header_footer/Header_Logo_TrenZ.png" alt="logo"
+                        class="logo_img"></a>
+            </div>
+            <div class="header_search">
+                <input class="header_search_input" type="text" name="search" placeholder="Tìm kiếm...">
+                <button class="header_search_btn" type="submit"><i style="color:var(--white-color)"
+                        class="fas fa-search"></i></button>
+            </div>
+            <div class="header_hotline">
+                <i class="fa-solid fa-phone-volume"></i>
+                <p class="header_hotline_number">Hotline: 0393524189</p>
+            </div>
+        </div>
+        <!-- NAVBAR SESSION -->
+        <div id="navbar">
+            <ul class="navbar_menu_list">
+                <li><a style="color: var(--primary-color)" href="#">SALE</a></li>
+                <li><a href="#">Nam</a></li>
+                <li><a href="#">Nữ</a></li>
+                <li><a href="#">Trẻ em</a></li>
+                <li><a href="#">Về TrenZ</a></li>
+            </ul>
+            <div class="navbar_user">
+                <!-- <a href=""><i class="navbar_btn fas fa-user"></i></a>
+                <p class="login_user">khoalee</p> -->
+                <p class="navbar_login_signup">
+                    <a class="navbar_login" href="">Đăng nhập</a>
+                    <a class="navbar_signup" href="">Đăng ký</a>
+                </p>
+            </div>
+            <div class="navbar_cart">
+                <a href=""><i class="navbar_btn fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- BODY SESSION -->
+    <div id="men_items">
+        <div class="men_items">
+            <h2>Trang chủ</h2>
+            <h1>Tất cả sản phẩm cho nam giới</h1>
+        </div>
+    </div>
+
+    <!-- filter and category-->
+    <section class="filter">
+        <div class="container">
+            <div class="row">
+                <div class="filter_left">
+                    <div class="filter-section">
+                        <h3>Khoảng giá (VNĐ)</h3>
+                        <label class="container1">Nhỏ hơn 100.000đ
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container1">Từ 100.000đ - 200.000đ
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container1">Từ 200.000đ - 350.000đ
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container1">Từ 350.000đ - 600.000đ
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container1">Lớn hơn 600.000đ
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                          
+                        
+                       
+                    </div>
+                    <div class="filter-section">
+                        <h3>Kích thước</h3>
+                        <label class="container1">S
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container1">M
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container1">L
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container1">XL
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container1">XXL
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter_right row">
+                    <div class="filter_right_items">
+                        <label for="category">Sắp xếp theo</label>
+                        <select id="category">
+                            <option value="all_clothing">Tất cả</option>
+                            <option value="ex_clothing">Đắt nhất</option>
+                            <option value="cheap_clothing">Rẻ nhất</option>
+                            <option value="latest_clothing">Mới nhất</option>
+                        </select>     
+                    </div>
+
+                    <div class="men_product_content row">    
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/home_page/ao-phao-nam-yody-phm6005-xbi-qkm.png" alt="ao-phao-nam"  >
+                            <p class="description">Áo Phao Nam 3S Siêu Nhẹ Tay Raglan</p>
+                            <p class="price">599.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/home_page/ao-polo-nam-apm3519-dod-5-yodyvn.png" alt="ao-polo-nam">
+                            <p class="description">Áo Polo Nam 3S Siêu Nhẹ Tay Raglan</p>
+                            <p class="price">399.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/ao-polo-nam-apm4235-vag-7.png" alt="ao-phao-nam">
+                            <p class="description">Áo Polo Nam Cafe Phối Bo Kháng Khuẩn Khử Mùi</p>
+                            <p class="price">279.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="\assets\css\images\home_page\ao-so-mi-nam-smm6019-kny-3.png" alt="ao-polo-nam">
+                            <p class="description">Áo sơ mi Nam 3S Siêu Nhẹ dài Raglando</p>
+                            <p class="price">699.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/ao-polo-nam-apm4239-dlv-2.png" alt="ao-phao-nam">
+                            <p class="description">Áo Polo Nam Cafe Thể Thao Phối Vai</p>
+                            <p class="price">320.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/ao-polo-nam-apm5351-tr1-20230516.png" alt="ao-polo-nam">
+                            <p class="description">Áo Polo Nam Airycool Thoáng Mát Phối Bo</p>
+                            <p class="price">299.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/ao-polo-nam-the-thao-sam5003-xtm.png" alt="ao-phao-nam">
+                            <p class="description">Áo Polo Thể Thao Nam Airy Cool Phối Bo</p>
+                            <p class="price">349.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/ao-so-mi-smm5065-kde-3-yodyvn.png" alt="ao-polo-nam">
+                            <p class="description">Áo Sơ Mi Nam Tay Dài Sơ Kẻ Bambo</p>
+                            <p class="price">499.000đ</p>
+                        </div>
+
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/apm5083-tra-5.png" alt="ao-phao-nam"  >
+                            <p class="description">Áo Polo Nam Airycool Giữ Form Thoáng Mát</p>
+                            <p class="price">299.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/apm5123-tim-4.png" alt="ao-polo-nam">
+                            <p class="description">Áo Polo Nam Cafe Dáng Suông Chống Tia UV</p>
+                            <p class="price">380.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/apm5181-dod-4.png" alt="ao-phao-nam">
+                            <p class="description">Áo Polo Nam Coolmax Thoáng Mát Bo Cổ Phối Màu</p>
+                            <p class="price">399.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/apm5245-ddo-4.png" alt="ao-polo-nam">
+                            <p class="description">Áo Polo Nam Mắt Chim Thấm Hút Tốt</p>
+                            <p class="price">299.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/apm5281-nav.png" alt="ao-phao-nam">
+                            <p class="description">Áo Polo Nam Cafe Phối Tay Raglan Ngực In Gấu</p>
+                            <p class="price">379.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/apm5371-tny-qam3190-den-4-jpeg.png" alt="ao-polo-nam">
+                            <p class="description">Áo Polo Nam Cafe Tay Phối Màu Khử Mùi Vượt Trội</p>
+                            <p class="price">379.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/blm5007-trg10.png" alt="ao-phao-nam">
+                            <p class="description">Áo Ba Lỗ Nam 100% Cotton Siêu Mềm Siêu Thoáng</p>
+                            <p class="price">99.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/qam3191-bee-4.png" alt="ao-polo-nam">
+                            <p class="description">Quần Âu Nam Ống Đứng Vải Nano Melange Giữ Phom Ít Nhăn</p>
+                            <p class="price">559.000đ</p>
+                        </div>
+
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/qsm3026-den-2.png" alt="ao-phao-nam"  >
+                            <p class="description">Quần Short Nam Kaki Ống Đứng Thể Thao</p>
+                            <p class="price">299.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/qsm5019-ghi0.png" alt="ao-polo-nam">
+                            <p class="description">Quần Short Nam Kaki Ống Đứng Lịch Lãm</p>
+                            <p class="price">359.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/qsm5047-den-8-min.png" alt="ao-phao-nam">
+                            <p class="description">Quần Short Nam Ống Đứng Gấu Lơ Vê</p>
+                            <p class="price">359.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/qsm5057-bee-3.png" alt="ao-polo-nam">
+                            <p class="description">Quần Short Nam Ống Đứng Trẻ Trung</p>
+                            <p class="price">359.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/quan-short-nam-sqm5015-tit-5.png" alt="ao-phao-nam">
+                            <p class="description">Quần Short Tây Nam Thể Thao Năng Động</p>
+                            <p class="price">299.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/sam5007-ghi-4.png" alt="ao-polo-nam">
+                            <p class="description">Áo Polo Thể Thao Nam Airy Cool Basic</p>
+                            <p class="price">349.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/sam5009-ddo-14.png" alt="ao-phao-nam">
+                            <p class="description">Áo Polo Thể Thao Nam Active Melange In Phản Quang</p>
+                            <p class="price">349.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/sbm5047-trd-4.png" alt="ao-polo-nam">
+                            <p class="description">Bộ Đồ Nam Sportman</p>
+                            <p class="price">599.000đ</p>
+                        </div>
+
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/scm4033-tra-qam4009-den-4.png" alt="ao-phao-nam"  >
+                            <p class="description">Áo Sơ Mi Nam Tay Ngắn Nano Chống Nhăn Khử Mùi</p>
+                            <p class="price">459.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/smm3011-xdm-qam4005-den-5.png" alt="ao-polo-nam">
+                            <p class="description">Áo Sơ Mi Nam Dài Tay Cafe Melange Khử Mùi Kháng Khuẩn</p>
+                            <p class="price">599.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/sqm5013-den-stm6079-tit-8.png" alt="ao-phao-nam">
+                            <p class="description">Quần Short Nam Thể Thao Quốc Dân</p>
+                            <p class="price">179.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/sqm5021-den-3.png" alt="ao-polo-nam">
+                            <p class="description">Quần Short Thể Thao Nam Lịch Lãm Thời Trang</p>
+                            <p class="price">299.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/sqm5023-den-4.png" alt="ao-phao-nam">
+                            <p class="description">Quần Short Nam Thể Thao Lưng Thun Bản To Khỏe Khoắn</p>
+                            <p class="price">179.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/tsm5231-vag-3.png" alt="ao-polo-nam">
+                            <p class="description">Áo T-Shirt Nam Cotton USA Phiên Bản Premium</p>
+                            <p class="price">329.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/vem4007-xnh-2.png" alt="ao-phao-nam">
+                            <p class="description">Áo Vest Nam Nano Công Sở Trẻ Trung</p>
+                            <p class="price">1.599.000đ</p>
+                        </div>
+                
+                        <div class="men_product_content_items">
+                            <img class="detail_product" src="/assets/css/images/menproduct_page/ao-ba-lo-nam-yody-blm3001-tra-8.png" alt="ao-polo-nam">
+                            <p class="description">Áo Ba Lỗ Nam Cotton 100%</p>
+                            <p class="price">79.000đ</p>
+                        </div>
+                    </div>
+
+                    <div class="filter_right_numbers ">
+                        <div class="pagination">
+                            <ul>
+                              <li><span class="pagination-arrow">&#171</span></li>
+                              <li><a href="#">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                              <li><a href="#">5</a></li>
+                              <li><span class="pagination-arrow">&#187</span></li>                       
+                            </ul>
+                          </div>
+                    </div>
+                   
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    
+    
+
+    
+    
+    
+
+    <!-- END BODY SESSION -->
+    <!-- FOOTER SESSION-->
+    <div id="footer">
+        <div class="footer_quote">
+            <h1 class="footer_quote_content">
+                Tren<span style="color: var(--primary-color)">Z</span> dẫn đầu xu hướng thời trang GENZ
+            </h1>
+            <p>Chúng tôi luôn không ngừng phát triển và ra mắt những 
+            sản phẩm mới phù hợp với xu hướng thời trang trong thời đại thế hệ GenZ nhằm mang đến sự tươi mới, trẻ trung và trải 
+            nghiệm tốt nhất cho khách hàng. </p>
+
+            <p>Tren<span style="color: var(--primary-color)">Z</span> mong đợi nhận được mọi 
+            ý kiến đóng góp từ khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa trong tương lai.
+            </p>
+
+            <div class="footer_opinion">
+                <a class="footer_opinion_link" href="" target="_blank" >Đóng góp ý kiến</a>
+            </div>
+        </div>
+        <div class="footer_info">
+            <div class="footer_address">
+                <h1 class="footer_address_title">CÔNG TY CP THỜI TRANG TRENZ</h1>
+                <p class="footer_address_content"><i class="footer_icon fa-solid fa-house"></i>
+                    Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh.
+                </p>
+                <p class="footer_address_content"><i class="footer_icon fa-solid fa-phone-volume"></i> 
+                    Liên hệ đặt hàng: 0909111222. <br>
+                    Thắc mắc đơn hàng: 0909111333. <br>
+                    Góp ý khiếu nại: 0909111444.
+                </p>
+                <p class="footer_address_content"><i class="footer_icon fa-solid fa-envelope"></i>
+                    Email: chamsockhachhang@trenz.com
+                </p>
+                <p class="footer_address_content">
+                    <i class="footer_icon fa-solid fa-file-lines"></i>
+                    Chính sách <br>
+                    Chính sách bảo hành, đổi/trả trong vòng 30 ngày. <br>
+                    Chính sách bảo mật thông tin khách hàng.
+                </p>
+            </div>
+            <div class="footer_social_link">
+                <a href="" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="" target="_blank"><i class="fab fa-youtube-square"></i></a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

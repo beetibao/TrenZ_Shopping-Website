@@ -51,3 +51,167 @@ body {
     color: var(--primary-color)
 }
 /**/
+
+
+/* account /**/
+/* Khối chính, hiển thị dạng flex để các thành phần nằm ngang cùng một hàng */
+.main-body {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px; /* Khoảng cách giữa các thành phần con */
+}
+
+/* Thiết lập phần thông tin tài khoản */
+.account-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
+}
+
+/* Trung tâm hình ảnh đại diện */
+.account-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Thiết lập hình ảnh đại diện */
+.avatar-image {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+}
+
+/* Cấu hình chi tiết tài khoản */
+.account-details {
+    padding: 0 20px; /* Thêm đệm hai bên */
+}
+
+/* Định dạng tiêu đề trong phần chi tiết tài khoản */
+.account-details h1 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+/* Thiết lập cho phần nội dung chi tiết khác */
+.detail-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: calc(100% - 320px); 
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
+}
+
+/* Các nút bấm chung */
+.btn {
+    background-color: #0600b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 100%; 
+    margin-top: 20px; 
+}
+
+/* Tiêu đề hồ sơ */
+.profile-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+/* Nút chỉnh sửa hồ sơ */
+.btn.edit-profile {
+    width: auto; 
+    margin-top: 0;
+}
+
+/* Tên hồ sơ với màu sắc đặc biệt */
+.profile-name {
+    color: #b6ade6;
+}
+/* account 2*/
+
+
+/* Form styles */
+.form-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 500%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+.account-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
+}
+
+
+/* Style the input fields */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; /* Spacing between fields */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* So that padding does not affect the width */
+}
+
+/* Style the buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust the size as you like */
+}
+
+/* Blue button style */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Gray button style */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Adjust the button wrapper if necessary */
+.button-group {
+    display: flex;
+    justify-content: space-between; /* This will place one button at each end */
+}
+
+/* Make sure that the buttons do not stick together */
+.button-group .btn + .btn {
+    margin-left: 10px;
+}
+  

@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4; 
+    color: #333; 
+    line-height: 1.8;
+    margin: 0; 
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff; /* White background for container */
+    padding: 20px; /* Padding around the content */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .order-steps, .progress-tracker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .address, .order-details, .shipping-payment, .order-summary {
+    border: 1px solid #ccc; /* Lighter border as per screenshot */
+    margin-bottom: 20px; /* Space between sections */
+    padding: 20px;
+    background: #fff;
+  }
+  
+.address {
+background-color: #f4f4f4; /* Adjust the background color as needed */
+border-left: 4px solid #007bff; /* A blue left border as an accent */
+padding: 16px;
+margin-bottom: 20px; /* Spacing below the address block */
+}
+
+.address-title,.section-title {
+display: flex;
+align-items: center;
+color: #007bff; /* Adjust the color to match your theme */
+margin-bottom: 20px;
+}
+
+
+.address-title .icon {
+font-size: 24px; /* Adjust icon size as needed */
+margin-right: 8px;
+}
+
+
+.address-detail {
+margin: 4px 0;
+line-height: 1.4;
+}
+
+.address-detail strong {
+font-weight: bold;
+}
+  
+  .order-steps div::after, .progress-tracker .step::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 50%;
+    background-color: #007bff; /* Your desired color */
+    z-index: -1;
+  }
+  
+.order-steps div:last-child::after, .progress-tracker .step:last-child::after {
+content: none; /* No line after the last step */
+}
+
+.order-details, .shipping-payment, .order-summary {
+border-top: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+padding: 20px 0;
+background: #fff; /* White background for sections */
+}
+
+.order-details img {
+width: 100px;
+height: auto;
+margin-right: 10px;
+}
+
+h3 {
+margin: 5px 0;
+color: #007bff; /* Highlight color for headers */
+}
+
+.progress-tracker .step .icon {
+display: block;
+margin-bottom: 5px;
+font-size: 24px;
+color: #007bff;
+}
+
+.progress-tracker .step .text {
+font-size: 16px;
+}
+
+.progress-tracker .step .checkmark {
+color: #28a745;
+font-size: 16px;
+}
+
+.progress-tracker .step.completed .icon, 
+.progress-tracker .step.completed .text {
+color: #28a745; /* Completed step color */
+}
+
+/* Additional styles for improved layout and responsiveness */
+@media (max-width: 768px) {
+.container {
+    width: 95%;
+    padding: 10px;
+}
+
+.order-details img, .progress-tracker .step .icon {
+    font-size: 18px; /* Smaller icons for mobile */
+}
+
+.progress-tracker .step .text {
+    font-size: 14px; /* Smaller text for mobile */
+}
+
+.progress-tracker .step::after {
+    width: 50%; /* Shorter lines for smaller screens */
+}
+}
+
+.order-section {
+margin-bottom: 20px;
+}
+
+.section-title {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.order-item {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.product-image {
+width: 100px; /* Set your desired image width */
+height: auto; /* Maintain aspect ratio */
+margin-right: 10px;
+}
+
+.item-details {
+flex-grow: 1;
+}
+
+.item-price {
+font-weight: bold;
+margin-left: 10px;
+}
+
+/* Styling for the shipping and payment information, and order summary */
+
+.shipping-payment, .order-summary {
+padding: 10px 0;
+}
+
+.shipping-payment div, .order-summary div {
+margin-bottom: 5px;
+}
+
+.order-summary {
+font-size: 18px; /* Larger font size for the summary */
+font-weight: bold; /* Bold font for emphasis */
+border-top: 1px solid #ccc; /* Separator line */
+}
+
+.detail-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 20px;
+    background-color: #f4f4f4; /* Màu nền như trong hình ảnh */
+    border-top: 2px solid #007bff; /* Dòng kẻ màu xanh ở trên cùng */
+    border-bottom: 2px solid #007bff; /* Dòng kẻ màu xanh ở dưới cùng */
+}
+
+.detail-section > div {
+    width: 48%; /* Đặt chiều rộng cho mỗi cột */
+    padding: 10px;
+}
+
+.section-subtitle {
+    font-size: 16px; /* Đặt kích thước font cho tiêu đề */
+    color: #333; /* Màu chữ */
+    margin-bottom: 5px; /* Khoảng cách giữa tiêu đề và nội dung */
+}
+
+p {
+    font-size: 16px; /* Đặt kích thước font cho đoạn văn */
+    color: #333; /* Màu chữ */
+    margin: 5px 0; /* Khoảng cách giữa các đoạn văn */
+}
+
+.total-price {
+    color: #007bff; /* Màu chữ cho tổng tiền */
+    font-weight: bold; /* Đặt in đậm cho tổng tiền */
+    font-size: 20px; /* Kích thước lớn hơn cho tổng tiền */
+}
+
+/* Thêm các media queries nếu cần để tối ưu hóa cho các màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .detail-section {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .detail-section > div {
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+  
+

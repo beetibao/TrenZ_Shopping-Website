@@ -92,7 +92,6 @@ section {
     width: 290px;
     margin-right: 30px;
     border: 2px solid #FFF;
-    box-shadow: 6px 6px 6px 6px #0077C0;
     margin-bottom: 28px;
 }
 .col-left-ac .block-account {
@@ -218,14 +217,20 @@ a {
     background-image: url(https://bizweb.dktcdn.net/100/438/408/themes/930060/assets/acc_user_3.svg);
 }
 .col-right-ac {
-    background: #FFF;
-    width: calc(100% - 320px);
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: calc(100% - 320px); 
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
 }
 .col-right-ac .title-head {
     padding: 18px 30px;
 }
 .col-right-ac .title-head {
-    color: #0077C0;
+    color: #438DBA;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     border-bottom: 1px solid #DDE1EF;

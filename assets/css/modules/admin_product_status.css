@@ -1,0 +1,190 @@
+.main-body {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px; 
+}
+
+.main-body .account-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 1px solid gray; 
+}
+.account-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.avatar-image {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: gray;
+}
+
+/* Các nút bấm chung */
+.btn_logout {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 100%; 
+    margin-top: 20px; 
+    font-size: 1.5rem;
+}
+
+
+nav .menu-items{
+    margin-top: 10px;
+    height : calc (100% - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-items li{
+    list-style: none;
+}
+
+.menu-items li a{ 
+    display: flex;
+    align-items: center;
+    height: 50px;
+    text-decoration: none;
+}
+
+.menu-items li a:hover *{ 
+    display: flex;
+    align-items: center;
+    height: 50px;
+    text-decoration: none;
+    background-color: lightblue;
+    color: var(--primary-color);
+    border-radius: 4px;
+}
+.menu-items li:hover {
+    background-color: lightblue;
+    border-radius: 4px; 
+}
+i{
+    min-width: 3rem;
+    margin-right: 10px;
+    color: var(--black-color);
+}
+
+.menu-items li a .link-name{
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--black-color);
+}
+
+.nav-links li a:hover .link-name,
+.nav-links li a:hover .link-name i:hover{
+    color: var(--primary-color);
+}
+.table_info{
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 500%;
+    max-width: 900px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+.btn_filter i{
+    display: absolute;
+    margin-right: 10px;
+    width: 100%; 
+    margin-top: 20px; 
+    font-size: 1.5rem;
+    
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+table {
+    width: 100%;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: #0077C0;
+}
+tr {
+    display: table-row;
+    vertical-align: center;
+    border-color: #0077C0;
+}
+th {
+    font-size: 1.4rem;
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: center;
+    border-top:1px solid #0077C0;
+    border-bottom:1px solid #0077C0;
+
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: center;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #CCC;
+}
+
+.page_customer_account .col-right-ac .my-account .table-responsive-block .table-cart thead th {
+    font-family: 'Lato', sans-serif;
+    background: #F8F8F8;
+    border: none;
+    text-align: left;
+    line-height: 16px;
+    vertical-align: middle;
+}
+.page_customer_account .col-right-ac .my-account .table-responsive-block .table-cart thead th:nth-child(1) {
+    padding-left: 30px;
+}
+.page_customer_account .col-right-ac .my-account .table-responsive-block .table-cart thead th:nth-child(2) {
+    text-align: right;
+}
+td {
+    font-size: 1.2rem;
+    padding: 18px;
+    font-weight: 400;
+}
+td:first-child {
+    color: #0077C0;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}

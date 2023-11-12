@@ -1,0 +1,186 @@
+/* account /**/
+/* Khối chính, hiển thị dạng flex để các thành phần nằm ngang cùng một hàng */
+.main-body {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px; 
+}
+
+/* Thiết lập phần thông tin tài khoản */
+.account-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
+}
+
+/* Trung tâm hình ảnh đại diện */
+.account-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Thiết lập hình ảnh đại diện */
+.avatar-image {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+}
+
+/* Cấu hình chi tiết tài khoản */
+.account-details {
+    padding: 0 20px; /* Thêm đệm hai bên */
+}
+
+/* Định dạng tiêu đề trong phần chi tiết tài khoản */
+.account-details h1 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+/* Thiết lập cho phần nội dung chi tiết khác */
+.detail-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: calc(100% - 320px); 
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
+}
+
+/* Các nút bấm chung */
+.btn {
+    background-color: #0600b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 100%; 
+    margin-top: 20px; 
+}
+
+/* Tiêu đề hồ sơ */
+.profile-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+/* Nút chỉnh sửa hồ sơ */
+.btn.edit-profile {
+    width: auto; 
+    margin-top: 0;
+}
+
+/* Tên hồ sơ với màu sắc đặc biệt */
+.profile-name {
+    color: #007bff;
+}
+/* account 2*/
+
+
+/* Form styles */
+.form-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 500%;
+    max-width: 900px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+.account-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
+}
+.menu-items h2:hover {
+    background-color: #007bff; /* Thay đổi màu nền khi di chuột vào */
+    cursor: pointer; 
+}
+.menu-items h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 8px 0;
+}
+
+.menu-items h2 i {
+    margin-right: 8px;
+    min-width: 20px;
+}
+.menu-items {
+    padding-left: 0; 
+    list-style: none; 
+}
+
+.menu-items h2.active {
+    background-color: #007bff; 
+    color: white;
+    padding: 8px; 
+    border-radius: 4px; 
+}
+.menu-items h2.active i {
+    color: white;
+}
+
+/* Style the input fields */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+/* Style the buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust the size as you like */
+}
+
+/* Blue button style */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Gray button style */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.button-group {
+    display: flex;
+    justify-content: space-between; /* This will place one button at each end */
+}
+.button-group .btn + .btn {
+    margin-left: 10px;
+}
+

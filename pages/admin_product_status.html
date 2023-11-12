@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrenZ_Header</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/modules/admin_product_status.css">
+    <link rel="stylesheet" href="/assets/css/modules/header_footer.css">
+    <link rel="stylesheet" href="/assets/css/icon/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;500&family=Lato:wght@100;300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER SESSION -->
+    <div class="header_sticky">
+        <div id="header">
+            <div class="header_logo">
+                <a href="#"><img src="/assets/css/images/header_footer/Header_Logo_TrenZ.png" alt="logo"
+                        class="logo_img"></a>
+            </div>
+            <div class="header_search">
+                <input class="header_search_input" type="text" name="search" placeholder="Tìm kiếm...">
+                <button class="header_search_btn" type="submit"><i style="color:var(--white-color)"
+                        class="fas fa-search"></i></button>
+            </div>
+            <div class="header_hotline">
+                <i class="fa-solid fa-phone-volume"></i>
+                <p class="header_hotline_number">Hotline: 0393524189</p>
+            </div>
+        </div>
+        <!-- NAVBAR SESSION -->
+        <div id="navbar">
+            <ul class="navbar_menu_list">
+                <li><a style="color: var(--primary-color)" href="#">SALE</a></li>
+                <li><a href="#">Nam</a></li>
+                <li><a href="#">Nữ</a></li>
+                <li><a href="#">Trẻ em</a></li>
+                <li><a href="#">Về TrenZ</a></li>
+            </ul>
+            <div class="navbar_user">
+                <!-- <a href=""><i class="navbar_btn fas fa-user"></i></a>
+                <p class="login_user">khoalee</p> -->
+                <p class="navbar_login_signup">
+                    <i class="fa fa-user"></i>
+                    <a class="navbar_login" href="">khoalee</a>
+                </p>
+            </div>
+            <div class="navbar_cart">
+                <a href=""><i class="navbar_btn fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- BODY SESSION -->
+
+    <div class="main-body">
+        <aside class="account-section">
+            <div class="account-avatar">
+                <img src="assets\css\images\C\C01.jpg" alt="Avatar" class="avatar-image">
+            </div>
+            <nav>
+                <div class="menu-items">
+                    <ul class = "nav-links">
+                        <li><a href="#">
+                            <i class="fa fa-tasks fa-2xl"> </i>
+                            <span class = "link-name">Tình trạng đơn hàng</span>
+                        </a></li>
+                        <li><a href="#">
+                            <i class="fa fa-list-alt fa-2xl"> </i>
+                            <span class = "link-name">Danh mục sản phẩm</span>
+                        </a></li>
+                        <li><a href="#">
+                            <i class="fa fa-users fa-2xl"> </i>
+                            <span class = "link-name">Danh mục khách hàng</span>
+                        </a></li>
+                        <li><a href="#">
+                            <i class="fa fa-line-chart fa-2xl"> </i>
+                            <span class = "link-name">Doanh thu</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="btn_logout">Đăng xuất</button>
+                </div>
+            </nav>
+            
+        </aside class="table_info">
+        
+        <table class="table table-cart table-order" id="my-orders-table">
+            <thead class="thead-default">
+                <tr>
+                    <th>Mã</th>
+                    <th>Khách hàng</th>
+                    <th>Ngày mua</th>
+                    <th>Số điện thoại</th>
+                    <th>Tình trạng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>                                      
+                    <td>#1312303</td>
+                    <td>Phạm Thiện Bảo</td>
+                    <td>15/10/2023</td>
+                    <td>0908352135</td>
+                    <td>Đang xử lý</td>
+                </tr>
+                <tr>
+                
+                    <td>#1312304</td>
+                    <td>Nguyễn Anh Dũng</td>
+                    <td>18/10/2023</td>
+                    <td>0908352456</td>
+                    <td>Đã giao</td>
+                </tr>
+                <tr>
+                    <td>#1312305</td>
+                    <td>Hoàng Đình Hữu</td>
+                    <td>18/10/2023</td>
+                    <td>0908352456</td>
+                    <td>Đã giao</td>
+                </tr>
+                <tr>
+                    <td>#1312305</td>
+                    <td>Lê Văn Khoa</td>
+                    <td>18/10/2023</td>
+                    <td>0908352456</td>
+                    <td>Đã giao</td>
+                </tr>
+                <tr>
+                    <td>#1312305</td>
+                    <td>Lê Nguyễn Tiến Đạt</td>
+                    <td>18/10/2023</td>
+                    <td>0908352456</td>
+                    <td>Đã giao</td>
+                </tr>
+            </tbody>
+        </table>
+        </aside>
+    </div>
+
+    <!-- END BODY SESSION -->
+    <!-- FOOTER SESSION-->
+    <div id="footer">
+        <div class="footer_quote">
+            <h1 class="footer_quote_content">
+                Tren<span style="color: var(--primary-color)">Z</span> dẫn đầu xu hướng thời trang GENZ
+            </h1>
+            <p>Chúng tôi luôn không ngừng phát triển và ra mắt những
+                sản phẩm mới phù hợp với xu hướng thời trang trong thời đại thế hệ GenZ nhằm mang đến sự tươi mới, trẻ
+                trung và trải
+                nghiệm tốt nhất cho khách hàng. </p>
+
+            <p>Tren<span style="color: var(--primary-color)">Z</span> mong đợi nhận được mọi
+                ý kiến đóng góp từ khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa trong tương
+                lai.
+            </p>
+
+            <div class="footer_opinion">
+                <a class="footer_opinion_link" href="" target="_blank">Đóng góp ý kiến</a>
+            </div>
+        </div>
+        <div class="footer_info">
+            <div class="footer_address">
+                <h1 class="footer_address_title">CÔNG TY CP THỜI TRANG TRENZ</h1>
+                <p class="footer_address_content"><i class="footer_icon fa-solid fa-house"></i>
+                    Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh.
+                </p>
+                <p class="footer_address_content"><i class="footer_icon fa-solid fa-phone-volume"></i>
+                    Liên hệ đặt hàng: 0909111222. <br>
+                    Thắc mắc đơn hàng: 0909111333. <br>
+                    Góp ý khiếu nại: 0909111444.
+                </p>
+                <p class="footer_address_content"><i class="footer_icon fa-solid fa-envelope"></i>
+                    Email: chamsockhachhang@trenz.com
+                </p>
+                <p class="footer_address_content">
+                    <i class="footer_icon fa-solid fa-file-lines"></i>
+                    Chính sách <br>
+                    Chính sách bảo hành, đổi/trả trong vòng 30 ngày. <br>
+                    Chính sách bảo mật thông tin khách hàng.
+                </p>
+            </div>
+            <div class="footer_social_link">
+                <a href="" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="" target="_blank"><i class="fab fa-youtube-square"></i></a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

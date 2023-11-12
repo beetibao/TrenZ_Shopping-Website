@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;500&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
     <!-- HEADER SESSION -->
@@ -55,16 +56,16 @@
                 <img src="/assets/images/account/rose.png" alt="Avatar" class="avatar-image">
             </div>
             <div class="account-details">
-                <h1>Lê Văn Khoa</h1>
                 <div class="menu-items">
-                    <h2>Tài Khoản của tôi</h2>
-                    <h2>Lịch sử đơn hàng</h2>
-                    <h2>Đổi mật khẩu</h2>
+                    <h2 class="active"><i class="fas fa-user-circle"></i> Tài Khoản của tôi</h2>
+                    <h2><i class="fas fa-clipboard-list"></i> Lịch sử đơn hàng</h2>
+                    <h2><i class="fas fa-lock"></i> Đổi mật khẩu</h2>
                 </div>
                 <div class="account-actions">
-                    <button class="btn logout">Đăng xuất</button>
+                    <button class="btn logout" id="logoutButton">Đăng xuất</button>
                 </div>
             </div>
+            
         </aside>
         <aside>
             <div class="form-container">
@@ -150,5 +151,19 @@
         </div>
 
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var logoutButton = document.getElementById("logoutButton");
+            if (logoutButton) {
+                logoutButton.addEventListener("click", function(event){
+                    var confirmLogout = confirm("Bạn có chắc chắn muốn đăng xuất?");
+                    if (!confirmLogout) {
+                        event.preventDefault();
+                    }
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

@@ -57,7 +57,11 @@
     max-width: calc(100% - 320px); 
     box-sizing: border-box;
     border: 1px solid #ddd; 
+    
 }
+
+
+
 
 /* Các nút bấm chung */
 .btn {
@@ -89,6 +93,10 @@
 /* Tên hồ sơ với màu sắc đặc biệt */
 .profile-name {
     color: #007bff;
+    font-size: 20px;
+}
+.detail-section p{
+    font-size: 16px;
 }
 /* account 2*/
 

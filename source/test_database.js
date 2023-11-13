@@ -1,19 +1,20 @@
-const sql = require('mssql');
+const mssql = require('mssql');
 
 const config = {
     user: 'trenz',
     password: 'nhom1_2023',
     server: 'trenz.database.windows.net',
-    database: 'trenz_database',
-    options: {
-        encrypt: true, // Use this if you're on Windows Azure
-    },
+    database: 'database'
 };
 
-sql.connect(config, (err) => {
-    if (err) {
-        console.error('Database connection failed:', err);
-    } else {
-        console.log('Connected to the database');
-    }
-});
+async function getProduct(){
+    let pool = await mssql.connect(config);
+    let product = await pool.request().query("SELECT * from product")
+    return product.recordset;
+}
+
+(async () => {
+    getProduct().then((result) => {
+        console.log(result);
+    });
+})();

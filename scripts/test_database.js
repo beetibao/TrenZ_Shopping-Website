@@ -13,8 +13,8 @@ const config = {
 
 async function getProduct(){
     let pool = await mssql.connect(config);
-    let order = await pool.request().query('SELECT * from [dbo].[order]')
-    return order.recordset;
+    let product = await pool.request().query('SELECT * from [dbo].[product]') 
+    return product.recordset;
 }
 
 
@@ -22,7 +22,7 @@ async function getProduct(){
     getProduct().then((result) => {
         console.log(result[2]);
         //console.log(result[2].detail);
-        //const b = JSON.parse(result[2].detail);
-        //console.log(b);
+        const b = JSON.parse(result[2].size);
+        console.log(b.S); // lấy giá trị size S
     });
 })();

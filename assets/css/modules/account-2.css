@@ -1,5 +1,4 @@
 /* account /**/
-/* Khối chính, hiển thị dạng flex để các thành phần nằm ngang cùng một hàng */
 .main-body {
     display: flex;
     flex-direction: row;
@@ -7,7 +6,6 @@
     gap: 20px; 
 }
 
-/* Thiết lập phần thông tin tài khoản */
 .account-section {
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -191,4 +189,5 @@
 .button-group .btn + .btn {
     margin-left: 10px;
 }
+
 

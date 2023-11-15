@@ -2,12 +2,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-body, input, textarea, button, select {
-    line-height: 1.5;
-    color: #000;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-}
+
 body {
     margin: 0;
     font-weight: 400;

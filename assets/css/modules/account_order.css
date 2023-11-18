@@ -3,6 +3,8 @@ body {
 }
 
 
+
+
 body {
     margin: 0;
     font-weight: 400;
@@ -31,7 +33,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 section {
     display: block;
 }
-
 
 
 .container {
@@ -110,10 +111,6 @@ img {
     vertical-align: middle;
     border-style: none;
 }
-img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
 .col-left-ac .block-account .info1 p {
     margin-bottom: 5px;
     font-size: 1.5rem;
@@ -186,11 +183,7 @@ a, .text-link {
 a {
     color: #000;
 }
-a {
-    text-decoration: none;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
-}
+
 .col-left-ac .block-account ul li:nth-child(2) .title-info:hover, .col-left-ac .block-account ul li:nth-child(2) .title-info.active {
     background-image: url(https://bizweb.dktcdn.net/100/438/408/themes/930060/assets/acc_user_2_hover.svg);
 }

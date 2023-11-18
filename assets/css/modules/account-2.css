@@ -15,7 +15,9 @@
     max-width: 300px;
     box-sizing: border-box;
     border: 1px solid #ddd; 
+    position: relative;
 }
+
 
 /* Trung tâm hình ảnh đại diện */
 .account-avatar {
@@ -57,9 +59,6 @@
     border: 1px solid #ddd; 
     
 }
-
-
-
 
 /* Các nút bấm chung */
 .btn {

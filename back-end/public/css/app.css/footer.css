@@ -1,0 +1,48 @@
+/*FOOTER*/
+#footer{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    /* margin-top: 2rem; */
+    background-color: #EBE9E9;
+    font-family: 'Kanit', sans-serif;
+}
+#footer h1 {
+    font-size: 2.5rem;
+
+}
+#footer p{
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+}
+.footer_quote{
+    width: 50%;
+}
+.footer_quote p {
+    width: 65%;
+}
+.footer_opinion{
+    margin-top: 3rem;
+}
+.footer_opinion_link {
+    padding: 1.4rem 3rem; 
+    background-color: var(--primary-color);
+    border-radius: 3rem;
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+.footer_icon {
+    color: var(--primary-color)
+}
+.footer_address > p i {
+    margin-right: 0.5rem;
+}
+.footer_social_link a i {
+    font-size: 3rem;
+    margin-right: 2.5rem;
+    color: var(--primary-color);
+}

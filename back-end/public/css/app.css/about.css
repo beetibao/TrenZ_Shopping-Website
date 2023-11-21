@@ -1,0 +1,53 @@
+#about_trenZ{
+    margin: 0 50px;
+}
+/*TRENZ CONTENT*/
+.trenZ_title, .trenZ_info > h2 {
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700;
+
+}
+.trenZ_info > h2 {
+    color: var(--primary-color);
+    font-size: 3rem;
+    line-height: 1;
+    font-family: 'Kanit', sans-serif;
+}
+.trenZ_info p {
+    text-align: center;
+    font-size: 2rem;
+    color: #A3A9C2;
+    margin-top: 1rem;
+    line-height: 3rem;
+}
+.trenZ_sub_info {   
+    text-align: center;
+}
+#about_trenZ img {
+    width: 1200px;
+    height: 700px;
+    margin-top: 2rem;
+}
+.sub_info_cite {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 4rem 0;
+}
+.sub_info_cite .sub_info_title {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+.sub_info_title {
+    flex:2.5;
+    line-height: 1.5;
+}
+.sub_info_cite p {
+    flex:1;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+.sub_info_cite div:last-child {
+    flex:0.75;
+} 

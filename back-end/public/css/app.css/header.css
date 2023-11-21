@@ -1,0 +1,131 @@
+.header_sticky {
+    width: 100%;
+    background-color: var(--white-color);
+    z-index: 1;
+}   
+.header_sticky.active {
+    position: fixed;
+    top:0;
+    animation: slideIn 500ms ease forwards;
+} 
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    
+}
+#header{
+    display: flex;
+    align-items: center;
+    margin: 0 2rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.logo_img{
+    width: 180px;
+    height: 70px;
+}
+.header_search{
+    margin-left: 5rem;
+}
+.header_search_input{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+.header_search_btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+.header_hotline{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-size: 20px;
+}
+.header_hotline_number {
+    margin-left: 1rem;
+}
+/*NAV BAR*/
+#navbar{
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 2rem;
+    margin-right: 4rem;
+    margin-left: 2rem; */
+    margin: 1.5rem 3rem;
+    padding-bottom: 1.5rem;
+}
+.navbar_menu_list{
+    padding: 0;
+    margin-left: 1.6rem;
+    font-family: 'Kanit', sans-serif;
+}
+.navbar_menu_list li .active {
+    border: 1px solid var(--primary-color);
+}
+.navbar_menu_list > li{
+    display: inline-block;
+}
+.navbar_menu_list > li > a{
+    color: var(--black-color);
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+.navbar_menu_list > li + li{
+    margin-left: 3rem;
+}
+.navbar_menu_list > li > a:hover{
+    color: var(--primary-color);
+}
+/*Navbar before login*/
+.navbar_login_signup{
+    margin-left: auto;
+    margin-right: 2rem;
+}
+.navbar_login_signup > a{
+    color: var(--black-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+}
+.navbar_login_signup a ~ a {
+    border-left: 1px solid #000;
+}
+.navbar_signup {
+    padding-left: 0.8rem;
+}
+.navbar_login_signup > a:hover{
+    color: var(--primary-color);
+}
+/*Navbar after login*/
+.navbar_user {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 2rem;
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+} 
+
+.navbar_user p {
+    margin-left: 1rem;
+}
+.navbar_btn{
+    color: var(--black-color);
+    font-size: 2rem;
+}
+a i:hover{
+    color: var(--primary-color);
+}

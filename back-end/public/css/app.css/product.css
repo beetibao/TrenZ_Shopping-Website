@@ -1,0 +1,236 @@
+.body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+.container {
+    max-width: 1800px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+    
+}
+.product_title {
+    margin-top: 50px;
+    text-align: center;
+}
+.product_title > h2 {
+    font-size: 2.2rem;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;    
+}
+.product_title > h1 {
+    margin-top: 20px;
+    font-size: 2.8rem;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500; 
+    color: #0077C0;
+}
+
+/* Filter */
+.filter {
+    padding: 30px 30px;
+}
+.filter_left {
+    width: 30%;
+}
+.filter_right{
+    width: 70%;
+} 
+.filter_right_items {
+    padding: 0 12px;
+
+}
+.filter_right_items label {
+    width: 25%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 830px;
+    font-size: 15px;
+}
+.filter_right_items select {
+    width: 18%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 2px solid #dddddd;
+    cursor: pointer;
+    margin-left: 850px;
+}
+.products_content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.products_content_items {
+    width: calc(25% - 12px);
+    padding: 12px 0;
+    margin-left: 12px;
+    text-align: left;
+} 
+.products_content_list {
+    padding: 1rem;
+    border-radius: 10px;
+}
+.products_content_items .products_content_list:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.products_content_items a {
+    text-decoration: none;
+}
+.products_content_items .description {
+    font-size: 1.5rem;
+    font-weight: 450;
+    font-family: 'Lato', sans-serif;
+    margin-top: 6px;
+    color: #333333;
+}
+.products_content_items .description:hover {
+   text-decoration: underline;
+}
+.products_content_items .price{
+    font-family: 'Lato', sans-serif;
+    margin-top: 6px;
+    color: #333333;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+.products_content_items img {
+    width: 97%;
+    border-radius: 10px;
+}
+.filter_left {
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+}
+.filter-section {
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+.filter-section h3 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.container1 {
+    width: 500px;
+    display: block;
+    position: relative;
+    padding-left: 27px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 400;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container1 input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    border-radius: 3px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container1 input:checked~.checkmark {
+    background-color: #0077C0;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container1 input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container1 .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 2px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.filter_right_numbers {
+    justify-content: space-between;
+    margin: 30px 0 20px;
+    width: 100%;
+    margin: 15px;
+}
+.filter_right_numbers_items p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 11px;
+    word-spacing: 6px;
+}
+
+.pagination {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+  
+.pagination ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.pagination li {
+    display: inline;
+    margin-right: 10px;
+}
+  
+.pagination a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #0077C0;
+    font-weight: bold;
+}
+  
+.pagination .pagination-arrow {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+  

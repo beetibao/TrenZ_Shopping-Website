@@ -1,0 +1,208 @@
+<div class="product">
+        <!-- Đường dẫn -->
+        {{!-- <div class="product-link">
+            <ul class="product-link-list">
+                <li class="product-link-list-item">
+                    <a href="" class="product-link-list-item-link">TrenZ</a>
+                    <i class="product-link-icon fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="product-link-list-item">
+                    <a href="" class="product-link-list-item-link">Trẻ em</a>
+                    <i class="product-link-icon fa-solid fa-chevron-right"></i>
+                </li>
+                <li class="product-link-list-item">
+                    <a href="" class="product-link-list-item-link">Áo thun</a>
+                </li>
+            </ul>
+        </div> --}}
+    
+        <!-- Ảnh và thông tin sản phẩm -->
+        <div class="product-info">
+            {{#each id_product}}
+            <div class="product-info-image">
+                <img src="{{this.img}}" alt="Áo sọc bé trai" class="product-info-image-img">
+            </div>
+            <div class="product-info-detail">
+                <!-- Tên Sản Phẩm -->
+                <div class="product-info-detail-name">{{this.name}}</div>
+                <!-- Giá tiền -->
+                <div class="product-info-detail-price product-line">{{this.price}}đ</div>
+                <!-- Chọn kích thước -->
+                <div class="product-info-detail-size product-line">
+                    <div class="product-info-detail-title ">Kích thước:</div>
+                    <div class="product-info-detail-size-list">
+                        <div class="product-info-detail-size-list-item">S</div>
+                        <div class="product-info-detail-size-list-item">M</div>
+                        <div class="product-info-detail-size-list-item">L</div>
+                        <div class="product-info-detail-size-list-item">XL</div>
+                    </div>
+                </div>
+                <!-- Chọn số lượng -->
+                <div class="product-info-detail-quantity product-line">
+                    <div class="product-info-detail-title">Số lượng:</div>
+                    <div class="product-info-detail-quantity-number">
+                        <button class="product-info-detail-quantity-number-button">-</button>
+                        <input type="text" class="product-info-detail-quantity-number-input" value="1">
+                        <button class="product-info-detail-quantity-number-button">+</button>
+                    </div>
+    
+                    <p class="product-info-detail-quantity-avai">{{this.amount}} sản phẩm có sẵn</p>
+                </div>
+                <!-- Thanh toán -->
+                <div class="product-info-detail-button product-line">
+    
+                    <a href="" class="product-btn product-info-detail-button-add">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        Thêm vào giỏ hàng
+                    </a>
+                    <a href="" class="product-btn product-info-detail-button-buy">Mua ngay</a>
+                </div>
+    
+                <!-- Hoàn tiền & Vận chuyển -->
+                <div class="product-info-detail-shipping">
+                    <div class="product-info-detail-shipping-info">
+                        <div class="product-info-detail-content">
+                            <i class="shipping-icon fa-solid fa-truck-fast"></i>
+                            Vận chuyển miễn phí
+                        </div>
+                        <div class="product-info-detail-description">Nhập mã bưu điện để biết về tình trạng giao hàng</div>
+                    </div>
+                    <div class="product-info-detail-refund-info">
+                        <div class="product-info-detail-content">
+                            <i style="margin-left: 3px; margin-right: 4px;" class=" shipping-icon fa-solid fa-bag-shopping"></i>
+                            Chính sách trả hàng
+                        </div>
+                        <div class="product-info-detail-description">Hoàn trả hàng miễn phí trong vòng 30 ngày.
+                            {{!-- <a href="" class="product-info-detail-refund-content-link">Xem chi tiết</a> --}}
+                        </div>
+    
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <div class="img-side">
+            <i class="img-side-btn fa-solid fa-chevron-left"></i>
+            <div class="img-side-item">
+                <img src="" alt="" class="img-side-item-img">
+                <img src="/assets/css/images/Detail_Product/side1.jpg" alt="" class="img-side-item-img">
+                <img src="/assets/css/images/Detail_Product/side2.jpg" alt="" class="img-side-item-img">
+                <img src="/assets/css/images/Detail_Product/side3.jpg" alt="" class="img-side-item-img">
+            </div>
+            <i class="img-side-btn fa-solid fa-chevron-right"></i>
+        </div>
+    
+        <!-- Mô tả sản phẩm -->
+        <div class="product-description">
+            <div class="product-description-title">
+                MÔ TẢ SẢN PHẨM
+                <div class="product-description-highlight"></div>
+            </div>
+            <div class="product-description-content">
+                <p class="product-overview">Tổng quan</p>
+                <ul class="product-detail">
+                    {{!-- <li>Lớp lót 100% cotton được chải cho cảm giác mềm mại, mịn màng.</li>
+                    <li>Chất vải mịn, co giãn nhiều.</li>
+                    <li>Đường may phía sau cổ áo được ẩn đi bằng băng dính để tạo sự thoải mái.</li>
+                    <li>Kiểu dáng thoải mái</li>
+                    <li>Cổ được làm bằng vải gân</li>
+                    <li>Thiết kế kẻ sọc đa năng</li> --}}
+                    {{this.description}}
+                </ul>
+                
+                {{!-- <p class="product-overview">Chất liệu</p>
+                <p class="product-detail"> VẢI <br>
+                    100% Bông <br>
+                    HƯỚNG DẪN GIẶT <br>
+                    Giặt máy nước lạnh, Không giặt khô, Không sấy khô <br>
+                    - Những hình ảnh sản phẩm có thể bao gồm Những màu không có sẵn
+                </p> --}}
+                <p class="product-overview">Thông tin thêm</p>
+                <p class="product-detail">
+                    1. Xin vui lòng đọc thông tin kích thước trước khi chọn kích thước, cảm ơn bạn. <br>
+                    Đơn vị: cm, 1 inch = 2,54cm; Kích thước của người lớn: S-5XL; Kích thước của trẻ em: 100-160. <br>
+                    2. Hình chỉ hiển thị mẫu, do ánh sáng, môi trường, máy ảnh, các hiệu ứng khác nhau nên hình hơi khác so
+                    với hàng thật <br>
+                    3. Đo lường thủ công sẽ có một sai số 1-3 cm, xin vui lòng hiểu được. <br>
+                    Cảm ơn! <br>
+                    Cảm ơn bạn đã ghé thăm cửa hàng của chúng tôi.
+                </p>
+                
+            </div>
+        </div>
+
+        <!-- Sản phẩm liên quan -->
+        <div class="Similar-product">
+            <div class="Similar-product-title">
+                SẢN PHẨM LIÊN QUAN
+            </div>
+            <div class="Similar-product-content">
+                <i class="img-side-btn fa-solid fa-chevron-left"></i>
+                <div class="Similar-product-item">
+                    <img src="/assets/css/images/Detail_Product/si1.jpg" alt="" class="Similar-product-item-image-img">
+                    <div class="Similar-product-info">
+                        <div class="Similar-product-item-name">
+                            <a href="" class="Similar-product-item-link">Set bộ đồ lịch sự dành cho bé</a>   
+                        </div>
+                        <div class="Similar-product-item-price">449.000đ</div>
+                        <div class="Similar-product-item-stock">Còn 500 sản phẩm</div>
+                    </div>
+                </div>
+                <div class="Similar-product-item">
+                    <img src="/assets/css/images/Detail_Product/si2.jpg" alt="" class="Similar-product-item-image-img">
+                    <div class="Similar-product-info">
+                        <div class="Similar-product-item-name">
+                            
+                            <a href="" class="Similar-product-item-link">Áo yếm kèm theo nơ đen, phù hợp cho bé</a>
+                        </div>
+                        <div class="Similar-product-item-price">350.000đ</div>
+                        <div class="Similar-product-item-stock">Còn 15 sản phẩm</div>
+                    </div>
+                </div>
+                <div class="Similar-product-item">
+                    <img src="/assets/css/images/Detail_Product/si3.jpg" alt="" class="Similar-product-item-image-img">
+                    <div class="Similar-product-info">
+                        <div class="Similar-product-item-name">
+                            
+                            <a href="" class="Similar-product-item-link">Đồ bộ thun thể thao thoáng mát</a>
+                        </div>
+                        <div class="Similar-product-item-price">100.000đ</div>
+                        <div class="Similar-product-item-stock">Còn 5000 sản phẩm</div>
+                    </div>
+                </div>
+                <div class="Similar-product-item">
+                    <img src="/assets/css/images/Detail_Product/si4.jpg" alt="" class="Similar-product-item-image-img">
+                    <div class="Similar-product-info">
+                        <div class="Similar-product-item-name">
+                            <a href="" class="Similar-product-item-link">Đồ bộ thun thể thao co dãn tốt</a>
+                        </div>
+                        <div class="Similar-product-item-price">200.000đ</div>
+                        <div class="Similar-product-item-stock">Còn 421 sản phẩm</div>
+                    </div>
+                </div>
+                <div class="Similar-product-item">
+                    <img src="/assets/css/images/Detail_Product/si5.jpg" alt="" class="Similar-product-item-image-img">
+                    <div class="Similar-product-info">
+                        <div class="Similar-product-item-name">
+                            
+                            <a href="" class="Similar-product-item-link">Áo thun dành cho bé thích đi dã ngoại</a>
+                        </div>
+                        <div class="Similar-product-item-price">149.000đ</div>
+                        <div class="Similar-product-item-stock">Còn 5 sản phẩm</div>
+                    </div>
+                </div>
+                <div class="Similar-product-item">
+                    <img src="/assets/css/images/Detail_Product/si6.jpg" alt="" class="Similar-product-item-image-img">
+                    <div class="Similar-product-info">
+                        <div class="Similar-product-item-name">    
+                            <a href="" class="Similar-product-item-link">Áo quần dạ quang cực kì ngầu cho bé</a>
+                        </div>
+                        <div class="Similar-product-item-price">299.000đ</div>
+                        <div class="Similar-product-item-stock">Còn 200 sản phẩm</div>
+                    </div>
+                </div>
+                <i class="img-side-btn fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+        {{/each}}
+    </div>

@@ -36,9 +36,31 @@ async function getProductById(id) {
     console.log(error);
   }
 }
+async function searchProduct(list_keywords) {
+  try {
+    await mssql.connect(config);
+    const request = new mssql.Request();
+    var list_keyword = "";
+    for (var i = 0; i < list_keywords.length; i++) {
+      if (i == 0) {
+        list_keyword += `[name] LIKE N'%${list_keywords[i]}%'`;
+      } else {
+        list_keyword += ` AND [name] LIKE N'%${list_keywords[i]}%'`;
+      }
+    }
+    const result = await request.query(
+      `SELECT * FROM [dbo].[product] WHERE ${list_keyword}`
+    );
+    const product = result.recordset;
+    return product;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 //create new produc
 module.exports = {
   getProducts,
   getProductById,
+  searchProduct,
 };

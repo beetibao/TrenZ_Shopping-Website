@@ -8,7 +8,7 @@ function route(myWeb) {
   myWeb.use("/childrenProduct", childrenRouter);
   myWeb.use("/womenProduct", womenRouter);
   myWeb.use("/product", productRouter);
-  myWeb.use("/home", siteRouter);
+  myWeb.use("/", siteRouter);
 }
 
 module.exports = route;

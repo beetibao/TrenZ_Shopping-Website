@@ -19,7 +19,17 @@ class SiteController {
 
   //[GET] /search
   search(req, res) {
-    res.render("search");
+    let list_keyword = req.query.keyword.split(" ");
+    Products.searchProduct(list_keyword)
+      .then((products) => {
+        res.render("search", {
+          products: products,
+          keyword: req.query.keyword,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   about(req, res) {

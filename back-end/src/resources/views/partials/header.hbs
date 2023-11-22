@@ -4,8 +4,12 @@
             <a href="/"><img src="/img/Header_Logo_TrenZ.png" alt="logo" class="logo_img"></a>
         </div>
         <div class="header_search">
-                <input class="header_search_input" type="text" name="search" placeholder="Tìm kiếm...">
+            <form method="GET" action="./search" >
+                <input class="header_search_input" type="text" name="keyword" placeholder="Tìm kiếm...">
                 <button class="header_search_btn" type="submit"><i style="color:var(--white-color)" class="fas fa-search"></i></button>
+            </form>
+                
+                
         </div>
         <div class="header_hotline">
             <i class="fa-solid fa-phone-volume"></i>
@@ -15,7 +19,7 @@
     <!-- NAVBAR SESSION -->
     <div id="navbar">
         <ul class="navbar_menu_list">
-            <li><a href="/home">Trang chủ</a></li>
+            <li><a href="/">Trang chủ</a></li>
             <li><a href="/product">Nam</a></li>
             <li><a href="/womenProduct">Nữ</a></li>
             <li><a href="/childrenProduct">Trẻ em</a></li>

@@ -152,19 +152,7 @@
         </div>
 
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var logoutButton = document.getElementById("logoutButton");
-            if (logoutButton) {
-                logoutButton.addEventListener("click", function(event){
-                    var confirmLogout = confirm("Bạn có chắc chắn muốn đăng xuất?");
-                    if (!confirmLogout) {
-                        event.preventDefault();
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="assets/routes/account_order.js"></script>
 </body>
 
 </html>

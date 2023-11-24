@@ -4,15 +4,15 @@ const mssql = require('mssql');
 const app = express();
 app.use(express.json());
 
-const dbConfig = {
-    user: '',
-    password: '',
-    server: '',
-    database: '',
-};
-app.get('/order-history/:userId', async (req, res) => {
+const config = {
+    user: "trenz",
+    password: "nhom1_2023",
+    server: "trenz.database.windows.net",
+    database: "database",
+  };
+  app.get('/order-history/:userId', async (req, res) => {
     try {
-        let pool = await mssql.connect(dbConfig);
+        let pool = await mssql.connect(config);
         let result = await pool.request()
                                .input('userId', mssql.Int, req.params.userId)
                                .query('SELECT * FROM Orders WHERE UserId = @userId');

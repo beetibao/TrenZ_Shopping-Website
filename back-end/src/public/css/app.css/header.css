@@ -2,6 +2,7 @@
     width: 100%;
     background-color: var(--white-color);
     z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }   
 .header_sticky.active {
     position: fixed;

@@ -1,0 +1,112 @@
+h4 {
+    font-family: 'Kanit', sans-serif;
+}
+.cart_items {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 5rem;
+}
+.cart_list {
+    flex:2;
+}
+.cart_payment {
+    flex:1;
+}
+.cart_list > p, .cart_list h4{
+    display: inline-block;
+    font-size: 2rem;
+}
+.cart_list > p {
+    color:#7A7A9D;
+    padding-left: 1.4rem;
+}
+.cart_list_item {
+    display: flex;
+}
+.cart_noti {
+    text-align: center;
+    font-size: 2rem;
+    margin: 5rem 0;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+table th {
+    font-size: 1.8rem;
+    text-align: left;
+    padding: 1.4rem 3rem;
+    font-family: 'Kanit', sans-serif;
+}
+table tr td {
+    font-size: 1.4rem;
+    padding: 2rem 4rem;
+    border-bottom: 1px solid #E0E0E0;
+}
+.cart_list_item_img {
+    width: 90px;
+    height: 120px;
+    border-radius: 1.2rem;
+}
+.cart_list_item_info {
+    padding-left: 1.4rem;
+    max-width: 70%;
+}
+.cart_list_item_quantity {
+    display: flex;
+    max-width: 100px;
+    text-align: left;
+}
+.cart_list_item_quantity p {
+    margin: 0 1rem;
+    width: 30%;
+    font-family: 'Lato', sans-serif;
+}
+.cart_list_item_quantity p, .cart_list_item_quantity a {
+    text-align: center;
+    font-size: 1.4rem;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--black-color);
+}
+.cart_list_item_quantity_btn{
+    cursor: pointer;
+}
+.cart_list_item_delete {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.delete_btn{
+    color: red;
+}
+/*CART PAYMENT*/
+.cart_payment h4 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cart_payment p {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.payment_btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+}
+.cart_payment a:first-child {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.cart_payment a:first-child:hover {
+    text-decoration: underline;
+}
+.cart_payment a:last-child {
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}

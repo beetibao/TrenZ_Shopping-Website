@@ -1,0 +1,80 @@
+<div id="cart">
+            <div class="cart_items">
+                <div class="cart_list">
+                    <h4>GIỎ HÀNG </h4>
+                    <p class="number_of_product"></p>
+                    <div class="cart_noti"></div>
+                    <div class="cart_list_title">
+                        <table>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Đơn giá</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                            </tr>
+
+                            {{#each product}}
+                            <tr class="products_cart">
+                                <td>
+                                    <div class="cart_list_item">
+                                        <img src="{{this.image}}" alt="item" class="cart_list_item_img">
+                                        <div class="cart_list_item_info">
+                                            <p class="cart_list_item_name">{{this.name}}</p>
+                                            <p class="cart_list_item_size">Size: M</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>{{this.price}}đ</td>
+                                <td>
+                                    <div class="cart_list_item_quantity">
+                                        <a href="/cart/update/{{this.id}}?action=remove"  class="cart_list_item_quantity_btn">-</a>
+                                        <p class="cart_list_item_quantity_input">{{this.quantity}}</p>
+                                        <a href="/cart/update/{{this.id}}?action=add" class="cart_list_item_quantity_btn">+</a>
+                                    </div>
+                                </td>
+                                <td>{{this.totalprice}}đ</td>
+                                <td>
+                                    <a href="/cart/update/{{this.id}}?action=clear" class="delete_btn cart_list_item_delete"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            
+                        </table>
+                    </div>
+                </div>
+        
+                <div class="cart_payment">
+                    <h4>THANH TOÁN</h4>
+                    <div class="payment_session">
+                        <p>Tổng đơn: {{total}}đ</p>
+                        <div class="payment_btn">
+                            <a href="/product">
+                                Tiếp tục mua hàng
+                            </a>
+                            <a href="" class="cart_payment_btn">
+                                Thanh toán
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+</div>
+
+<script>
+    const numberOfProduct = document.querySelectorAll('table tr.products_cart');
+    const number_of_product = document.querySelector('.number_of_product');
+    number_of_product.innerHTML = "(" + numberOfProduct.length + ")" + " sản phẩm";
+
+
+    const cart_list_title = document.querySelector('.cart_list_title');
+    if(numberOfProduct.length == 0){   //Khi giỏ hàng trống thì ẩn
+        cart_list_title.style.display = "none";
+
+        const cart_noti = document.querySelector('.cart_noti'); //Hiện thông báo giỏ hàng trống
+        cart_noti.innerHTML = "Giỏ hàng trống";
+    }
+
+
+</script>

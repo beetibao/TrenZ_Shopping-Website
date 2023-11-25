@@ -89,6 +89,7 @@
     margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 .product-btn{
     min-width: 256px;
@@ -97,6 +98,14 @@
     border-radius: 30px;
     text-align: center;
     cursor: pointer;
+}
+.product-btn:hover {
+    opacity: 50%;
+}
+.cart_confirm {
+    display: none;
+    font-size: 2rem;
+    
 }
 .product-info-detail-button-add {
     background-color: var(--white-color);

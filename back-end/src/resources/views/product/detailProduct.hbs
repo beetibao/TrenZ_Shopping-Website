@@ -51,12 +51,21 @@
                 <!-- Thanh toán -->
                 <div class="product-info-detail-button product-line">
     
-                    <a href="" class="product-btn product-info-detail-button-add">
+                    <a href="/cart/add/{{this.id}}" class="product-btn product-info-detail-button-add">
                         <i class="fa-solid fa-cart-plus"></i>
-                        Thêm vào giỏ hàng
+                        Thêm vào giỏ hàng                     
                     </a>
+              
+                    
                     <a href="" class="product-btn product-info-detail-button-buy">Mua ngay</a>
+                    <div class="cart_confirm">
+                        <div class="noti">
+                            <i class="fa-solid fa-check"></i>
+                            Đã thêm vào giỏ hàng
+                        </div>
+                    </div>
                 </div>
+                
     
                 <!-- Hoàn tiền & Vận chuyển -->
                 <div class="product-info-detail-shipping">
@@ -206,3 +215,16 @@
         </div>
         {{/each}}
     </div>
+<script>
+    //show a noti when click on "thêm vào giỏ hàng"
+                var noti = document.querySelector('.cart_confirm');
+                var btnAdd = document.querySelector('.product-info-detail-button-add');
+                btnAdd.onclick = function () {
+                    noti.style.display = 'block';
+                    noti.style.color = 'green';
+                    setTimeout(function () {
+                        noti.style.display = 'none';
+                    }, 5000);
+                }
+
+</script>

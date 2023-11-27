@@ -3,7 +3,6 @@ class ProductController {
   //[GET] /home
 
   index(req, res, next) {
-    console.log()
     Products.getMenProducts(req.query)
       .then((men_products) => {
         res.render("product/product", { products: men_products });

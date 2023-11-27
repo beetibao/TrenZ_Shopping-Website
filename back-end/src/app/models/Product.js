@@ -251,6 +251,7 @@ async function addProductToCart(id, list_cart) {
         image: productItem[0].img,
         price: productItem[0].price,
         totalprice: productItem[0].price,
+        size: 'S',
         quantity: 1,
       });
     } else {
@@ -271,6 +272,7 @@ async function addProductToCart(id, list_cart) {
           image: productItem[0].img,
           price: productItem[0].price,
           totalprice: productItem[0].price,
+          size: 'S',
           quantity: 1,
         });
       }

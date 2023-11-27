@@ -3,21 +3,22 @@ class ProductController {
   //[GET] /home
 
   index(req, res, next) {
-    Products.getMenProducts()
+    console.log()
+    Products.getMenProducts(req.query)
       .then((men_products) => {
         res.render("product/product", { products: men_products });
       })
       .catch(next);
   }
   index1(req, res, next) {
-    Products.getWomenProducts()
+    Products.getWomenProducts(req.query)
       .then((women_products) => {
         res.render("product/womenProduct", { products: women_products });
       })
       .catch(next);
   }
   index2(req, res, next) {
-    Products.getChildrenProducts()
+    Products.getChildrenProducts(req.query)
       .then((children_products) => {
         res.render("product/childrenProduct", { products: children_products });
       })

@@ -12,23 +12,33 @@
                     <div class="filter-section">
                         <h3>Khoảng giá (VNĐ)</h3>
                         <label class="container1">Nhỏ hơn 100.000đ
-                            <input type="checkbox" checked="checked">
+                            <input 
+                                type="radio" 
+                                onchange="handleChangePriceRange(this, 0, 100)" 
+                                name="price" 
+                                value="0,100"
+                                onclick="handleUnSelectPrice(this)"
+                            >
                             <span class="checkmark"></span>
                         </label>
                         <label class="container1">Từ 100.000đ - 200.000đ
-                            <input type="checkbox">
+                            <input onclick="handleUnSelectPrice(this)" type="radio" onchange="handleChangePriceRange(this, 100, 200)"
+                                name="price" value="100,200">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container1">Từ 200.000đ - 350.000đ
-                            <input type="checkbox">
+                            <input onclick="handleUnSelectPrice(this)" type="radio" onchange="handleChangePriceRange(this, 200, 350)"
+                                name="price" value="200,350">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container1">Từ 350.000đ - 600.000đ
-                            <input type="checkbox">
+                            <input onclick="handleUnSelectPrice(this)" type="radio" onchange="handleChangePriceRange(this, 350, 600)"
+                                name="price" value="350,600">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container1">Lớn hơn 600.000đ
-                            <input type="checkbox">
+                            <input onclick="handleUnSelectPrice(this)" type="radio" onchange="handleChangePriceRange(this, 600)" name="price"
+                                value="600,">
                             <span class="checkmark"></span>
                         </label>
                           
@@ -38,23 +48,23 @@
                     <div class="filter-section">
                         <h3>Kích thước</h3>
                         <label class="container1">S
-                            <input type="checkbox" checked="checked">
+                            <input onclick="handleUnSelectSize(this)" onchange="handleChangeSize(this)" type="radio" name="size" value="S">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container1">M
-                            <input type="checkbox">
+                            <input onclick="handleUnSelectSize(this)" onchange="handleChangeSize(this)" type="radio" name="size" value="M">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container1">L
-                            <input type="checkbox">
+                            <input onclick="handleUnSelectSize(this)" onchange="handleChangeSize(this)" type="radio" name="size" value="L">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container1">XL
-                            <input type="checkbox">
+                            <input onclick="handleUnSelectSize(this)" onchange="handleChangeSize(this)" type="radio" name="size" value="XL">
                             <span class="checkmark"></span>
                         </label>
                         <label class="container1">XXL
-                            <input type="checkbox">
+                            <input onclick="handleUnSelectSize(this)" onchange="handleChangeSize(this)" type="radio" name="size" value="XXL">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -92,11 +102,9 @@
                         <div class="pagination">
                             <ul>
                               <li><span class="pagination-arrow">&#171</span></li>
-                              <li><a href="#">1</a></li>
-                              <li><a href="#">2</a></li>
-                              <li><a href="#">3</a></li>
-                              <li><a href="#">4</a></li>
-                              <li><a href="#">5</a></li>
+                              <li onclick="handlePaginate(1)" id="page1" class="pagination-item">1</li>
+                              <li onclick="handlePaginate(2)" id="page2" class="pagination-item">2</li>
+                              <li onclick="handlePaginate(3)" id="page3" class="pagination-item">3</li>
                               <li><span class="pagination-arrow">&#187</span></li>                       
                             </ul>
                           </div>

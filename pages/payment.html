@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/modules/header_footer.css">
+    <link rel="stylesheet" href="/assets/css/modules/payment.css">
+    <link rel="stylesheet" href="/assets/css/icon/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/assets/css/modules/account-2.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;500&family=Lato:wght@100;300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER SESSION -->
+    <div class="header_sticky">
+        <div id="header">
+            <div class="header_logo">
+                <a href="#"><img src="/assets/css/images/header_footer/Header_Logo_TrenZ.png" alt="logo"
+                        class="logo_img"></a>
+            </div>
+            <div class="header_search">
+                <input class="header_search_input" type="text" name="search" placeholder="Tìm kiếm...">
+                <button class="header_search_btn" type="submit"><i style="color:var(--white-color)"
+                        class="fas fa-search"></i></button>
+            </div>
+            <div class="header_hotline">
+                <i class="fa-solid fa-phone-volume"></i>
+                <p class="header_hotline_number">Hotline: 0393524189</p>
+            </div>
+        </div>
+        <!-- NAVBAR SESSION -->
+        <div id="navbar">
+            <ul class="navbar_menu_list">
+                <li><a style="color: var(--primary-color)" href="#">SALE</a></li>
+                <li><a href="#">Nam</a></li>
+                <li><a href="#">Nữ</a></li>
+                <li><a href="#">Trẻ em</a></li>
+                <li><a href="#">Về TrenZ</a></li>
+            </ul>
+            <div class="navbar_user">
+                <!-- <a href=""><i class="navbar_btn fas fa-user"></i></a>
+                <p class="login_user">khoalee</p> -->
+                <p class="navbar_login_signup">
+                    <a class="navbar_login" href="">Đăng nhập</a>
+                    <a class="navbar_signup" href="">Đăng ký</a>
+                </p>
+            </div>
+            <div class="navbar_cart">
+                <a href=""><i class="navbar_btn fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- BODY SESSION -->
+    <div class="container">
+        <h2>Đơn mua</h2>
+        <div class="heading">
+            <div class="c0">STT</div>
+            <div class="c1">Sản phẩm</div>
+            <div class="c2">Đơn giá</div>
+            <div class="c3">Số lượng</div>
+            <div class="c4">Thành tiền</div>
+        </div>
+        <div class="list-product">
+            <div class="product">
+                <div class="c0">1</div>
+                <div class="c1">
+                    <img src="/assets/css/images/Detail_Product/side1.jpg" alt="Áo thun">
+                    <div class="item-info">
+                        <p class="item-name">Áo thun</p>
+                        <p class="item-size">Size: XL</p>
+                    </div>
+                </div>
+                <div class="c2">100.000đ</div>
+                <div class="c3">1</div>
+                <div class="c4">100.000đ</div>
+            </div>
+            <div class="product">
+                <div class="c0">2</div>
+                <div class="c1"><img src="/assets/css/images/Detail_Product/side1.jpg" alt="Áo thun">
+                    <div class="item-info">
+                        <p class="item-name">Áo thun</p>
+                        <p class="item-size">Size: XL</p>
+                    </div>
+                </div>
+                <div class="c2">100.000đ</div>
+                <div class="c3">1</div>
+                <div class="c4">100.000đ</div>
+            </div>
+            <div class="product">
+                <div class="c0">3</div>
+                <div class="c1"><img src="/assets/css/images/Detail_Product/side1.jpg" alt="Áo thun">
+                    <div class="item-info">
+                        <p class="item-name">Áo thun</p>
+                        <p class="item-size">Size: XL</p>
+                    </div>
+                </div>
+                <div class="c2">100.000đ</div>
+                <div class="c3">1</div>
+                <div class="c4">100.000đ</div>
+            </div>
+        </div>
+        <h2 class="title">Thông tin thanh toán</h2>
+        <div class="payment-info">
+            <div class="info">
+                <p>Họ và tên: <span id="customer-name">Lê Văn Báo</span></p>
+                <p>Số điện thoại: <span id="customer-phone">(+84) 39524189</span></p>
+                <p>Địa chỉ: <span id="customer-address">Ký túc xá Khu A - ĐHQG TP.HCM, Phường Đông Hoà, Thành Phố Dĩ An, Tỉnh Bình Dương</span></p>
+            </div>
+            <div class="change">
+                <button class="btn-change" id ="changeBtn">Thay đổi</button>
+            </div>
+            <div id="changeInfo" class="modal-info">
+                <!-- Modal content -->
+                <div class="info-content">
+                    <h2>Thay đổi thông tin thanh toán</h2>
+                    <form>
+                        <div class="row">
+                            <div class="col-30">
+                                <label for="fullName">Họ và tên:</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="text" id="fullName" name="fullName" placeholder="Họ và tên">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30">
+                                <label for="phone">Số điện thoại:</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="tel" id="phone" name="phone" placeholder="Số điện thoại">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30">
+                                <label for="address">Địa chỉ:</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="text" id="address" name="address" placeholder="Địa chỉ">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30">
+                                <label for="email">Email:</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="email" id="email" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input class="saveBtn" type="submit" value="Lưu">
+                            <input class="closeBtn" type="submit" value="Hủy">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <h2 class="title">Vận chuyển</h2>
+        <div class="transport">
+            <div class="t1"><span class="trans-comp">Đơn vị vận chuyển: </span></div> 
+            <div class="t2">Giao hàng nhanh
+                <div class="pred">
+                    <span>(Dự kiến 3-5 ngày)</span>
+                </div>
+            </div> 
+            <div class="t3">50.100đ</div>
+            <div class="t4"><button class="btn-change1" id="changeTransBtn">Thay đổi</button></div>
+        </div>
+        <div id="changeTrans" class="trans-info">
+            <!-- Modal content -->
+            <div class="trans-content">
+                <h2>Thay đổi đơn vị vận chuyển</h2>
+                <div class="opt">
+                    <input type="radio" id="GHN" name="payment_method" value="GHN" checked />
+                    <label for="GHN" class="label-pos"> Giao hàng nhanh </label>
+                    <span id="transMoney">50.100đ</span>
+                    <div class="transTime">(Dự kiến 3-5 ngày)</div>
+                </div>
+                <div class="opt">
+                    <input type="radio" id="GHTK" name="payment_method" value="GHTK"/>
+                    <label for="GHTK" class="label-pos"> Giao hàng tiết kiệm </label>
+                    <span id="transMoney">60.000đ</span>
+                    <div class="transTime">(Dự kiến 1-2 ngày)</div>
+                </div>
+                <div class="row">
+                    <input class="saveTransBtn" type="submit" value="Lưu">
+                    <input class="closeTransBtn" type="submit" value="Huỷ">
+                </div>
+            </div>
+        </div>
+        <h2 class="title">Phương thức thanh toán</h2>
+        <div class="payment-method">
+            <div class="checkbox-group">
+                <input type="radio" id="COD" name="payment_method" value="COD">
+                <label for="COD"> Thanh toán khi nhận hàng (COD) 
+                    <img class='icon' src="/assets/css/icon/fontawesome-free-6.4.2-web/svgs/regular/money-bill-1.svg" width=40 height=25>
+                </label><br>
+                <input type="radio" id="Credit-card" name="payment_method" value="Credit-card">
+                <label for="Credit-card"> Thanh toán qua thẻ ngân hàng 
+                    <img class='icon' src="/assets/css/icon/fontawesome-free-6.4.2-web/svgs/regular/credit-card.svg" width=40 height=25>
+                </label><br>
+                <input type="radio" id="MoMo-EWallet" name="payment_method" value="MoMo-EWallet">
+                <label for="MoMo-EWallet"> Thanh toán qua ví MoMo 
+                    <img class='icon' src="https://developers.momo.vn/v3/assets/images/square-logo-f8712a4d5be38f389e6bc94c70a33bf4.png" width=45 height=40>
+                </label><br><br>
+            </div>
+        </div>
+        <div class="total">
+            <div class="a1">Tổng tiền hàng:</div> 
+            <div class="a2">
+                <span id="sum-of-prod">1.424.000đ</span>      
+            </div>
+            <div class="a1">Phí vận chuyển:</div>
+            <div class="a2">
+                <span id="tranp-fee">50.100đ</span>
+            </div>
+            <div class="a1">Voucher của shop:</div>
+            <div class="a2">
+                <span id="discount">-25.000đ</span>
+            </div>
+            <div class="a1" id="tt">Thành tiền:</div>
+            <div class="a2">
+                <span id="sum" class="sum">1.399.100đ</span>
+            </div>
+            <div class="a1"></div>
+            <div class="a2">
+                <button class="btn-acpt" onclick="acceptOrder()">Đặt hàng</button>
+            </div>
+        </div>
+        <div class="last">
+            <a href="#" class="back"> &lt Quay về giỏ hàng</a>
+        <script src="/scripts/payment.js"></script>
+    </div>
+    <!-- ..... -->
+
+    <!-- END BODY SESSION -->
+    <!-- FOOTER SESSION -->
+    <div id="footer">
+        <div class="footer_quote">
+            <h1 class="footer_quote_content">
+                Tren<span style="color: var(--primary-color)">Z</span> dẫn đầu xu hướng thời trang GENZ
+            </h1>
+            <p>Chúng tôi luôn không ngừng phát triển và ra mắt những
+                sản phẩm mới phù hợp với xu hướng thời trang trong thời đại thế hệ GenZ nhằm mang đến sự tươi mới, trẻ
+                trung và trải
+                nghiệm tốt nhất cho khách hàng. </p>
+
+            <p>Tren<span style="color: var(--primary-color)">Z</span> mong đợi nhận được mọi
+                ý kiến đóng góp từ khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa trong tương
+                lai.
+            </p>
+
+            <div class="footer_opinion">
+                <a class="footer_opinion_link" href="" target="_blank">Đóng góp ý kiến</a>
+            </div>
+        </div>
+        <div class="footer_info">
+            <div class="footer_address">
+                <h1 class="footer_address_title">CÔNG TY CP THỜI TRANG TRENZ</h1>
+                <p class="footer_address_content"><i class="footer_icon fa-solid fa-house"></i>
+                    Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh.
+                </p>
+                <p class="footer_address_content"><i class="footer_icon fa-solid fa-phone-volume"></i>
+                    Liên hệ đặt hàng: 0909111222. <br>
+                    Thắc mắc đơn hàng: 0909111333. <br>
+                    Góp ý khiếu nại: 0909111444.
+                </p>
+                <p class="footer_address_content"><i class="footer_icon fa-solid fa-envelope"></i>
+                    Email: chamsockhachhang@trenz.com
+                </p>
+                <p class="footer_address_content">
+                    <i class="footer_icon fa-solid fa-file-lines"></i>
+                    Chính sách <br>
+                    Chính sách bảo hành, đổi/trả trong vòng 30 ngày. <br>
+                    Chính sách bảo mật thông tin khách hàng.
+                </p>
+            </div>
+            <div class="footer_social_link">
+                <a href="" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                <a href="" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="" target="_blank"><i class="fab fa-youtube-square"></i></a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

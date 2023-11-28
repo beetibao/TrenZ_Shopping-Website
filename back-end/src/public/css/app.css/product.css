@@ -233,4 +233,9 @@
     font-weight: bold;
     color: #333;
 }
+
+.pagination-item {
+    cursor: pointer;
+    font-size: 15px;
+}
   

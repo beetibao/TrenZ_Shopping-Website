@@ -13,6 +13,8 @@ const transName = document.getElementById("trans-comp-name");
 const transDelivery = document.getElementById("trans-expect-delivery");
 const transPrice = document.getElementById("trans-price");
 
+const DISCOUNT = 25000;
+
 let transportComp = {
   id: 'ghn',
   name: 'Giao hàng nhanh',
@@ -133,7 +135,18 @@ window.onclick = function(event) {
 // Confirm Order
 var confirmOrder = document.getElementById("confirmPlaceOrder");
 var cancelOrderBtn = document.getElementsByClassName("cancelOrder")[0];
+const orderConfirmedForm = document.getElementById("orderConfirmed");
+const closeOrderConfirmedBtn = document.getElementById("closeOrderConfirmedBtn");
 
+if(closeOrderConfirmedBtn) {
+  closeOrderConfirmedBtn.addEventListener((e) => {
+    e.preventDefault();
+    orderConfirmedForm.style.display = "none";
+
+    window.location.href = location.hostname;
+  })
+  
+}
 let selectedMethod = null;
 
 const acceptOrder = () => {
@@ -159,7 +172,7 @@ if(confirmOrder) {
       selectedMethod = 'cod';
     }
     if(creditCard.checked) {
-      selectedMethod = 'credit-card';
+      selectedMethod = 'creditCard';
     }
     if(momo.checked) {
       selectedMethod = 'momo';
@@ -173,5 +186,47 @@ if(confirmOrder) {
     if(missingValue) {
       return;
     }
+
+    fetch("http://localhost:3000/payment/addPayment", {
+      method: "POST",
+      body: JSON.stringify({
+        user_id: 1,
+        name: userInfo.fullName,
+        total: sumOfProducts - transportComp.price - DISCOUNT,
+        phone: userInfo.phone,
+        detail: transportComp.id,
+        payment_method: selectedMethod,
+        status: "delivery",
+        created_at: new Date(),
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    }).then(response => {
+      if(response.status === 200) { 
+        confirmOrder.style.display = "none";
+        orderConfirmedForm.style.display = "block";
+      }
+    }) ;
   });
 }
+
+// Order
+const discountEl = document.getElementById('discount');
+if(discountEl) {
+  discountEl.innerText = `-${DISCOUNT}đ`
+}
+
+const transFeeEl = document.getElementById('tranp-fee');
+if(transFeeEl) {
+  transFeeEl.innerText = `${transportComp.price}đ`
+}
+const sumOfProductsEl = document.getElementById('sum-of-prod');
+const finalTotalEl = document.getElementById('sum');
+const sumOfProducts = parseInt(sumOfProductsEl.innerText.split('đ')[0]);
+if(!isNaN(sumOfProducts)) {
+  const finalTotal = sumOfProducts - transportComp.price - DISCOUNT;
+
+  finalTotalEl.innerText = `${finalTotal} đ`;
+}
+

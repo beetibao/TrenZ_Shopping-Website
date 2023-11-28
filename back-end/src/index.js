@@ -12,12 +12,14 @@ const hbs = handlebars.create({});
 
 const myWeb = express();
 const port = 3000;
+
 myWeb.use(express.static(path.join(__dirname, "public"))); //static file
 myWeb.use(
   express.urlencoded({
     extended: true,
   })
 ); //middleware
+myWeb.use(express.json());
 //template engine
 //Sets handlebars configurations
 myWeb.engine(

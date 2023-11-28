@@ -384,6 +384,16 @@ h1, h2{
     margin-right: 10%;
 }
 
+.cancelOrder {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 .trans-content input[type=submit] {
     background-color: var(--primary-color);
     color: white;
@@ -396,4 +406,14 @@ h1, h2{
 }
 .trans-content input[type=submit]:hover, .info-content input[type=submit]:hover {
     background-color: #45a049;
+}
+
+.btn {
+    display: block;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
 }

@@ -115,6 +115,19 @@
             </div>
         </div>
     </form>
+
+    {{!-- ORDER CONFIRMED --}}
+    <form id="orderConfirmed" class="trans-info">
+        <!-- Modal content -->
+        <div class="trans-content">
+            <h2>Đặt hàng thành công</h2>
+            <label style="margin: 20px 0"> Đơn hàng đã được đặt thành công. Hãy chú ý điện thoại để nhận hàng </label>
+            <div class="row">
+                <a href="/" class="btn">OK</a>
+            </div>
+        </div>
+    </form>
+
     <h2 class="title">Phương thức thanh toán</h2>
     <div class="payment-method">
         <div class="checkbox-group">
@@ -139,19 +152,19 @@
     <div class="total">
         <div class="a1">Tổng tiền hàng:</div>
         <div class="a2">
-            <span id="sum-of-prod">1.424.000đ</span>
+            <span id="sum-of-prod">{{ total }}đ</span>
         </div>
         <div class="a1">Phí vận chuyển:</div>
         <div class="a2">
-            <span id="tranp-fee">50.100đ</span>
+            <span id="tranp-fee"></span>
         </div>
         <div class="a1">Voucher của shop:</div>
         <div class="a2">
-            <span id="discount">-25.000đ</span>
+            <span id="discount"></span>
         </div>
         <div class="a1" id="tt">Thành tiền:</div>
         <div class="a2">
-            <span id="sum" class="sum">1.399.100đ</span>
+            <span id="sum" class="sum"></span>
         </div>
         <div class="a1"></div>
         <div class="a2">

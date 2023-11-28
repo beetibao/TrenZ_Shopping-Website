@@ -74,6 +74,24 @@ async function getPayment(params) {
     console.log(error);
   }
 }
+
+async function addPayment(params) {
+  try {
+    await mssql.connect(config);
+    const request = new mssql.Request();
+
+    const orderList = await request.query('SELECT * FROM [dbo].[order]');
+    const maxId = Math.max(...orderList.recordsets[0].map(item => item.order_id), 0);
+
+    const result = await request.query(
+      `INSERT INTO [dbo].[order] (order_id, user_id, name, total, phone, detail, payment_method, status, created_at) VALUES ('${maxId + 1}', '${params.user_id}', '${params.name}', '${params.total}', '${params.phone}', '${params.detail}', '${params.payment_method}', '${params.status}', '${params.created_at}')`
+    );
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+}
 module.exports = {
     getPayment,
+    addPayment,
 };

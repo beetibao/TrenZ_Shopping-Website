@@ -14,6 +14,9 @@ class PaymentController {
 
   addPayment(req, res, next) {
     Payment.addPayment(req.body).then(function(order) {
+
+      global.carts = [];
+      global.cart_total = 0;
       res.json({ success: true });
     });
   }

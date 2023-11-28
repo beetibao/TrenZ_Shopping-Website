@@ -192,11 +192,12 @@ if(confirmOrder) {
       body: JSON.stringify({
         user_id: 1,
         name: userInfo.fullName,
+        address: userInfo.address,
         total: sumOfProducts - transportComp.price - DISCOUNT,
         phone: userInfo.phone,
-        detail: transportComp.id,
+        detail: transportComp.name,
         payment_method: selectedMethod,
-        status: "delivery",
+        status: "Đang vận chuyển",
         created_at: new Date(),
       }),
       headers: {

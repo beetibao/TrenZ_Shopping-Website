@@ -83,8 +83,11 @@ async function addPayment(params) {
     const orderList = await request.query('SELECT * FROM [dbo].[order]');
     const maxId = Math.max(...orderList.recordsets[0].map(item => item.order_id), 0);
 
+    const products = global.carts.map(item => item.id);
+    const detail = global.carts.map(item => ([item.id, item.size || 'S', item.quantity, item.totalprice ]));
+
     const result = await request.query(
-      `INSERT INTO [dbo].[order] (order_id, user_id, name, total, phone, detail, payment_method, status, created_at) VALUES ('${maxId + 1}', '${params.user_id}', '${params.name}', '${params.total}', '${params.phone}', '${params.detail}', '${params.payment_method}', '${params.status}', '${params.created_at}')`
+      `INSERT INTO [dbo].[order] (order_id, user_id, name, address, total, phone, detail, payment_method, status, created_at) VALUES ('${maxId + 1}', '${params.user_id}', N'${params.name}', N'${params.address}', '${params.total}', '${params.phone}', N'${JSON.stringify(detail)}', '${params.payment_method}', N'${params.status}', '${params.created_at}')`
     );
     return result;
   } catch (error) {

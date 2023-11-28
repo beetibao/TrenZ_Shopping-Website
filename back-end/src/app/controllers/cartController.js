@@ -21,7 +21,9 @@ class CartController {
       carts = listsProduct[0];
       cart_total = listsProduct[1];
       console.log("thêm sản phẩm thành công" + carts.length);
-      res.redirect("back");
+      setTimeout(function () {
+        res.redirect("back");
+      }, 5000);
     });
   }
   checkout(req, res, next) {

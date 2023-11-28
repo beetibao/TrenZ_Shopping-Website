@@ -2,7 +2,7 @@
             <div class="cart_items">
                 <div class="cart_list">
                     <h4>GIỎ HÀNG </h4>
-                    <p class="number_of_product"></p>
+                    <p class="number_of_product">({{product.length}}) sản phẩm</p>
                     <div class="cart_noti"></div>
                     <div class="cart_list_title">
                         <table>
@@ -64,9 +64,6 @@
 
 <script>
     const numberOfProduct = document.querySelectorAll('table tr.products_cart');
-    const number_of_product = document.querySelector('.number_of_product');
-    number_of_product.innerHTML = "(" + numberOfProduct.length + ")" + " sản phẩm";
-
 
     const cart_list_title = document.querySelector('.cart_list_title');
     if(numberOfProduct.length == 0){   //Khi giỏ hàng trống thì ẩn
@@ -74,6 +71,7 @@
 
         const cart_noti = document.querySelector('.cart_noti'); //Hiện thông báo giỏ hàng trống
         cart_noti.innerHTML = "Giỏ hàng trống";
+        cart_noti.style.height = "30rem";
     }
 
 

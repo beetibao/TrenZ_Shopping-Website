@@ -1,0 +1,55 @@
+<div class="admin-body">
+        <div class="account-section">
+            <div class="account-avatar">
+                <img src="https://imgtrenz.blob.core.windows.net/blob/avatar.png" alt="Avatar" class="avatar-image">
+            </div>
+            <nav>
+                <div class="menu-items">
+                    <ul class = "nav-links">
+                        <li><a href="/admin/admin_statusOrder">
+                            <i class="fa fa-tasks fa-2xl"> </i>
+                            <span class = "link-name">Tình trạng đơn hàng</span>
+                        </a></li>
+                        <li><a href="/admin/admin_listProduct" >
+                            <i class="fa fa-list-alt fa-2xl"> </i>
+                            <span class = "link-name">Danh mục sản phẩm</span>
+                        </a></li>
+                        <li><a href="/admin/admin_listUser" class="nav-active">
+                            <i class="fa fa-users fa-2xl"> </i>
+                            <span class = "link-name">Danh mục khách hàng</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="btn-logout">Đăng xuất</button>
+                </div>
+            </nav>
+        </div>
+        <div class= "border">
+            <div class="account-table">
+                <div class="table-wapper">
+                    <table>
+                    <thead>
+                        <th>Mã khách hàng</th>
+                        <th>Tên khách hàng</th>
+                        <th>Giới tính</th>
+                        <th>Địa chỉ</th>
+                        <th>Liên lạc</th>
+                        <th>Email</th>
+                    </thead>
+                    <tbody>
+                        {{#each users}}
+                            <tr>
+                                <td>{{this.id}}</td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.gender}}</td>
+                                <td>{{this.phone}}</td>
+                                <td>{{this.address}}</td>
+                                <td>{{this.email}}</td>
+                            </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="admin-body">
+        <div class="account-section">
+            <div class="account-avatar">
+                <img src="https://imgtrenz.blob.core.windows.net/blob/avatar.png" alt="Avatar" class="avatar-image">
+            </div>
+            <nav>
+                <div class="menu-items">
+                    <ul class = "nav-links">
+                        <li><a href="/admin/admin_statusOrder">
+                            <i class="fa fa-tasks fa-2xl"> </i>
+                            <span class = "link-name">Tình trạng đơn hàng</span>
+                        </a></li>
+                        <li><a href="/admin/admin_listProduct" class="nav-active">
+                            <i class="fa fa-list-alt fa-2xl"> </i>
+                            <span class = "link-name">Danh mục sản phẩm</span>
+                        </a></li>
+                        <li><a href="/admin/admin_listUser">
+                            <i class="fa fa-users fa-2xl"> </i>
+                            <span class = "link-name">Danh mục khách hàng</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="btn-logout">Đăng xuất</button>
+                </div>
+            </nav>
+        </div>
+        
+        <div class= "border">
+            <button class="btn-add">Thêm sản phẩm</button>
+        <div class="account-table">
+            <br>
+            <div class="table-wapper">
+                <table>
+                    <thead>
+                        <th>Mã sản phẩm</th>
+                        <th>Sản phẩm</th>
+                        <th>Loại</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Chi tiết kích thước</th>
+                        <th>Chỉnh sửa</th>
+                    </thead>
+                    <tbody>
+                        {{#each products}}
+                            <tr>
+                                <td>{{this.id}}</td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.category}}</td>
+                                <td>{{this.price}}</td>
+                                <td>{{this.amount}}</td>
+                                <td>{{this.size}}</td>
+                                <td>
+                                    <a class= "update-data" href="/admin/admin_statusOrder/edit/{{this.id}}">
+                                    <i class="fa-solid fa-pen-to-square fa-xl btn-change"></i>
+                                    </a>
+                                    <a class= "update-data" href="/admin/admin_statusOrder/del/{{this.id}}">
+                                    <i class="fa-solid fa-trash fa-xl btn-del"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {{/each}}
+                </table>
+            </div>
+        </div>
+        </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const logoutButton = document.querySelector('.btn-logout');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function() {
+            window.location.href = '/'; 
+        });
+    }
+    });
+
+</script>

@@ -1,4 +1,5 @@
 const Admin = require("../models/Admin");
+
 class AdminController {
 
   index(req, res, next) {
@@ -25,13 +26,26 @@ class AdminController {
       })
       .catch(next);
   }
+  //[GET] admin/createProduct
+  createProduct(req, res) {
+    res.render("admin/createProduct");
+  }
 
-  create(req, res, next) {
-    Admin.getUsers(req.query)
-      .then((users) => {
-        res.render("admin/admin_listUser", { users: users });
-      })
-      .catch(next);
+  //[POST] admin/storeProduct
+  storeProduct(req, res) {
+    try {
+      const formdata = req.body;
+      Admin.uploadImage(req, res);
+      //const formdata = ;
+      console.log(formdata);
+      Admin.insertProduct(formdata);
+      res.json({ success: true, message: 'Thêm sản phẩm thành công' });
+      } catch (error) {
+      console.error(error);
+      res.status(500).json({ success: false, message: 'Đã xảy ra lỗi khi tải ảnh hoặc thêm sản phẩm' });
+    }
   }
 }
+
 module.exports = new AdminController();
+

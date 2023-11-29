@@ -11,39 +11,39 @@ const config = {
 };
 async function getMenProducts(params) {
   try {
-    const minPrice = parseFloat(params.min)* 1000;
+    const minPrice = parseFloat(params.min) * 1000;
     const maxPrice = parseFloat(params.max) * 1000;
     await mssql.connect(config);
     const request = new mssql.Request();
     let query = `SELECT * FROM [dbo].[product] WHERE category = 'Nam'`;
 
-    if(params.max && params.min) {
-      query += ` AND CAST(price AS INT) BETWEEN ${minPrice} AND ${maxPrice}`
+    if (params.max && params.min) {
+      query += ` AND CAST(price AS INT) BETWEEN ${minPrice} AND ${maxPrice}`;
     }
 
-    if(params.min && !params.max) {
-      query += ` AND CAST(price AS INT) >= ${minPrice}`
+    if (params.min && !params.max) {
+      query += ` AND CAST(price AS INT) >= ${minPrice}`;
     }
 
-    if(params.max && !params.min) {
-      query += ` AND CAST(price AS INT) <= ${maxPrice}`
+    if (params.max && !params.min) {
+      query += ` AND CAST(price AS INT) <= ${maxPrice}`;
     }
 
-    if(params.size) {
-      query += ` AND JSON_VALUE(size, '$.${params.size}') > 0`
+    if (params.size) {
+      query += ` AND JSON_VALUE(size, '$.${params.size}') > 0`;
     }
 
-    if(params.sort) {
-      switch(params.sort) {
-        case 'all_clothing':
+    if (params.sort) {
+      switch (params.sort) {
+        case "all_clothing":
           break;
-        case 'ex_clothing':
+        case "ex_clothing":
           query += ` ORDER BY CAST(price AS INT) DESC`;
           break;
-        case 'cheap_clothing':
+        case "cheap_clothing":
           query += ` ORDER BY CAST(price AS INT) ASC`;
           break;
-        case 'latest_clothing':
+        case "latest_clothing":
           query += ` ORDER BY modified_at DESC`;
           break;
       }
@@ -51,9 +51,9 @@ async function getMenProducts(params) {
     const result = await request.query(query);
 
     let currentPageProducts = result.recordset;
-    if(params.page) {
+    if (params.page) {
       let itemsPerPage = 20;
-      switch(params.page) {
+      switch (params.page) {
         case "1":
           itemsPerPage = 20;
           break;
@@ -77,39 +77,39 @@ async function getMenProducts(params) {
 
 async function getWomenProducts(params) {
   try {
-    const minPrice = parseFloat(params.min)* 1000;
+    const minPrice = parseFloat(params.min) * 1000;
     const maxPrice = parseFloat(params.max) * 1000;
     await mssql.connect(config);
     const request = new mssql.Request();
     let query = "SELECT * FROM [dbo].[product] WHERE category = N'Nữ'";
 
-    if(params.max && params.min) {
-      query += ` AND CAST(price AS INT) BETWEEN ${minPrice} AND ${maxPrice}`
+    if (params.max && params.min) {
+      query += ` AND CAST(price AS INT) BETWEEN ${minPrice} AND ${maxPrice}`;
     }
 
-    if(params.min && !params.max) {
-      query += ` AND CAST(price AS INT) >= ${minPrice}`
+    if (params.min && !params.max) {
+      query += ` AND CAST(price AS INT) >= ${minPrice}`;
     }
 
-    if(params.max && !params.min) {
-      query += ` AND CAST(price AS INT) <= ${maxPrice}`
+    if (params.max && !params.min) {
+      query += ` AND CAST(price AS INT) <= ${maxPrice}`;
     }
 
-    if(params.size) {
-      query += ` AND JSON_VALUE(size, '$.${params.size}') > 0`
+    if (params.size) {
+      query += ` AND JSON_VALUE(size, '$.${params.size}') > 0`;
     }
 
-    if(params.sort) {
-      switch(params.sort) {
-        case 'all_clothing':
+    if (params.sort) {
+      switch (params.sort) {
+        case "all_clothing":
           break;
-        case 'ex_clothing':
+        case "ex_clothing":
           query += ` ORDER BY CAST(price AS INT) DESC`;
           break;
-        case 'cheap_clothing':
+        case "cheap_clothing":
           query += ` ORDER BY CAST(price AS INT) ASC`;
           break;
-        case 'latest_clothing':
+        case "latest_clothing":
           query += ` ORDER BY modified_at DESC`;
           break;
       }
@@ -117,9 +117,9 @@ async function getWomenProducts(params) {
     const result = await request.query(query);
 
     let currentPageProducts = result.recordset;
-    if(params.page) {
+    if (params.page) {
       let itemsPerPage = 20;
-      switch(params.page) {
+      switch (params.page) {
         case "1":
           itemsPerPage = 20;
           break;
@@ -143,39 +143,39 @@ async function getWomenProducts(params) {
 
 async function getChildrenProducts(params) {
   try {
-    const minPrice = parseFloat(params.min)* 1000;
+    const minPrice = parseFloat(params.min) * 1000;
     const maxPrice = parseFloat(params.max) * 1000;
     await mssql.connect(config);
     const request = new mssql.Request();
     let query = "SELECT * FROM [dbo].[product] WHERE category = N'Trẻ em'";
 
-    if(params.max && params.min) {
-      query += ` AND CAST(price AS INT) BETWEEN ${minPrice} AND ${maxPrice}`
+    if (params.max && params.min) {
+      query += ` AND CAST(price AS INT) BETWEEN ${minPrice} AND ${maxPrice}`;
     }
 
-    if(params.min && !params.max) {
-      query += ` AND CAST(price AS INT) >= ${minPrice}`
+    if (params.min && !params.max) {
+      query += ` AND CAST(price AS INT) >= ${minPrice}`;
     }
 
-    if(params.max && !params.min) {
-      query += ` AND CAST(price AS INT) <= ${maxPrice}`
+    if (params.max && !params.min) {
+      query += ` AND CAST(price AS INT) <= ${maxPrice}`;
     }
 
-    if(params.size) {
-      query += ` AND JSON_VALUE(size, '$.${params.size}') > 0`
+    if (params.size) {
+      query += ` AND JSON_VALUE(size, '$.${params.size}') > 0`;
     }
 
-    if(params.sort) {
-      switch(params.sort) {
-        case 'all_clothing':
+    if (params.sort) {
+      switch (params.sort) {
+        case "all_clothing":
           break;
-        case 'ex_clothing':
+        case "ex_clothing":
           query += ` ORDER BY CAST(price AS INT) DESC`;
           break;
-        case 'cheap_clothing':
+        case "cheap_clothing":
           query += ` ORDER BY CAST(price AS INT) ASC`;
           break;
-        case 'latest_clothing':
+        case "latest_clothing":
           query += ` ORDER BY modified_at DESC`;
           break;
       }
@@ -183,9 +183,9 @@ async function getChildrenProducts(params) {
     const result = await request.query(query);
 
     let currentPageProducts = result.recordset;
-    if(params.page) {
+    if (params.page) {
       let itemsPerPage = 20;
-      switch(params.page) {
+      switch (params.page) {
         case "1":
           itemsPerPage = 20;
           break;
@@ -208,13 +208,18 @@ async function getChildrenProducts(params) {
 }
 async function getProductById(id) {
   try {
+    var product_category = id.slice(0, 1);
     await mssql.connect(config);
     const request = new mssql.Request();
-    const result = await request.query(
+    const result_1 = await request.query(
       `SELECT * FROM [dbo].[product] WHERE id = '${id}'`
     );
-    const product = result.recordset;
-    return product;
+    const result_2 = await request.query(
+      `SELECT TOP 6 * FROM [dbo].[product] WHERE [id] LIKE '${product_category}%' ORDER BY NEWID()`
+    );
+    const product = result_1.recordset;
+    const category_products = result_2.recordset;
+    return [product, category_products];
   } catch (error) {
     console.log(error);
   }

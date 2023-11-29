@@ -3,7 +3,7 @@ class ProductController {
   //[GET] /home
 
   index(req, res, next) {
-    console.log()
+    console.log();
     Products.getMenProducts(req.query)
       .then((men_products) => {
         res.render("product/product", { products: men_products });
@@ -27,7 +27,10 @@ class ProductController {
   show(req, res, next) {
     Products.getProductById(req.params.id)
       .then((id_product) => {
-        res.render("product/detailProduct", { id_product: id_product });
+        res.render("product/detailProduct", {
+          id_product: id_product[0],
+          relative_products: id_product[1],
+        });
       })
       .catch(next);
   }

@@ -20,7 +20,7 @@
         <div class="product-info">
             {{#each id_product}}
             <div class="product-info-image">
-                <img src="{{this.img}}" alt="Áo sọc bé trai" class="product-info-image-img">
+                <img src="{{this.img}}" alt="{{this.name}}" class="product-info-image-img">
             </div>
             <div class="product-info-detail">
                 <!-- Tên Sản Phẩm -->
@@ -31,10 +31,10 @@
                 <div class="product-info-detail-size product-line">
                     <div class="product-info-detail-title ">Kích thước:</div>
                     <div class="product-info-detail-size-list">
-                        <div class="product-info-detail-size-list-item">S</div>
-                        <div class="product-info-detail-size-list-item">M</div>
-                        <div class="product-info-detail-size-list-item">L</div>
-                        <div class="product-info-detail-size-list-item">XL</div>
+                        <a class="product-info-detail-size-list-item" data-name="S">S</a>
+                        <a class="product-info-detail-size-list-item" data-name="M">M</a>
+                        <a class="product-info-detail-size-list-item" data-name="L">L</a>
+                        <a class="product-info-detail-size-list-item" data-name="XL">XL</a>
                     </div>
                 </div>
                 <!-- Chọn số lượng -->
@@ -46,7 +46,11 @@
                         <button class="product-info-detail-quantity-number-button">+</button>
                     </div>
     
-                    <p class="product-info-detail-quantity-avai">{{this.amount}} sản phẩm có sẵn</p>
+                    <p class="product-info-detail-quantity-avai">
+                        <span>{{this.amount}}</span> 
+                        <span>{{this.size}}</span>
+                        <span class="show_quantity"></span>
+                         sản phẩm có sẵn</p>
                 </div>
                 <!-- Thanh toán -->
                 <div class="product-info-detail-button product-line">
@@ -93,10 +97,7 @@
         <div class="img-side">
             <i class="img-side-btn fa-solid fa-chevron-left"></i>
             <div class="img-side-item">
-                <img src="" alt="" class="img-side-item-img">
-                <img src="/assets/css/images/Detail_Product/side1.jpg" alt="" class="img-side-item-img">
-                <img src="/assets/css/images/Detail_Product/side2.jpg" alt="" class="img-side-item-img">
-                <img src="/assets/css/images/Detail_Product/side3.jpg" alt="" class="img-side-item-img">
+               <span>{{this.sub_img}}</span>
             </div>
             <i class="img-side-btn fa-solid fa-chevron-right"></i>
         </div>
@@ -139,7 +140,7 @@
                 
             </div>
         </div>
-
+        {{/each}}
         <!-- Sản phẩm liên quan -->
         <div class="Similar-product">
             <div class="Similar-product-title">
@@ -147,84 +148,86 @@
             </div>
             <div class="Similar-product-content">
                 <i class="img-side-btn fa-solid fa-chevron-left"></i>
+                {{#each relative_products}}
                 <div class="Similar-product-item">
-                    <img src="/assets/css/images/Detail_Product/si1.jpg" alt="" class="Similar-product-item-image-img">
+                    <a href="/product/{{this.id}}">
+                        <img src="{{this.img}}" alt="{{this.name}}" class="Similar-product-item-image-img">
+                    </a>
                     <div class="Similar-product-info">
                         <div class="Similar-product-item-name">
-                            <a href="" class="Similar-product-item-link">Set bộ đồ lịch sự dành cho bé</a>   
+                            <a href="/product/{{this.id}}" class="Similar-product-item-link">{{this.name}}</a>   
                         </div>
-                        <div class="Similar-product-item-price">449.000đ</div>
-                        <div class="Similar-product-item-stock">Còn 500 sản phẩm</div>
+                        <div class="Similar-product-item-price">{{this.price}}đ</div>
+                        <div class="Similar-product-item-stock">Còn {{this.amount}} sản phẩm</div>
                     </div>
                 </div>
-                <div class="Similar-product-item">
-                    <img src="/assets/css/images/Detail_Product/si2.jpg" alt="" class="Similar-product-item-image-img">
-                    <div class="Similar-product-info">
-                        <div class="Similar-product-item-name">
-                            
-                            <a href="" class="Similar-product-item-link">Áo yếm kèm theo nơ đen, phù hợp cho bé</a>
-                        </div>
-                        <div class="Similar-product-item-price">350.000đ</div>
-                        <div class="Similar-product-item-stock">Còn 15 sản phẩm</div>
-                    </div>
-                </div>
-                <div class="Similar-product-item">
-                    <img src="/assets/css/images/Detail_Product/si3.jpg" alt="" class="Similar-product-item-image-img">
-                    <div class="Similar-product-info">
-                        <div class="Similar-product-item-name">
-                            
-                            <a href="" class="Similar-product-item-link">Đồ bộ thun thể thao thoáng mát</a>
-                        </div>
-                        <div class="Similar-product-item-price">100.000đ</div>
-                        <div class="Similar-product-item-stock">Còn 5000 sản phẩm</div>
-                    </div>
-                </div>
-                <div class="Similar-product-item">
-                    <img src="/assets/css/images/Detail_Product/si4.jpg" alt="" class="Similar-product-item-image-img">
-                    <div class="Similar-product-info">
-                        <div class="Similar-product-item-name">
-                            <a href="" class="Similar-product-item-link">Đồ bộ thun thể thao co dãn tốt</a>
-                        </div>
-                        <div class="Similar-product-item-price">200.000đ</div>
-                        <div class="Similar-product-item-stock">Còn 421 sản phẩm</div>
-                    </div>
-                </div>
-                <div class="Similar-product-item">
-                    <img src="/assets/css/images/Detail_Product/si5.jpg" alt="" class="Similar-product-item-image-img">
-                    <div class="Similar-product-info">
-                        <div class="Similar-product-item-name">
-                            
-                            <a href="" class="Similar-product-item-link">Áo thun dành cho bé thích đi dã ngoại</a>
-                        </div>
-                        <div class="Similar-product-item-price">149.000đ</div>
-                        <div class="Similar-product-item-stock">Còn 5 sản phẩm</div>
-                    </div>
-                </div>
-                <div class="Similar-product-item">
-                    <img src="/assets/css/images/Detail_Product/si6.jpg" alt="" class="Similar-product-item-image-img">
-                    <div class="Similar-product-info">
-                        <div class="Similar-product-item-name">    
-                            <a href="" class="Similar-product-item-link">Áo quần dạ quang cực kì ngầu cho bé</a>
-                        </div>
-                        <div class="Similar-product-item-price">299.000đ</div>
-                        <div class="Similar-product-item-stock">Còn 200 sản phẩm</div>
-                    </div>
-                </div>
+                {{/each}}
                 <i class="img-side-btn fa-solid fa-chevron-right"></i>
             </div>
         </div>
-        {{/each}}
+        
     </div>
 <script>
     //show a noti when click on "thêm vào giỏ hàng"
-                var noti = document.querySelector('.cart_confirm');
-                var btnAdd = document.querySelector('.product-info-detail-button-add');
-                btnAdd.onclick = function () {
-                    noti.style.display = 'block';
-                    noti.style.color = 'green';
-                    setTimeout(function () {
-                        noti.style.display = 'none';
-                    }, 5000);
+        var noti = document.querySelector('.cart_confirm');
+        var btnAdd = document.querySelector('.product-info-detail-button-add');
+        btnAdd.onclick = function () {
+            noti.style.display = 'block';
+            noti.style.color = 'green';
+            setTimeout(function () {
+                noti.style.display = 'none';
+                }, 3000);
                 }
+
+        var sizeElements = document.querySelectorAll('.product-info-detail-size-list-item');
+        const total_amount = document.querySelector('.product-info-detail-quantity-avai span');
+        const amount = document.querySelector('.product-info-detail-quantity-avai span:nth-child(2)');
+        const list_quantity = JSON.parse(amount.innerHTML)
+
+        const show_quantity = document.querySelector('.show_quantity');
+
+        amount.classList.add('style');
+        amount.style.display = 'none';
+        
+        sizeElements.forEach(function(element) {
+        var dataSizeName = element.getAttribute('data-name');
+
+        element.addEventListener('click', function() {
+            sizeElements.forEach(function(element) {
+                element.classList.remove('active');
+            });
+            element.classList.add('active');
+
+            total_amount.classList.add('style');
+            total_amount.style.display = 'none';
+
+            show_quantity.innerHTML = list_quantity[dataSizeName];
+
+        });
+        });
+        
+        const img_urls = document.querySelector('.img-side-item span');
+        img_urls.classList.add('style');
+        img_urls.style.display = 'none';
+
+        //list_imgs = JSON.parse(img_urls.textContent.split(','));
+        //list_imgs = JSON.parse(img_urls.textContent);
+
+        sub_imgs = img_urls.textContent.replace(/'/g, '"');
+        list_imgs = JSON.parse(sub_imgs);
+        console.log(list_imgs);
+        
+        const product_info_image_img = document.querySelector('.product-info-image-img');
+        for(let i = 0; i < list_imgs.length; i++){
+            var img = document.querySelector('.img-side-item')
+            var img_item = document.createElement('img');
+            img_item.src = list_imgs[i];
+            img_item.classList.add('img-side-item-img');
+            img.appendChild(img_item);
+                   
+            img.onclick = function (e) {
+            product_info_image_img.src = e.target.src;
+            };
+        }
 
 </script>

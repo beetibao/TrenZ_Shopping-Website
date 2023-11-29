@@ -10,7 +10,7 @@ class AdminController {
       })
       .catch(next);
   }
-
+ 
   index1(req, res, next) {
     Admin.getOrders(req.query)
       .then((orders) => {

@@ -28,24 +28,24 @@
         <div class= "border">
             <div class="account-table">
                 <div class="table-wapper">
-                    <table>
+                    <table class="table-block">
                     <thead>
-                        <th>Mã khách hàng</th>
-                        <th>Tên khách hàng</th>
-                        <th>Giới tính</th>
-                        <th>Địa chỉ</th>
-                        <th>Liên lạc</th>
-                        <th>Email</th>
+                        <th class="table-header">Mã khách hàng</th>
+                        <th class="table-header">Tên khách hàng</th>
+                        <th class="table-header">Giới tính</th>
+                        <th class="table-header">Địa chỉ</th>
+                        <th class="table-header">Liên lạc</th>
+                        <th class="table-header">Email</th>
                     </thead>
                     <tbody>
                         {{#each users}}
                             <tr>
-                                <td>{{this.id}}</td>
-                                <td>{{this.name}}</td>
-                                <td>{{this.gender}}</td>
-                                <td>{{this.phone}}</td>
-                                <td>{{this.address}}</td>
-                                <td>{{this.email}}</td>
+                                <td class="table-content-col">{{this.id}}</td>
+                                <td class="table-content-col">{{this.name}}</td>
+                                <td class="table-content-col">{{this.gender}}</td>
+                                <td class="table-content-col">{{this.phone}}</td>
+                                <td class="table-content-col">{{this.address}}</td>
+                                <td class="table-content-col">{{this.email}}</td>
                             </tr>
                         {{/each}}
                     </table>

@@ -21,7 +21,7 @@
     padding: 20px;
     margin-bottom: 30px;
     width: 500%;
-    max-width: 120rem;
+    max-width: 150rem;
     box-sizing: border-box;
     border: 1px solid gray;
 }
@@ -117,7 +117,7 @@ i{
     color: var(--primary-color);
 }
 
-table {
+.table-block {
     font-family: 'Latto';
     border-collapse: collapse;
     border-spacing: 0px;
@@ -129,7 +129,7 @@ table {
     margin: 0px;
 }
 
-th {
+.table-header {
     position: sticky;
     background-color: var(--primary-color);
     color: white;
@@ -139,7 +139,7 @@ th {
     border: 1px solid #ffffff;
 }
 
-td {
+.table-content-col {
     text-align: center;
     max-width: fit-content;
     white-space: nowrap;

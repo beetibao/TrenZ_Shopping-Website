@@ -1,4 +1,5 @@
 const Admin = require("../models/Admin");
+const multer = require('multer');
 
 class AdminController {
 
@@ -32,18 +33,37 @@ class AdminController {
   }
 
   //[POST] admin/storeProduct
-  storeProduct(req, res) {
-    try {
-      const formdata = req.body;
-      Admin.uploadImage(req, res);
-      //const formdata = ;
-      console.log(formdata);
-      Admin.insertProduct(formdata);
-      res.json({ success: true, message: 'Thêm sản phẩm thành công' });
+  storeProduct(req, res, next) {
+    let uploadCount = 0;
+    const upload = multer({ storage: Admin.getMulterStorage(uploadCount)}).array('img[]', 4);
+    
+    upload(req, res, function (err) {
+      if (err) {
+        console.log(err);
+        res.status(500).json({ success: false, message: 'Lỗi tải file ảnh' });
+        return;
+      }
+      else{
+        const folderImage = './src/public/img/backup';
+        const test = Admin.uploadImagetoAzure(folderImage);
+        if(test){
+          console.error('Sai rồi!!!');
+        }
+      }
+      try {
+        const formdata = req.body;
+        const result = Admin.insertProduct(formdata);
+        if(result){
+          res.redirect('/admin/admin_statusOrder');
+          //res.json({ success: true, message: 'Thêm sản phẩm thành công' });
+          //return;
+        }
       } catch (error) {
-      console.error(error);
-      res.status(500).json({ success: false, message: 'Đã xảy ra lỗi khi tải ảnh hoặc thêm sản phẩm' });
-    }
+        console.error(error);
+        res.status(500).json({ success: false, message: 'Đã xảy ra lỗi khi thêm sản phẩm' });
+      }
+      //res.redirect('/admin/admin_statusOrder');
+    });
   }
 }
 

@@ -31,26 +31,26 @@
         <div class="account-table">
             <br>
             <div class="table-wapper">
-                <table>
+                <table class="table-block">
                     <thead>
-                        <th>Mã sản phẩm</th>
-                        <th>Sản phẩm</th>
-                        <th>Loại</th>
-                        <th>Giá</th>
-                        <th>Số lượng</th>
-                        <th>Chi tiết kích thước</th>
-                        <th>Chỉnh sửa</th>
+                        <th class="table-header">Mã sản phẩm</th>
+                        <th class="table-header">Sản phẩm</th>
+                        <th class="table-header">Loại</th>
+                        <th class="table-header">Giá</th>
+                        <th class="table-header">Số lượng</th>
+                        <th class="table-header">Chi tiết kích thước</th>
+                        <th class="table-header">Chỉnh sửa</th>
                     </thead>
                     <tbody>
                         {{#each products}}
                             <tr>
-                                <td>{{this.id}}</td>
-                                <td>{{this.name}}</td>
-                                <td>{{this.category}}</td>
-                                <td>{{this.price}}</td>
-                                <td>{{this.amount}}</td>
-                                <td>{{this.size}}</td>
-                                <td>
+                                <td class="table-content-col">{{this.id}}</td>
+                                <td class="table-content-col">{{this.name}}</td>
+                                <td class="table-content-col">{{this.category}}</td>
+                                <td class="table-content-col">{{this.price}}</td>
+                                <td class="table-content-col">{{this.amount}}</td>
+                                <td class="table-content-col">{{this.size}}</td>
+                                <td class="table-content-col">
                                     <a class= "update-data" href="/admin/admin_statusOrder/edit/{{this.id}}">
                                     <i class="fa-solid fa-pen-to-square fa-xl btn-change"></i>
                                     </a>
@@ -67,13 +67,21 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     const logoutButton = document.querySelector('.btn-logout');
     if (logoutButton) {
         logoutButton.addEventListener('click', function() {
             window.location.href = '/'; 
         });
     }
-    });
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const logoutButton = document.querySelector('.btn-add');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function() {
+            window.location.href = '/admin/createProduct'; 
+        });
+    }
+});
 </script>

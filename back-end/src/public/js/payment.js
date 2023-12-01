@@ -107,6 +107,23 @@ if(changeTransForm) {
       transPrice.innerText = `${transportComp.price} đ`;
     }
 
+    if(transFeeEl) {
+      transFeeEl.innerText = `${transportComp.price}đ`
+    }
+
+    const discountEl = document.getElementById('discount');
+    if(discountEl) {
+      discountEl.innerText = `-${DISCOUNT}đ`;
+    }
+    const sumOfProductsEl = document.getElementById('sum-of-prod');
+    const finalTotalEl = document.getElementById('sum');
+    const sumOfProducts = parseInt(sumOfProductsEl.innerText.split('đ')[0]);
+    if(!isNaN(sumOfProducts)) {
+      const finalTotal = sumOfProducts - transportComp.price - DISCOUNT;
+
+      finalTotalEl.innerText = `${finalTotal} đ`;
+    }
+
     transInfo.style.display = "none";
   })
 }
@@ -120,11 +137,16 @@ window.onclick = function(event) {
 var transInfo = document.getElementById("changeTrans");
 var changeTransBtn = document.getElementById("changeTransBtn");
 var closeTransBtn = document.getElementsByClassName("closeTransBtn")[0];
-changeTransBtn.onclick = function() {
-  transInfo.style.display = "block";
+if(changeTransBtn) {
+  changeTransBtn.onclick = function() {
+    transInfo.style.display = "block";
+  }
 }
-closeTransBtn.onclick = function() {
-  transInfo.style.display = "none";
+
+if(closeTransBtn) {
+  closeTransBtn.onclick = function() {
+    transInfo.style.display = "none";
+  }
 }
 window.onclick = function(event) {
   if (event.target == transInfo) {
@@ -187,6 +209,9 @@ if(confirmOrder) {
       return;
     }
 
+    const sumOfProductsEl = document.getElementById('sum-of-prod');
+    const sumOfProducts = parseInt(sumOfProductsEl.innerText.split('đ')[0]);
+
     fetch("http://localhost:3000/payment/addPayment", {
       method: "POST",
       body: JSON.stringify({
@@ -224,10 +249,11 @@ if(transFeeEl) {
 }
 const sumOfProductsEl = document.getElementById('sum-of-prod');
 const finalTotalEl = document.getElementById('sum');
-const sumOfProducts = parseInt(sumOfProductsEl.innerText.split('đ')[0]);
-if(!isNaN(sumOfProducts)) {
-  const finalTotal = sumOfProducts - transportComp.price - DISCOUNT;
+if(sumOfProductsEl) {
+  const sumOfProducts = parseInt(sumOfProductsEl.innerText.split('đ')[0]);
+  if(!isNaN(sumOfProducts)) {
+    const finalTotal = sumOfProducts - transportComp.price - DISCOUNT;
 
-  finalTotalEl.innerText = `${finalTotal} đ`;
+    finalTotalEl.innerText = `${finalTotal} đ`;
+  }
 }
-

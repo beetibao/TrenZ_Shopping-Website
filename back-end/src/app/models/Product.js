@@ -240,8 +240,9 @@ async function createProduct(product) {
 }
 
 //CART
-async function addProductToCart(id, list_cart) {
+async function addProductToCart(id, list_cart, size_prd, quantity) {
   try {
+    const quantity_prd = Number(quantity);
     await mssql.connect(config);
     const request = new mssql.Request();
     const product = await request.query(
@@ -254,20 +255,28 @@ async function addProductToCart(id, list_cart) {
         id: productItem[0].id,
         name: productItem[0].name,
         image: productItem[0].img,
+        size: size_prd,
         price: productItem[0].price,
+<<<<<<< HEAD
+        quantity: quantity_prd,
+        totalprice: productItem[0].price * quantity_prd,
+=======
         totalprice: productItem[0].price,
         size: 'S',
         quantity: 1,
+>>>>>>> f03e769ceedb332d6dd2ec6aa8182ff6aeaa7927
       });
     } else {
       var newItem = true;
       for (var i = 0; i < list_cart.length; i++) {
-        if (list_cart[i].id == productItem[0].id) {
-          list_cart[i].quantity++;
+        if (list_cart[i].size == size_prd && list_cart[i].id == id) {
+          list_cart[i].quantity += quantity_prd;
           totalprice = list_cart[i].price * list_cart[i].quantity;
           list_cart[i].totalprice = totalprice;
           newItem = false;
           break;
+        } else if (list_cart[i].size != size_prd && list_cart[i].id == id) {
+          continue;
         }
       }
       if (newItem) {
@@ -275,10 +284,16 @@ async function addProductToCart(id, list_cart) {
           id: productItem[0].id,
           name: productItem[0].name,
           image: productItem[0].img,
+          size: size_prd,
           price: productItem[0].price,
+<<<<<<< HEAD
+          quantity: quantity_prd,
+          totalprice: productItem[0].price * quantity_prd,
+=======
           totalprice: productItem[0].price,
           size: 'S',
           quantity: 1,
+>>>>>>> f03e769ceedb332d6dd2ec6aa8182ff6aeaa7927
         });
       }
     }

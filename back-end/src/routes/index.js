@@ -4,17 +4,19 @@ const siteRouter = require("./site");
 const womenRouter = require("./women");
 const aboutRouter = require("./about");
 const cartRouter = require("./cart");
+const paymentRouter = require("./payment");
 const adminRouter = require("./admin");
-//const adminRouter = require("./admin");
+const changePasswordRouter = require("./changepassword")
 
 function route(myWeb) {
-  //myWeb.use("/changePassword", changePasswordRouter)
+  myWeb.use("/changePassword", changePasswordRouter)
   myWeb.use("/admin", adminRouter);
   myWeb.use("/cart", cartRouter);
   myWeb.use("/about", aboutRouter);
   myWeb.use("/childrenProduct", childrenRouter);
   myWeb.use("/womenProduct", womenRouter);
   myWeb.use("/product", productRouter);
+  myWeb.use("/payment", paymentRouter);
   myWeb.use("/", siteRouter);
 }
 

@@ -5,8 +5,10 @@ const womenRouter = require("./women");
 const aboutRouter = require("./about");
 const cartRouter = require("./cart");
 const changePasswordRouter = require("./changePassword");
+const loginRouter = require("./login");
 function route(myWeb) {
-  myWeb.use("/changePassword", changePasswordRouter)
+  myWeb.use("/login", loginRouter);
+  myWeb.use("/changePassword", changePasswordRouter);
   myWeb.use("/cart", cartRouter);
   myWeb.use("/about", aboutRouter);
   myWeb.use("/childrenProduct", childrenRouter);

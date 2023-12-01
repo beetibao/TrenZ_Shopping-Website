@@ -71,7 +71,7 @@ async function getUsers() {
 async function insertProduct(dataform) {
   try {
     // Lấy những data cần thiết và xử lý dữ liệu nhập
-    console.log(dataform.description);
+    //console.log(dataform.description);
     const sizeS = parseInt(dataform.sizeS);
     const sizeM = parseInt(dataform.sizeM);
     const sizeL = parseInt(dataform.sizeL);
@@ -87,7 +87,7 @@ async function insertProduct(dataform) {
       "XXL": sizeXXL
     };
     const img = `https://imgtrenz.blob.core.windows.net/blob/${dataform.id}.jpg`
-    const sub_img = `[https://imgtrenz.blob.core.windows.net/blob/${dataform.id}_1.jpg,https://imgtrenz.blob.core.windows.net/blob/${dataform.id}_2.jpg,https://imgtrenz.blob.core.windows.net/blob/${dataform.id}_3.jpg]`
+    const sub_img = `['https://imgtrenz.blob.core.windows.net/blob/${dataform.id}.jpg', 'https://imgtrenz.blob.core.windows.net/blob/${dataform.id}_1.jpg', 'https://imgtrenz.blob.core.windows.net/blob/${dataform.id}_2.jpg', 'https://imgtrenz.blob.core.windows.net/blob/${dataform.id}_3.jpg']`
     
     const newProduct = {
       id: dataform.id, 
@@ -115,7 +115,7 @@ async function insertProduct(dataform) {
     request.input('modified_at', mssql.Date, newProduct.modified_at);
     request.input('description', mssql.NVarChar(650), newProduct.description);
     request.input('img', mssql.NVarChar(100), newProduct.img);
-    request.input('sub_img', mssql.NVarChar(200), newProduct.sub_img);
+    request.input('sub_img', mssql.NVarChar(250), newProduct.sub_img);
 
     const result = await request.query(`
     INSERT INTO [dbo].[product] (id, name, category, price, amount, size, modified_at, description, img, sub_img)

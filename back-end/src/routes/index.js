@@ -9,6 +9,7 @@ const changePasswordRouter = require("./changepassword")
 
 function route(myWeb) {
   myWeb.use("/changePassword", changePasswordRouter)
+  myWeb.use("/admin", adminRouter);
   myWeb.use("/cart", cartRouter);
   myWeb.use("/about", aboutRouter);
   myWeb.use("/childrenProduct", childrenRouter);

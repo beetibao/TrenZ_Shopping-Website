@@ -161,17 +161,18 @@ tr:hover td {
     background-color: #ffffff;
 }
 
-.btn-del:hover{
+.btn-admin-del,.btn-admin-change {
+    margin-left: 20px;
+    color: black;
+}
+
+.btn-admin-del:hover{
     color: red;
     cursor: pointer;
     text-decoration: none;
 }
-.btn-del,.btn-change {
-    margin-left: 20px;
-    color: black;
-}
-.btn-change:hover{
 
+.btn-admin-change:hover{
     color: yellowgreen;
     cursor: pointer;
     text-decoration: none;
@@ -194,7 +195,7 @@ tr:hover td {
     color: var(--primary-color);
 }
 
-form {
+#admin-form {
     display: flex;
     flex-direction: column;
     font-family: 'Lato';
@@ -204,24 +205,22 @@ form {
     margin-bottom: 20px;
 }
   
-label {
+.form-admin-label {
     font-size: 1.75em;
     display: block;
     margin-bottom: 5px;
 }
-  
-input[type="text"],
-input[type="number"],
-input[type="file"],
 
-button {
+.admin-input-text,
+.admin-input-number,
+.admin-input-file {
     font-size: 1.5rem;
     padding: 8px;
     width: 100%;
     box-sizing: border-box;
-  }
-  
-input[type="file"] {
+}
+
+.admin-input-file {
     padding: 8px 0;
 }
 
@@ -261,6 +260,9 @@ input[type="file"] {
     cursor: pointer;
     border-radius: 4px;
     font-size: 2rem;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .help-text {

@@ -1,75 +1,75 @@
 <div id="admin-container-form">
   <h1 id="form-name">THÊM SẢN PHẨM</h1>
   <br>
-  <form method="post" action="/admin/storeProduct" enctype="multipart/form-data">
+  <form id= "admin-form" method="post" action="/admin/storeProduct" enctype="multipart/form-data">
     <div class="form-row">
-      <label for="id">Id sản phẩm</label>
-      <input type="text" id="id" placeholder="Nhập id sản phẩm" name="id">
+      <label class="form-admin-label" for="id">Id sản phẩm</label>
+      <input type="text" id="id" placeholder="Nhập id sản phẩm" name="id" class="admin-input-text" required>
     </div>
 
     <div class="form-row">
-      <label for="nameform">Tên sản phẩm</label>
-      <input type="text" id="nameform" placeholder="Nhập tên sản phẩm" name="name">
+      <label class="form-admin-label" for="nameform">Tên sản phẩm</label>
+      <input type="text" id="nameform" placeholder="Nhập tên sản phẩm" name="name" class="admin-input-text" required>
     </div>
 
     <div class="form-row">
-      <label for="categoryform">Loại</label>
+      <label class="form-admin-label" for="categoryform">Loại</label>
       <div class="radio-options">
         <input type="radio" id="nam" name="categoryform" value="Nam">
-        <label for="male">Nam</label>
+        <label class="form-admin-label" for="male">Nam</label>
 
         <input type="radio" id="nu" name="categoryform" value="Nữ">
-        <label for="female">Nữ</label>
+        <label class="form-admin-label" for="female">Nữ</label>
 
         <input type="radio" id="treem" name="categoryform" value="Trẻ em">
-        <label for="child">Trẻ em</label>
+        <label class="form-admin-label" for="child">Trẻ em</label>
       </div>
     </div>
 
     <div class="form-row">
-      <label for="price">Giá sản phẩm</label>
-      <input type="number" placeholder="Nhập giá sản phẩm" id="price" name="price">
+      <label class="form-admin-label" for="price">Giá sản phẩm</label>
+      <input type="number" placeholder="Nhập giá sản phẩm" id="price" name="price" class="admin-input-number" required>
     </div>
 
     <div class="form-row">
       <div class="size-inputs">
         <div class="size-row">
           <div class="size-item">
-            <label for="sizeS">Số lượng Size S</label>
-            <input type="number" placeholder="Size S" id="sizeS" name="sizeS">
+            <label class="form-admin-label" for="sizeS">Số lượng Size S</label>
+            <input type="number" placeholder="Size S" id="sizeS" name="sizeS" class="admin-input-number" required>
           </div>
 
           <div class="size-item">
-            <label for="sizeM">Số lượng Size M</label>
-            <input type="number" placeholder="Size M" id="sizeM" name="sizeM">
+            <label class="form-admin-label" for="sizeM">Số lượng Size M</label>
+            <input type="number" placeholder="Size M" id="sizeM" name="sizeM" class="admin-input-number" required>
           </div>
 
           <div class="size-item">
-            <label for="sizeL">Số lượng Size L</label>
-            <input type="number" placeholder="Size L" id="sizeL" name="sizeL">
+            <label class="form-admin-label" for="sizeL">Số lượng Size L</label>
+            <input type="number" placeholder="Size L" id="sizeL" name="sizeL" class="admin-input-number" required>
           </div>
 
           <div class="size-item">
-            <label for="sizeXL">Số lượng Size XL</label>
-            <input type="number" placeholder="Size XL" id="sizeXL" name="sizeXL">
+            <label class="form-admin-label" for="sizeXL">Số lượng Size XL</label>
+            <input type="number" placeholder="Size XL" id="sizeXL" name="sizeXL" class="admin-input-number" required>
           </div>
 
           <div class="size-item">
-            <label for="sizeXXL">Số lượng Size XXL</label>
-            <input type="number" placeholder="Size XXL" id="sizeXXL" name="sizeXXL">
+            <label class="form-admin-label" for="sizeXXL">Số lượng Size XXL</label>
+            <input type="number" placeholder="Size XXL" id="sizeXXL" name="sizeXXL" class="admin-input-number" required>
           </div>
         </div>
       </div> 
     </div>
 
     <div class="form-row">
-      <label for="description">Mô tả sản phẩm</label>
-      <input type="text" id="description" name="description" placeholder="Nhập mô tả cho sản phẩm">
+      <label class="form-admin-label" for="description">Mô tả sản phẩm</label>
+      <input type="text" id="description" name="description" placeholder="Nhập mô tả cho sản phẩm" class="admin-input-text" required>
     </div>
 
     <div class="form-row">
-      <label for="img">Hình sản phẩm</label>
-      <input id="img" placeholder="Chọn hình sản phẩm" type="file" name="img[]" multiple>
+      <label class="form-admin-label" for="img">Hình sản phẩm</label>
+      <input id="img" placeholder="Chọn hình sản phẩm" type="file" name="img[]" class="admin-input-file" multiple>
       <div class="help-text" style="color: red;">
         * Chọn 4 tấm hình cho sản phẩm muốn thêm.
       </div>

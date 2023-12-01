@@ -7,7 +7,7 @@ router.use("/admin_listProduct", AdminController.index);
 router.use("/admin_listUser", AdminController.index2);
 router.get("/createProduct", AdminController.createProduct);
 router.post("/storeProduct", AdminController.storeProduct);
-router.post("/editProduct", AdminController.editProduct);
+//router.post("/editProduct/:slug", AdminController.editProduct);
 //router.use("/deleteProduct", AdminController.deleteProduct);
 
 module.exports = router;

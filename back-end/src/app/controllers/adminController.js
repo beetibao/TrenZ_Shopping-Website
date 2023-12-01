@@ -65,8 +65,10 @@ class AdminController {
       }
       //res.redirect('/admin/admin_statusOrder');
     });
-  }
+
+    }
 }
+
 
 module.exports = new AdminController();
 

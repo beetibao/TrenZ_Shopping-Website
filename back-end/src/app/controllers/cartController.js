@@ -1,6 +1,6 @@
 const Cart = require("../models/Product");
-let carts = [];
-let cart_total = 0;
+global.carts = [];
+global.cart_total = 0;
 class CartController {
   index(req, res, next) {
     res.render("cart", { title: "Giỏ hàng" });
@@ -24,12 +24,13 @@ class CartController {
       carts = listsProduct[0];
       cart_total = listsProduct[1];
       console.log("thêm sản phẩm thành công" + carts.length);
-
       res.redirect("back");
     });
   }
   checkout(req, res, next) {
-    Cart.showToCart(carts, cart_total).then(function (listsProduct) {
+    Cart.showToCart(global.carts, global.cart_total).then(function (
+      listsProduct
+    ) {
       res.render("cart", {
         title: "Giỏ hàng",
         product: listsProduct[0],
@@ -46,7 +47,7 @@ class CartController {
       cart_total = 0;
     }
     for (let i = 0; i < carts.length; i++) {
-      if (carts[i].id == product_id) {
+      if (global.carts[i].id == product_id) {
         switch (action) {
           case "clear":
             console.log("Đã xóa sản phẩm");

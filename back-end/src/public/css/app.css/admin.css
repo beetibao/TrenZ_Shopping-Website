@@ -21,7 +21,7 @@
     padding: 20px;
     margin-bottom: 30px;
     width: 500%;
-    max-width: 120rem;
+    max-width: 150rem;
     box-sizing: border-box;
     border: 1px solid gray;
 }
@@ -93,14 +93,14 @@ nav .menu-items{
     border-radius: 4px; 
 }
 
-i{
+.icon-adminnav {
     min-width: 3rem;
     margin-right: 10px;
     color: var(--black-color);
 }
 
 .menu-items li a .link-name{
-    font-family: 'Latto';
+    font-family: 'Lato';
     font-size: 2rem;
     font-weight: 500;
     color: var(--black-color);
@@ -117,7 +117,7 @@ i{
     color: var(--primary-color);
 }
 
-table {
+.table-block {
     font-family: 'Latto';
     border-collapse: collapse;
     border-spacing: 0px;
@@ -129,7 +129,7 @@ table {
     margin: 0px;
 }
 
-th {
+.table-header {
     position: sticky;
     background-color: var(--primary-color);
     color: white;
@@ -139,7 +139,7 @@ th {
     border: 1px solid #ffffff;
 }
 
-td {
+.table-content-col {
     text-align: center;
     max-width: fit-content;
     white-space: nowrap;
@@ -166,7 +166,10 @@ tr:hover td {
     cursor: pointer;
     text-decoration: none;
 }
-
+.btn-del,.btn-change {
+    margin-left: 20px;
+    color: black;
+}
 .btn-change:hover{
 
     color: yellowgreen;
@@ -176,4 +179,92 @@ tr:hover td {
 
 .update-data{
     text-decoration: none;
+}
+
+#admin-container-form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#form-name{
+    text-align: center;
+    font-size: medium;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato';
+}
+  
+.form-row {
+    margin-bottom: 20px;
+}
+  
+label {
+    font-size: 1.75em;
+    display: block;
+    margin-bottom: 5px;
+}
+  
+input[type="text"],
+input[type="number"],
+input[type="file"],
+
+button {
+    font-size: 1.5rem;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+input[type="file"] {
+    padding: 8px 0;
+}
+
+.radio-options {
+    display: flex;
+    align-items: center;
+}
+  
+.radio-options input[type="radio"] {
+    margin-right: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.size-inputs {
+    display: flex;
+    align-items: center;
+}
+  
+.size-row {
+    display: flex;
+    align-items: center;
+}
+  
+.size-item {
+    margin-right: 20px;
+}
+  
+.size-item:last-child {
+    margin-right: 0;
+}
+
+#form-submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 2rem;
+}
+
+.help-text {
+    font-size: 2rem;
+    color: red;
+    margin-top: 5px;
 }

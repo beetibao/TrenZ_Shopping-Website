@@ -8,16 +8,16 @@
                     <ul class = "nav-links">
                         <li>
                         <a href="/admin/statusorder" class="nav-active">
-                            <i class="fa fa-tasks fa-2xl"> </i>
+                            <i class="fa fa-tasks fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Tình trạng đơn hàng</span>
                         </a>
                         </li>
                         <li><a href="/admin/admin_listProduct">
-                            <i class="fa fa-list-alt fa-2xl"> </i>
+                            <i class="fa fa-list-alt fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Danh mục sản phẩm</span>
                         </a></li>
                         <li><a href="/admin/admin_listUser">
-                            <i class="fa fa-users fa-2xl"> </i>
+                            <i class="fa fa-users fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Danh mục khách hàng</span>
                         </a></li>
                     </ul>
@@ -30,26 +30,26 @@
         <div class= "border">
         <div class="account-table">
             <div class="table-wapper">
-                <table>
+                <table class="table-block">
                     <thead>
-                        <th>Mã đơn</th>
-                        <th>Khách hàng</th>
-                        <th>Ngày mua</th>
-                        <th>Tổng tiền</th>
-                        <th>Liên lạc</th>
-                        <th>Tình trạng</th>
-                        <th>Chỉnh sửa</th> 
+                        <th class="table-header">Mã đơn</th>
+                        <th class="table-header">Khách hàng</th>
+                        <th class="table-header">Ngày mua</th>
+                        <th class="table-header">Tổng tiền</th>
+                        <th class="table-header">Liên lạc</th>
+                        <th class="table-header">Tình trạng</th>
+                        <th class="table-header">Chỉnh sửa</th> 
                     </thead>
                     <tbody>
                         {{#each orders}}
                             <tr>
-                                <td>{{this.order_id}}</td>
-                                <td>{{this.name}}</td>
-                                <td>{{this.created_at}}</td>
-                                <td>{{this.total}}</td>
-                                <td>{{this.phone}}</td>
-                                <td>{{this.status}}</td>
-                                <td>
+                                <td class="table-content-col">{{this.order_id}}</td>
+                                <td class="table-content-col">{{this.name}}</td>
+                                <td class="table-content-col">{{this.created_at}}</td>
+                                <td class="table-content-col">{{this.total}}</td>
+                                <td class="table-content-col">{{this.phone}}</td>
+                                <td class="table-content-col">{{this.status}}</td>
+                                <td class="table-content-col">
                                     <i class="fa-solid fa-pen-to-square fa-xl btn-change"></i>
                                     <i class="fa-solid fa-trash fa-xl btn-del"></i>
                                 </td>
@@ -70,4 +70,5 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
 </script>

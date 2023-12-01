@@ -1,0 +1,82 @@
+<div id="admin-container-form">
+  <h1 id="form-name">THÊM SẢN PHẨM</h1>
+  <br>
+  <form method="post" action="/admin/storeProduct" enctype="multipart/form-data">
+    <div class="form-row">
+      <label for="id">Id sản phẩm</label>
+      <input type="text" id="id" placeholder="Nhập id sản phẩm" name="id">
+    </div>
+
+    <div class="form-row">
+      <label for="nameform">Tên sản phẩm</label>
+      <input type="text" id="nameform" placeholder="Nhập tên sản phẩm" name="name">
+    </div>
+
+    <div class="form-row">
+      <label for="categoryform">Loại</label>
+      <div class="radio-options">
+        <input type="radio" id="nam" name="categoryform" value="Nam">
+        <label for="male">Nam</label>
+
+        <input type="radio" id="nu" name="categoryform" value="Nữ">
+        <label for="female">Nữ</label>
+
+        <input type="radio" id="treem" name="categoryform" value="Trẻ em">
+        <label for="child">Trẻ em</label>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label for="price">Giá sản phẩm</label>
+      <input type="number" placeholder="Nhập giá sản phẩm" id="price" name="price">
+    </div>
+
+    <div class="form-row">
+      <div class="size-inputs">
+        <div class="size-row">
+          <div class="size-item">
+            <label for="sizeS">Số lượng Size S</label>
+            <input type="number" placeholder="Size S" id="sizeS" name="sizeS">
+          </div>
+
+          <div class="size-item">
+            <label for="sizeM">Số lượng Size M</label>
+            <input type="number" placeholder="Size M" id="sizeM" name="sizeM">
+          </div>
+
+          <div class="size-item">
+            <label for="sizeL">Số lượng Size L</label>
+            <input type="number" placeholder="Size L" id="sizeL" name="sizeL">
+          </div>
+
+          <div class="size-item">
+            <label for="sizeXL">Số lượng Size XL</label>
+            <input type="number" placeholder="Size XL" id="sizeXL" name="sizeXL">
+          </div>
+
+          <div class="size-item">
+            <label for="sizeXXL">Số lượng Size XXL</label>
+            <input type="number" placeholder="Size XXL" id="sizeXXL" name="sizeXXL">
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <div class="form-row">
+      <label for="description">Mô tả sản phẩm</label>
+      <input type="text" id="description" name="description" placeholder="Nhập mô tả cho sản phẩm">
+    </div>
+
+    <div class="form-row">
+      <label for="img">Hình sản phẩm</label>
+      <input id="img" placeholder="Chọn hình sản phẩm" type="file" name="img[]" multiple>
+      <div class="help-text" style="color: red;">
+        * Chọn 4 tấm hình cho sản phẩm muốn thêm.
+      </div>
+    </div>
+    <div class="form-row">
+      <button id="form-submit" type="submit">Hoàn tất</button>
+    </div>
+  </form>
+</div>
+<br>

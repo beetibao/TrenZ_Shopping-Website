@@ -4,9 +4,6 @@ const siteRouter = require("./site");
 const womenRouter = require("./women");
 const aboutRouter = require("./about");
 const cartRouter = require("./cart");
-const changePasswordRouter = require("./changePassword");
-const adminRouter = require("./admin");
-
 function route(myWeb) {
   myWeb.use("/changePassword", changePasswordRouter)
   myWeb.use("/cart", cartRouter);
@@ -14,7 +11,6 @@ function route(myWeb) {
   myWeb.use("/childrenProduct", childrenRouter);
   myWeb.use("/womenProduct", womenRouter);
   myWeb.use("/product", productRouter);
-  myWeb.use("/admin", adminRouter);
   myWeb.use("/", siteRouter);
 }
 

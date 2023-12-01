@@ -7,7 +7,7 @@
     margin: auto;
 }
 .row {
-    display: flex;
+    display: flex !important;
     /* flex-wrap: wrap; */
     justify-content: space-around;
     
@@ -67,7 +67,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .products_content_items {
     width: calc(25% - 12px);

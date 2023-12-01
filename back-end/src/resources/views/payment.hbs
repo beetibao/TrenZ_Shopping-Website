@@ -1,0 +1,191 @@
+<div id="payment" class="payment-container">
+    <h2 class="payment-title">Đơn mua</h2>
+    <div class="heading">
+        <div class="c0">STT</div>
+        <div class="c1">Sản phẩm</div>
+        <div class="c2">Đơn giá</div>
+        <div class="c3">Số lượng</div>
+        <div class="c4">Thành tiền</div>
+    </div>
+    <div class="list-product">
+        {{#each products as |item index|}}
+        <div class="product">
+            <div class="c0">{{indexAddOne index}}</div>
+            <div class="c1">
+                <img class="cart_list_item_img" src="{{this.image}}" alt="Áo thun">
+                <div class="item-info">
+                    <p class="cart_list_item_name item-name">{{this.name}}</p>
+                    <p class="item-size">Size: {{this.size}}</p>
+                </div>
+            </div>
+            <div class="c2">{{this.price}}đ</div>
+            <div class="c3">{{this.quantity}}</div>
+            <div class="c4">{{this.totalprice}}đ</div>
+        </div>
+        {{/each}}
+    </div>
+    <h2 class="title">Thông tin thanh toán</h2>
+    <div class="payment-info-wrapper">
+        <div class="payment-info">
+            <div class="info">
+                <p>Họ và tên: <span id="customer-name"></span></p>
+                <p>Số điện thoại: <span id="customer-phone"></span></p>
+                <p>Địa chỉ: <span id="customer-address"></span></p>
+            </div>
+            <div class="change">
+                <button class="btn-change" id="changeBtn">Thay đổi</button>
+            </div>
+            <div id="changeInfo" class="modal-info">
+                <!-- Modal content -->
+                <div class="info-content" id="payment-info-form">
+                    <h2>Thay đổi thông tin thanh toán</h2>
+                    <form>
+                        <div class="row">
+                            <div class="col-30">
+                                <label for="fullName">Họ và tên:</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="text" id="fullName" name="fullName" placeholder="Họ và tên">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30">
+                                <label for="phone">Số điện thoại:</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="tel" id="phone" name="phone" placeholder="Số điện thoại">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30">
+                                <label for="address">Địa chỉ:</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="text" id="address" name="address" placeholder="Địa chỉ">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-30">
+                                <label for="email">Email:</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="email" id="email" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input class="saveBtn btn" type="submit" value="Lưu">
+                            <input class="closeBtn btn" value="Hủy">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="title">Vận chuyển</h2>
+    <div class="transport">
+        <div class="t1"><span class="trans-comp">Đơn vị vận chuyển: </span></div>
+        <div class="t2">
+            <div id="trans-comp-name"></div>
+            <div class="pred">
+                <span id="trans-expect-delivery"></span>
+            </div>
+        </div>
+        <div class="t3" id="trans-price"></div>
+        <div class="t4"><button class="btn-change1" id="changeTransBtn">Thay đổi</button></div>
+    </div>
+    <form id="changeTrans" class="trans-info">
+        <!-- Modal content -->
+        <div class="trans-content">
+            <h2>Thay đổi đơn vị vận chuyển</h2>
+            <div class="opt">
+                <input type="radio" id="GHN" name="payment_method" value="GHN" checked />
+                <label for="GHN" class="label-pos"> Giao hàng nhanh </label>
+                <span id="transMoney">50.100đ</span>
+                <div class="transTime">(Dự kiến 3-5 ngày)</div>
+            </div>
+            <div class="opt">
+                <input type="radio" id="GHTK" name="payment_method" value="GHTK" />
+                <label for="GHTK" class="label-pos"> Giao hàng tiết kiệm </label>
+                <span id="transMoney">60.000đ</span>
+                <div class="transTime">(Dự kiến 1-2 ngày)</div>
+            </div>
+            <div class="row">
+                <input class="saveTransBtn" type="submit" value="Lưu">
+                <input class="closeTransBtn" type="submit" value="Huỷ">
+            </div>
+        </div>
+    </form>
+
+    {{!-- ORDER CONFIRMED --}}
+    <form id="orderConfirmed" class="trans-info">
+        <!-- Modal content -->
+        <div class="trans-content">
+            <h2>Đặt hàng thành công</h2>
+            <label style="margin: 20px 0"> Đơn hàng đã được đặt thành công. Hãy chú ý điện thoại để nhận hàng </label>
+            <div class="row">
+                <a href="/" class="btn">OK</a>
+            </div>
+        </div>
+    </form>
+
+    <h2 class="title">Phương thức thanh toán</h2>
+    <div class="payment-method">
+        <div class="checkbox-group">
+            <input type="radio" id="COD" name="payment_method" value="COD">
+            <label for="COD"> Thanh toán khi nhận hàng (COD)
+                <img class='icon' src="/assets/css/icon/fontawesome-free-6.4.2-web/svgs/regular/money-bill-1.svg"
+                    width=40 height=25>
+            </label><br>
+            <input type="radio" id="Credit-card" name="payment_method" value="Credit-card">
+            <label for="Credit-card"> Thanh toán qua thẻ ngân hàng
+                <img class='icon' src="/assets/css/icon/fontawesome-free-6.4.2-web/svgs/regular/credit-card.svg"
+                    width=40 height=25>
+            </label><br>
+            <input type="radio" id="MoMo-EWallet" name="payment_method" value="MoMo-EWallet">
+            <label for="MoMo-EWallet"> Thanh toán qua ví MoMo
+                <img class='icon'
+                    src="https://developers.momo.vn/v3/assets/images/square-logo-f8712a4d5be38f389e6bc94c70a33bf4.png"
+                    width=45 height=40>
+            </label><br><br>
+        </div>
+    </div>
+    <div class="total">
+        <div class="a1">Tổng tiền hàng:</div>
+        <div class="a2">
+            <span id="sum-of-prod">{{ total }}đ</span>
+        </div>
+        <div class="a1">Phí vận chuyển:</div>
+        <div class="a2">
+            <span id="tranp-fee"></span>
+        </div>
+        <div class="a1">Voucher của shop:</div>
+        <div class="a2">
+            <span id="discount"></span>
+        </div>
+        <div class="a1" id="tt">Thành tiền:</div>
+        <div class="a2">
+            <span id="sum" class="sum"></span>
+        </div>
+        <div class="a1"></div>
+        <div class="a2">
+            <button class="btn-acpt" id="btn-acpt" onclick="acceptOrder()">Đặt hàng</button>
+        </div>
+
+        <form id="confirmPlaceOrder" class="trans-info">
+            <!-- Modal content -->
+            <div class="trans-content">
+                <h2>Xác nhận đặt hàng</h2>
+                <div class="col-30">
+                    <label>Xác nhận rằng bạn muốn đặt đơn hàng này</label>
+                </div>
+                <div class="row">
+                    <input class="confirmOrder" type="submit" value="Xác nhận">
+                    <input class="cancelOrder" type="submit" value="Hủy">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="last">
+        <a href="/cart" class="back"> &lt Quay về giỏ hàng</a>
+    </div>
+</div>

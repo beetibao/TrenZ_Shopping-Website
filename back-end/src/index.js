@@ -8,6 +8,8 @@ const db = require("./config/db");
 //Connect to DB
 db.Connect();
 
+const hbs = handlebars.create({});
+
 const myWeb = express();
 const port = 3000;
 
@@ -19,6 +21,7 @@ myWeb.use(
     extended: true,
   })
 ); //middleware
+myWeb.use(express.json());
 //template engine
 //Sets handlebars configurations
 myWeb.engine(
@@ -27,6 +30,10 @@ myWeb.engine(
 );
 myWeb.set("view engine", "hbs");
 myWeb.set("views", path.join(__dirname, "resources/views"));
+
+hbs.handlebars.registerHelper('indexAddOne', function(index) {
+  return index + 1;
+})
 
 //Routes init
 route(myWeb);

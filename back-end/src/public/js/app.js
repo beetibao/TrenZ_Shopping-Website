@@ -5,12 +5,18 @@ const sortOptions = ['all_clothing', 'ex_clothing', 'cheap_clothing', 'latest_cl
 
 let page = urlParams.get('page');
 
-if(!page && (window.location.href.includes('/product') || window.location.href.includes('/womenProduct') || window.location.href.includes('/childrenProduct'))) {
-    if(urlParams.size === 0) {
-        window.location.href = `?page=1`;
-    } else {
-        window.location.href = `${window.location.href}&page=1`;
-    }
+if (
+  !page &&
+  (window.location.href.includes("/product") ||
+    window.location.href.includes("/womenProduct") ||
+    window.location.href.includes("/childrenProduct")) &&
+    (window.location.href.match(/\//g) || []).length === 3
+) {
+  if (urlParams.size === 0) {
+    window.location.href = `?page=1`;
+  } else {
+    window.location.href = `${window.location.href}&page=1`;
+  }
 }
 let sort = urlParams.get('sort') || 'all_clothing';
 let minPrice = urlParams.get('min');
@@ -34,27 +40,29 @@ for(let i=0;i<eleSize.length;i++) {
 
 const selectedIx = sortOptions.findIndex(el => el === sort);
 
-categoryEl.selectedIndex = selectedIx;
-
-categoryEl.onchange = (e) => {
-   if(!window.location.href.includes('?')) {
-       if(window.location.href.includes(`sort=${sort}`)) {
-        window.location.href = window.location.href.replace(`sort=${sort}`, `sort=${e.target.value}`);
+if(categoryEl) {
+    categoryEl.selectedIndex = selectedIx;
+    categoryEl.onchange = (e) => {
+       if(!window.location.href.includes('?')) {
+           if(window.location.href.includes(`sort=${sort}`)) {
+            window.location.href = window.location.href.replace(`sort=${sort}`, `sort=${e.target.value}`);
+           } else {
+               window.location.href = `?sort=${e.target.value}`
+           }
        } else {
-           window.location.href = `?sort=${e.target.value}`
+        if(window.location.href.includes(`sort=${sort}`)) {
+            window.location.href = window.location.href.replace(`sort=${sort}`, `sort=${e.target.value}`);
+        } else {
+            window.location.href = `${window.location.href}&sort=${e.target.value}`
+        }
        }
-   } else {
-    if(window.location.href.includes(`sort=${sort}`)) {
-        window.location.href = window.location.href.replace(`sort=${sort}`, `sort=${e.target.value}`);
-    } else {
-        window.location.href = `${window.location.href}&sort=${e.target.value}`
+    
+       sort = e.target.value;
+    
+       categoryEl.selected = e.target.value;
     }
-   }
-
-   sort = e.target.value;
-
-   categoryEl.selected = e.target.value;
 }
+
 
 const handleChangePriceRange = (e, min, max) => {
     let newHref = window.location.href;

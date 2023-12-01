@@ -5,6 +5,7 @@ const womenRouter = require("./women");
 const aboutRouter = require("./about");
 const cartRouter = require("./cart");
 const paymentRouter = require("./payment");
+const adminRouter = require("./admin");
 const changePasswordRouter = require("./changepassword")
 
 function route(myWeb) {

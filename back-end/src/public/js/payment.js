@@ -93,7 +93,7 @@ if(changeTransForm) {
         id: 'ghtk',
         name: 'Giao hàng tiết kiệm',
         expectDelivery: '(Dự kiến 2-3 ngày)',
-        price: 35000,
+        price: 60000,
       }
     }
 

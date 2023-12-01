@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const handlebars = require("express-handlebars");
-
+const bodyParser = require('body-parser');
 const route = require("./routes/index");
 const db = require("./config/db");
 
@@ -14,6 +14,8 @@ const myWeb = express();
 const port = 3000;
 
 myWeb.use(express.static(path.join(__dirname, "public"))); //static file
+myWeb.use(bodyParser.urlencoded({ extended: true }));
+myWeb.use(bodyParser.json());
 myWeb.use(
   express.urlencoded({
     extended: true,
@@ -39,3 +41,4 @@ route(myWeb);
 myWeb.listen(port, () =>
   console.log(`Example myWeb listening at http://localhost:${port}!`)
 );
+

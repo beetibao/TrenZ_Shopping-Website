@@ -1,0 +1,95 @@
+<div class="container-lg">
+  <h1 style="text-align: center;">Thêm sản phẩm</h1>
+  <br>
+  <form method="post" action="/admin/storeProduct" enctype="multipart/form-data">
+  <div class="mb-3 row">
+    <label for="id" class="col-lg-2 col-form-label fs-2">Id sản phẩm</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control form-control-lg mt-2 fs-3" id = "id" placeholder="Nhập id sản phẩm" name="id">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="nameform" class="col-lg-2 col-form-label fs-2">Tên sản phẩm</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control form-control-lg mt-2 fs-3" id="nameform" placeholder="Nhập tên sản phẩm" name="name">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="categoryform" class="col-lg-2 col-form-label fs-2">Loại</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control form-control-lg mt-2 fs-3" id="categoryform" placeholder="Nhập loại sản phẩm" name="categoryform">
+      <div id="HelpBlock" class="form-text mt-2 fs-4">
+      Nhập giá trị: Nam, Nữ hoặc Trẻ em.
+      </div>
+    </div>
+  </div>
+  
+  <div class="mb-3 row">
+    <label for="price" class="col-sm-2 col-form-label fs-2">Giá sản phẩm</label>
+    <div class="col-lg-10">
+      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập giá sản phẩm" id="price" name="price">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="sizeS" class="col-sm-2 col-form-label fs-2">Số lượng size S</label>
+    <div class="col-lg-10">
+      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeS" name="sizeS">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="sizeM" class="col-sm-2 col-form-label fs-2">Số lượng size M</label>
+    <div class="col-lg-10">
+      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeM" name="sizeM">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="sizeL" class="col-sm-2 col-form-label fs-2">Số lượng size L</label>
+    <div class="col-lg-10">
+      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeL" name="sizeL">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="sizeXL" class="col-sm-2 col-form-label fs-2">Số lượng size XL</label>
+    <div class="col-lg-10">
+      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeXL" name="sizeXL">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="sizeXXL" class="col-sm-2 col-form-label fs-2">Số lượng size XXL</label>
+    <div class="col-lg-10">
+      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeXXL" name="sizeXXL">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="description" class="col-sm-2 col-form-label fs-2">Mô tả sản phẩm</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control form-control-lg mt-2 fs-3" id="description" name="description" placeholder="Nhập mô tả cho sản phẩm">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="img" class="col-sm-2 col-form-label fs-2">Hình sản phẩm</label>
+    <div class="col-lg-10">
+    <input class="form-control form-control-lg fs-2 mt-2" id="img" placeholder="Chọn hình sản phẩm" type="file" name="img[]" multiple>
+    </div>
+    <div id="HelpBlock" class="form-text mt-2 fs-3" style="color: red;">
+      * Chọn 4 tấm hình cho sản phẩm muốn thêm.
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-lg-12 text-center">
+      <button type="submit" class="btn btn-primary fs-2 w-100" style="background-color: var(--primary-color);">Hoàn tất</button>
+    </div>
+  </div>
+  </form>
+</div>
+<br>

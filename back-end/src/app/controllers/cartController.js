@@ -16,10 +16,11 @@ class CartController {
   // }
   add(req, res, next) {
     var product_id = req.params.product;
-    Cart.addProductToCart(product_id, global.carts).then(function (listsProduct) {
-      global.carts = listsProduct[0];
-      global.cart_total = listsProduct[1];
-      console.log("thêm sản phẩm thành công" + global.carts.length);
+    console.log(product_id);
+    Cart.addProductToCart(product_id, carts).then(function (listsProduct) {
+      carts = listsProduct[0];
+      cart_total = listsProduct[1];
+      console.log("thêm sản phẩm thành công" + carts.length);
       res.redirect("back");
     });
   }

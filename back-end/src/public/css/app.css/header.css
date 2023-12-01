@@ -126,8 +126,22 @@
 }
 .navbar_btn{
     color: var(--black-color);
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 a i:hover{
     color: var(--primary-color);
+}
+.navbar_cart a {
+    position: relative;
+    text-decoration: none;
+}
+.navbar_cart a > p {
+    position: absolute;
+    left : 15px;
+    bottom: 15px;
+    padding: 0.1rem 0.5rem;
+    background-color: red;
+    color: var(--white-color);
+    border-radius: 50%;
+    font-size: 1.4rem;
 }

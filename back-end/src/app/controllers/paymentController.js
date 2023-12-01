@@ -8,7 +8,7 @@ class PaymentController {
       const total = listsProduct[0].reduce((sum, item) => sum + item.totalprice, 0);
       const discount = 25000;
 
-      res.render("payment/payment", { products: listsProduct[0], total, discount, finalPrice: total - discount });
+      res.render("payment", { products: listsProduct[0], total, discount, finalPrice: total - discount });
     });
   }
 

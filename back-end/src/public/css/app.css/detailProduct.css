@@ -16,8 +16,8 @@
 }
 .product-info-image-img{
     /* width: 588px; */
-    width: 70%;
-    height: 650px;
+    width: 85%;
+    height: 600px;
     border-radius: 20px;
 }
 .product-info-detail .product-line {
@@ -41,6 +41,11 @@
 .product-info-detail-size-list{
     display: flex;
 }
+.product-info-detail-size-list a.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+}
 .product-info-detail-size-list-item {
     background-color: #F3F3F3;
     color: #726C6C;
@@ -48,6 +53,7 @@
     padding: 6px 10px;
     border-radius: 8px;
 }
+
 .product-info-detail-size-list-item.active {
     background-color: var(--primary-color);
     color: var(--white-color);
@@ -71,13 +77,14 @@
     background-color: #F3F3F3;
     border-radius: 30px;
 }
-.product-info-detail-quantity-number-button {
+.product-info-detail-quantity-number button {
     border: none;
     background-color: transparent;
     font-size: 20px;
     cursor: pointer;
+
 }
-.product-info-detail-quantity-number-button:hover {
+.product-info-detail-quantity-number button:hover {
     color: var(--primary-color)
 }
 .product-info-detail-quantity-number-input{
@@ -116,14 +123,14 @@
 .product-info-detail-button-add {
     background-color: var(--white-color);
     color: var(--primary-color);
-    font-size: 20px;
+    font-size: 2rem;
     border: 1px solid var(--primary-color);
 }
 .product-info-detail-button-buy{
     background-color: var(--primary-color);
     color: var(--white-color);
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 2rem;
+    line-height: 2rem;
 }
 /*Vận chuyển & Hoàn trả*/
 .product-info-detail-shipping {
@@ -162,7 +169,7 @@
 .img-side {
     display: flex;
     /* width: 588px; */
-    width: 36%;
+    width: 45%;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;

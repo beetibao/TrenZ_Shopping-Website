@@ -1,6 +1,6 @@
 const Cart = require("../models/Product");
-let carts = [];
-let cart_total = 0;
+global.carts = [];
+global.cart_total = 0;
 class CartController {
   index(req, res, next) {
     res.render("cart", { title: "Giỏ hàng" });
@@ -16,18 +16,21 @@ class CartController {
   // }
   add(req, res, next) {
     var product_id = req.params.product;
-    console.log(product_id);
-    Cart.addProductToCart(product_id, carts).then(function (listsProduct) {
+    var size = req.query.size;
+    var quantity = req.query.quantity;
+    Cart.addProductToCart(product_id, carts, size, quantity).then(function (
+      listsProduct
+    ) {
       carts = listsProduct[0];
       cart_total = listsProduct[1];
       console.log("thêm sản phẩm thành công" + carts.length);
-      setTimeout(function () {
-        res.redirect("back");
-      }, 5000);
+      res.redirect("back");
     });
   }
   checkout(req, res, next) {
-    Cart.showToCart(carts, cart_total).then(function (listsProduct) {
+    Cart.showToCart(global.carts, global.cart_total).then(function (
+      listsProduct
+    ) {
       res.render("cart", {
         title: "Giỏ hàng",
         product: listsProduct[0],
@@ -37,24 +40,17 @@ class CartController {
   }
   update(req, res, next) {
     var product_id = req.params.product;
-    var action = req.query.action;
+    var action = req.query.action; //clear
+    if (action == "remove") {
+      console.log("Đã xóa sản phẩm");
+      carts.splice(0, carts.length);
+      cart_total = 0;
+    }
     for (let i = 0; i < carts.length; i++) {
-      if (carts[i].id == product_id) {
+      if (global.carts[i].id == product_id) {
         switch (action) {
-          case "add":
-            carts[i].quantity++;
-            carts[i].totalprice = carts[i].price * carts[i].quantity;
-            cart_total += Number(carts[i].price);
-            break;
-          case "remove":
-            carts[i].quantity--;
-            carts[i].totalprice = carts[i].price * carts[i].quantity;
-            cart_total -= Number(carts[i].price);
-            if (carts[i].quantity < 1) {
-              carts.splice(i, 1);
-            }
-            break;
           case "clear":
+            console.log("Đã xóa sản phẩm");
             cart_total -= Number(carts[i].totalprice);
             carts.splice(i, 1);
             if (carts.length == 0) {

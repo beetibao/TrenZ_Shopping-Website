@@ -2,12 +2,19 @@
 var modalInfo = document.getElementById("changeInfo");
 var changeBtn = document.getElementById("changeBtn");
 var closeBtn = document.getElementsByClassName("closeBtn")[0];
-changeBtn.onclick = function() {
-  modalInfo.style.display = "block";
+
+if(changeBtn) {
+  changeBtn.onclick = function() {
+    modalInfo.style.display = "block";
+  }
 }
-closeBtn.onclick = function() {
-  modalInfo.style.display = "none";
+
+if(closeBtn) {
+  closeBtn.onclick = function() {
+    modalInfo.style.display = "none";
+  }
 }
+
 window.onclick = function(event) {
   if (event.target == modalInfo) {
     modalInfo.style.display = "none";

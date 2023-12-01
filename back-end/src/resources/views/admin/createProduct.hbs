@@ -1,95 +1,82 @@
-<div class="container-lg">
-  <h1 style="text-align: center;">Thêm sản phẩm</h1>
+<div id="admin-container-form">
+  <h1 id="form-name">THÊM SẢN PHẨM</h1>
   <br>
-  <form method="post" action="/admin/storeProduct" enctype="multipart/form-data">
-  <div class="mb-3 row">
-    <label for="id" class="col-lg-2 col-form-label fs-2">Id sản phẩm</label>
-    <div class="col-lg-10">
-      <input type="text" class="form-control form-control-lg mt-2 fs-3" id = "id" placeholder="Nhập id sản phẩm" name="id">
+  <form id= "admin-form" method="post" action="/admin/storeProduct" enctype="multipart/form-data">
+    <div class="form-row">
+      <label class="form-admin-label" for="id">Id sản phẩm</label>
+      <input type="text" id="id" placeholder="Nhập id sản phẩm" name="id" class="admin-input-text" required>
     </div>
-  </div>
 
-  <div class="mb-3 row">
-    <label for="nameform" class="col-lg-2 col-form-label fs-2">Tên sản phẩm</label>
-    <div class="col-lg-10">
-      <input type="text" class="form-control form-control-lg mt-2 fs-3" id="nameform" placeholder="Nhập tên sản phẩm" name="name">
+    <div class="form-row">
+      <label class="form-admin-label" for="nameform">Tên sản phẩm</label>
+      <input type="text" id="nameform" placeholder="Nhập tên sản phẩm" name="name" class="admin-input-text" required>
     </div>
-  </div>
 
-  <div class="mb-3 row">
-    <label for="categoryform" class="col-lg-2 col-form-label fs-2">Loại</label>
-    <div class="col-lg-10">
-      <input type="text" class="form-control form-control-lg mt-2 fs-3" id="categoryform" placeholder="Nhập loại sản phẩm" name="categoryform">
-      <div id="HelpBlock" class="form-text mt-2 fs-4">
-      Nhập giá trị: Nam, Nữ hoặc Trẻ em.
+    <div class="form-row">
+      <label class="form-admin-label" for="categoryform">Loại</label>
+      <div class="radio-options">
+        <input type="radio" id="nam" name="categoryform" value="Nam">
+        <label class="form-admin-label" for="male">Nam</label>
+
+        <input type="radio" id="nu" name="categoryform" value="Nữ">
+        <label class="form-admin-label" for="female">Nữ</label>
+
+        <input type="radio" id="treem" name="categoryform" value="Trẻ em">
+        <label class="form-admin-label" for="child">Trẻ em</label>
       </div>
     </div>
-  </div>
-  
-  <div class="mb-3 row">
-    <label for="price" class="col-sm-2 col-form-label fs-2">Giá sản phẩm</label>
-    <div class="col-lg-10">
-      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập giá sản phẩm" id="price" name="price">
-    </div>
-  </div>
 
-  <div class="mb-3 row">
-    <label for="sizeS" class="col-sm-2 col-form-label fs-2">Số lượng size S</label>
-    <div class="col-lg-10">
-      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeS" name="sizeS">
+    <div class="form-row">
+      <label class="form-admin-label" for="price">Giá sản phẩm</label>
+      <input type="number" placeholder="Nhập giá sản phẩm" id="price" name="price" class="admin-input-number" required>
     </div>
-  </div>
 
-  <div class="mb-3 row">
-    <label for="sizeM" class="col-sm-2 col-form-label fs-2">Số lượng size M</label>
-    <div class="col-lg-10">
-      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeM" name="sizeM">
-    </div>
-  </div>
+    <div class="form-row">
+      <div class="size-inputs">
+        <div class="size-row">
+          <div class="size-item">
+            <label class="form-admin-label" for="sizeS">Số lượng Size S</label>
+            <input type="number" placeholder="Size S" id="sizeS" name="sizeS" class="admin-input-number" required>
+          </div>
 
-  <div class="mb-3 row">
-    <label for="sizeL" class="col-sm-2 col-form-label fs-2">Số lượng size L</label>
-    <div class="col-lg-10">
-      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeL" name="sizeL">
-    </div>
-  </div>
+          <div class="size-item">
+            <label class="form-admin-label" for="sizeM">Số lượng Size M</label>
+            <input type="number" placeholder="Size M" id="sizeM" name="sizeM" class="admin-input-number" required>
+          </div>
 
-  <div class="mb-3 row">
-    <label for="sizeXL" class="col-sm-2 col-form-label fs-2">Số lượng size XL</label>
-    <div class="col-lg-10">
-      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeXL" name="sizeXL">
-    </div>
-  </div>
+          <div class="size-item">
+            <label class="form-admin-label" for="sizeL">Số lượng Size L</label>
+            <input type="number" placeholder="Size L" id="sizeL" name="sizeL" class="admin-input-number" required>
+          </div>
 
-  <div class="mb-3 row">
-    <label for="sizeXXL" class="col-sm-2 col-form-label fs-2">Số lượng size XXL</label>
-    <div class="col-lg-10">
-      <input type="number" class="form-control form-control-lg mt-2 fs-3" placeholder="Nhập số lượng còn trong kho" id="sizeXXL" name="sizeXXL">
-    </div>
-  </div>
+          <div class="size-item">
+            <label class="form-admin-label" for="sizeXL">Số lượng Size XL</label>
+            <input type="number" placeholder="Size XL" id="sizeXL" name="sizeXL" class="admin-input-number" required>
+          </div>
 
-  <div class="mb-3 row">
-    <label for="description" class="col-sm-2 col-form-label fs-2">Mô tả sản phẩm</label>
-    <div class="col-lg-10">
-      <input type="text" class="form-control form-control-lg mt-2 fs-3" id="description" name="description" placeholder="Nhập mô tả cho sản phẩm">
+          <div class="size-item">
+            <label class="form-admin-label" for="sizeXXL">Số lượng Size XXL</label>
+            <input type="number" placeholder="Size XXL" id="sizeXXL" name="sizeXXL" class="admin-input-number" required>
+          </div>
+        </div>
+      </div> 
     </div>
-  </div>
 
-  <div class="mb-3 row">
-    <label for="img" class="col-sm-2 col-form-label fs-2">Hình sản phẩm</label>
-    <div class="col-lg-10">
-    <input class="form-control form-control-lg fs-2 mt-2" id="img" placeholder="Chọn hình sản phẩm" type="file" name="img[]" multiple>
+    <div class="form-row">
+      <label class="form-admin-label" for="description">Mô tả sản phẩm</label>
+      <input type="text" id="description" name="description" placeholder="Nhập mô tả cho sản phẩm" class="admin-input-text" required>
     </div>
-    <div id="HelpBlock" class="form-text mt-2 fs-3" style="color: red;">
-      * Chọn 4 tấm hình cho sản phẩm muốn thêm.
-    </div>
-  </div>
 
-  <div class="mb-3 row">
-    <div class="col-lg-12 text-center">
-      <button type="submit" class="btn btn-primary fs-2 w-100" style="background-color: var(--primary-color);">Hoàn tất</button>
+    <div class="form-row">
+      <label class="form-admin-label" for="img">Hình sản phẩm</label>
+      <input id="img" placeholder="Chọn hình sản phẩm" type="file" name="img[]" class="admin-input-file" multiple>
+      <div class="help-text" style="color: red;">
+        * Chọn 4 tấm hình cho sản phẩm muốn thêm.
+      </div>
     </div>
-  </div>
+    <div class="form-row">
+      <button id="form-submit" type="submit">Hoàn tất</button>
+    </div>
   </form>
 </div>
 <br>

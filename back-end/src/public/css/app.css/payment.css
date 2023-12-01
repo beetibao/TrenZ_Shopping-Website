@@ -1,0 +1,419 @@
+.payment-container{
+    margin: 0 15px;
+    font-size: 2rem;
+}
+h1, h2{
+    font-size: 3rem;
+    margin-left: 3rem;
+}
+
+.payment-title {
+    margin-bottom: 2rem;
+}
+.title{
+    margin: 2rem 0;
+}
+/*list product*/
+.heading {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.heading div {
+    display: inline-block;
+}
+.c0 {
+    width: 10%;
+}
+.c1 {
+    display: flex;
+    width: 39%;
+}
+.c2 {
+    width: 20%;
+}
+.c3 {
+    width: 20%;
+}
+.c4 {
+    width: 10%;
+}
+.list-product {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.payment-container .product{
+    display: flex;
+    padding: 1rem 0;
+    border-bottom: 1px groove;
+    align-items: center;
+}
+.payment-container .product div div{
+    display: block;
+}
+.payment-container .product div div p{
+    margin-left: 2rem;
+}
+
+.item-info {
+    font-size: 14px;
+    text-align: left;
+}
+/* Payment Information*/
+.payment-info-wrapper {
+    border-bottom: 1px solid;
+}
+.payment-info{
+    margin: 0 4rem;
+    display: flex;
+    width: 95%;
+    align-items: center;
+}
+.payment-info .info{
+    margin-left: 1rem;
+    width: 90%;
+}
+.payment-info .info p{
+    margin: 1rem 0;
+}
+.payment-info .change{
+    width: 10%;
+    margin-right: 3rem;
+    
+}
+/* Transport information*/
+.transport{
+    display: flex;
+    width: 95%;
+    align-items: center;
+    margin: 0 4rem;
+    border-bottom: 1px solid;
+}
+.transport div {
+    display: block;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+.t1{
+    width: 20%;
+}
+.t2{
+    width: 30%;
+}
+.t3{
+    width: 40%;
+}
+.t4{
+    width: 10%;
+    margin-right: 3rem;
+}
+.pred{
+    margin-top: 0.5rem;
+}
+.trans-comp{
+    color: var(--primary-color);
+}
+.btn-change, .btn-change1{
+    color: #ffff;
+    font-size: 2rem;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.btn-change:hover, .btn-change1:hover{
+    background-color: red;
+}
+.btn-change:active, .btn-change1:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* Payment Method Selection */
+.payment-method {
+    width: 95%;
+    margin: 0 4rem;
+    border-bottom: 1px solid;
+}
+.payment-method input{
+    margin: 2rem 1rem;
+}
+.payment-method .icon{
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* Summary */
+.total{
+    margin: 1.5rem 0;
+    display: inline;
+    font-size: 2.5rem;
+    flex-direction: column;
+
+}
+.total div{
+    margin-top: 2rem;
+    display: inline-block;
+}
+.a1{
+    width: 70%;
+    text-align: right;
+}
+.a2{
+    width: 29%;
+    text-align: right;
+}
+.sum {
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    font-weight: bold;
+
+}
+#tt{
+    margin-top: 5rem;
+}
+/* Order button*/
+.btn-acpt{
+    color: #ffff;
+    background-color: var(--primary-color);
+    font-size: 2.5rem;
+    border-radius: 10px;
+    border: none;
+    padding: 13px 30px;
+    margin-top: 2rem;
+}
+.btn-acpt:hover {opacity: 1}
+.btn-acpt:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.last{
+    margin-bottom: 5rem;
+}
+
+.back{
+    color: var(--primary-color);
+    text-decoration: underline;
+    margin-left: 5rem;
+}
+
+/*Modal for changing adress information*/
+.modal-info {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.info-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #888;
+    width: 50%;
+}
+.info-content form{
+    padding-left: 40px;
+}
+.info-content label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+.info-content input[type=text], .info-content input[type=email], .info-content input[type=tel] {
+    width: 90%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.info-content .col-30 {
+    float: left;
+    width: 30%;
+    margin-top: 20px;
+}
+  
+.info-content .col-70 {
+    float: left;
+    width: 70%;
+    margin-top: 20px;
+}
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  /* The Close Button and Save Button*/
+.closeBtn{
+    width: 20%;
+    background-color: rgba(0,112,192,.4);
+    color: var(--primary-color);
+    float: right;
+    margin-top: 3%;
+    margin-right: 10%;
+}
+.saveBtn{
+    background-color: var(--primary-color);
+    color: white;
+    float: right;
+    width: 20%;
+    margin-top: 3%;
+    margin-right: 10%;
+}
+.info-content input[type=submit] {
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.info-content input.btn {
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/*Modal for changing transport company*/
+.trans-info {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto;
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.trans-content {
+    background-color: #fefefe;
+    border-radius: 10px;
+    margin: 10% auto !important;
+    padding: 20px;
+    width: 40%;
+    display: flex !important;
+    flex-direction: column;
+}
+.trans-content .opt {
+    width: 90%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.075);
+    margin: 10px 0 10px 20px;
+}
+/* radio custom*/
+.trans-content input[type="radio"]{
+   appearance: none;
+   border: 1px solid #d3d3d3;
+   border-radius: 5px;
+   width: 30px;
+   height: 30px;
+   content: none;
+   outline: none;
+   margin: 15px;
+   float: right;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   background-color: var(--primary-color);
+}
+
+.trans-content input[type="radio"]:checked {
+  appearance: none;
+  outline: none;
+  padding: 0;
+  content: none;
+  border: none;
+}
+
+.trans-content input[type="radio"]:checked::before{
+  position: absolute;
+  color: white !important;
+  content: "\00A0\2713\00A0" !important;
+  border: 1px solid #d3d3d3;
+  font-weight: bolder;
+  font-size: 21px;
+}
+.trans-content label{
+    position: relative;
+}
+.trans-content .label-pos {
+    padding-left: 5%;
+    top: 15px;
+}
+
+.trans-content #transMoney {
+    width: 20%;
+    float: right;
+    margin: 4%;
+    color: var(--primary-color)
+}
+
+.trans-content .transTime {
+    padding-left: 5%;
+    margin-top: 4%;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.544);
+}
+
+/* The Close Button */
+.closeTransBtn {
+    width: 20%;
+    float: right;
+    margin-top: 3%;
+    margin-right: 10%;
+}
+
+.saveTransBtn {
+    float: right;
+    width: 20%;
+    margin-top: 3%;
+    margin-right: 10%;
+}
+
+.cancelOrder {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.trans-content input[type=submit] {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.trans-content input[type=submit]:hover, .info-content input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.btn {
+    display: block;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+}

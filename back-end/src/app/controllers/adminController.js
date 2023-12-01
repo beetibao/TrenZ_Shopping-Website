@@ -54,6 +54,7 @@ class AdminController {
         const formdata = req.body;
         const result = Admin.insertProduct(formdata);
         if(result){
+          //alert(`Thêm sản phẩm ${formdata.id} thành công`);
           res.redirect('/admin/admin_statusOrder');
           //res.json({ success: true, message: 'Thêm sản phẩm thành công' });
           //return;
@@ -64,8 +65,10 @@ class AdminController {
       }
       //res.redirect('/admin/admin_statusOrder');
     });
-  }
+
+    }
 }
+
 
 module.exports = new AdminController();
 

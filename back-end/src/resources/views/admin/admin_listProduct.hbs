@@ -7,15 +7,15 @@
                 <div class="menu-items">
                     <ul class = "nav-links">
                         <li><a href="/admin/admin_statusOrder">
-                            <i class="fa fa-tasks fa-2xl"> </i>
+                            <i class="fa fa-tasks fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Tình trạng đơn hàng</span>
                         </a></li>
-                        <li><a href="/admin/admin_listProduct" class="nav-active">
-                            <i class="fa fa-list-alt fa-2xl"> </i>
+                        <li><a href="/admin/admin_listProduct" class="nav-admin-active">
+                            <i class="fa fa-list-alt fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Danh mục sản phẩm</span>
                         </a></li>
-                        <li><a href="/admin/admin_listUser">
-                            <i class="fa fa-users fa-2xl"> </i>
+                        <li><a href="/admin/admin_listUser icon-adminnav">
+                            <i class="fa fa-users fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Danh mục khách hàng</span>
                         </a></li>
                     </ul>
@@ -52,10 +52,10 @@
                                 <td class="table-content-col">{{this.size}}</td>
                                 <td class="table-content-col">
                                     <a class= "update-data" href="/admin/admin_statusOrder/edit/{{this.id}}">
-                                    <i class="fa-solid fa-pen-to-square fa-xl btn-change"></i>
+                                        <i class="fa-solid fa-pen-to-square fa-xl btn-admin-change"></i>
                                     </a>
-                                    <a class= "update-data" href="/admin/admin_statusOrder/del/{{this.id}}">
-                                    <i class="fa-solid fa-trash fa-xl btn-del"></i>
+                                    <a class= "update-data">
+                                        <i class="fa-solid fa-trash fa-xl btn-admin-del"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -67,7 +67,7 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("click", function() {
     const logoutButton = document.querySelector('.btn-logout');
     if (logoutButton) {
         logoutButton.addEventListener('click', function() {
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("click", function() {
     const logoutButton = document.querySelector('.btn-add');
     if (logoutButton) {
         logoutButton.addEventListener('click', function() {

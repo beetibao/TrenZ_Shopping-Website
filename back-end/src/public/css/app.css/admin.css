@@ -93,14 +93,14 @@ nav .menu-items{
     border-radius: 4px; 
 }
 
-i{
+.icon-adminnav {
     min-width: 3rem;
     margin-right: 10px;
     color: var(--black-color);
 }
 
 .menu-items li a .link-name{
-    font-family: 'Latto';
+    font-family: 'Lato';
     font-size: 2rem;
     font-weight: 500;
     color: var(--black-color);
@@ -161,14 +161,18 @@ tr:hover td {
     background-color: #ffffff;
 }
 
-.btn-del:hover{
+.btn-admin-del,.btn-admin-change {
+    margin-left: 20px;
+    color: black;
+}
+
+.btn-admin-del:hover{
     color: red;
     cursor: pointer;
     text-decoration: none;
 }
 
-.btn-change:hover{
-
+.btn-admin-change:hover{
     color: yellowgreen;
     cursor: pointer;
     text-decoration: none;
@@ -176,4 +180,93 @@ tr:hover td {
 
 .update-data{
     text-decoration: none;
+}
+
+#admin-container-form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#form-name{
+    text-align: center;
+    font-size: medium;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+#admin-form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato';
+}
+  
+.form-row {
+    margin-bottom: 20px;
+}
+  
+.form-admin-label {
+    font-size: 1.75em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.admin-input-text,
+.admin-input-number,
+.admin-input-file {
+    font-size: 1.5rem;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.admin-input-file {
+    padding: 8px 0;
+}
+
+.radio-options {
+    display: flex;
+    align-items: center;
+}
+  
+.radio-options input[type="radio"] {
+    margin-right: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.size-inputs {
+    display: flex;
+    align-items: center;
+}
+  
+.size-row {
+    display: flex;
+    align-items: center;
+}
+  
+.size-item {
+    margin-right: 20px;
+}
+  
+.size-item:last-child {
+    margin-right: 0;
+}
+
+#form-submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 2rem;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.help-text {
+    font-size: 2rem;
+    color: red;
+    margin-top: 5px;
 }

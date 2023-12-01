@@ -1,5 +1,5 @@
 #cart{
-    height: 550px;
+    max-height: 500rem;
 }
 h4 {
     font-family: 'Kanit', sans-serif;
@@ -14,6 +14,24 @@ h4 {
 }
 .cart_payment {
     flex:1;
+}
+.clear_cart {
+    width: 15%;
+    text-align: center;
+    padding: 1.8rem 1.8rem;
+    border-radius: 1.5rem;
+    margin-left: auto;
+    margin-top: 1rem;
+    background-color: red;
+}
+.clear_cart a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--white-color); 
+}
+.clear_cart:hover {
+    opacity: 50%;
+    
 }
 .cart_list > p, .cart_list h4{
     display: inline-block;
@@ -33,16 +51,18 @@ h4 {
     font-weight: 600;
     color: var(--primary-color);
 }
-table th {
+.cart_list_title table th {
     font-size: 1.8rem;
-    text-align: left;
+    text-align: center;
     padding: 1.4rem 3rem;
     font-family: 'Kanit', sans-serif;
 }
-table tr td {
-    font-size: 1.4rem;
+.cart_list_title table tr td {
+    font-size: 1.8rem;
     padding: 2rem 4rem;
     border-bottom: 1px solid #E0E0E0;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
 }
 .cart_list_item_img {
     width: 90px;
@@ -52,35 +72,42 @@ table tr td {
 .cart_list_item_info {
     padding-left: 1.4rem;
     max-width: 70%;
+    text-align: left;
+
 }
 .cart_list_item_quantity {
     display: flex;
     max-width: 100px;
-    text-align: left;
+    text-align: left;   
 }
 .cart_list_item_quantity p {
     margin: 0 1rem;
     width: 30%;
-    font-family: 'Lato', sans-serif;
 }
 .cart_list_item_quantity p, .cart_list_item_quantity a {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     border: none;
     background-color: transparent;
     text-decoration: none;
     color: var(--black-color);
 }
-.cart_list_item_quantity_btn{
+.cart_list_item_quantity > button{
+    border: none;
+    background-color: transparent;
     cursor: pointer;
+    font-size: 1.8rem;
+}
+.cart_list_item_quantity > button:hover{
+    color: var(--primary-color);
 }
 .cart_list_item_delete {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
-.delete_btn{
-    color: red;
+.delete_btn:hover{
+    color: red !important;
 }
 /*CART PAYMENT*/
 .cart_payment h4 {

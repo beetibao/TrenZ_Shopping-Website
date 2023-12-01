@@ -257,14 +257,8 @@ async function addProductToCart(id, list_cart, size_prd, quantity) {
         image: productItem[0].img,
         size: size_prd,
         price: productItem[0].price,
-<<<<<<< HEAD
         quantity: quantity_prd,
         totalprice: productItem[0].price * quantity_prd,
-=======
-        totalprice: productItem[0].price,
-        size: 'S',
-        quantity: 1,
->>>>>>> f03e769ceedb332d6dd2ec6aa8182ff6aeaa7927
       });
     } else {
       var newItem = true;
@@ -286,14 +280,8 @@ async function addProductToCart(id, list_cart, size_prd, quantity) {
           image: productItem[0].img,
           size: size_prd,
           price: productItem[0].price,
-<<<<<<< HEAD
           quantity: quantity_prd,
           totalprice: productItem[0].price * quantity_prd,
-=======
-          totalprice: productItem[0].price,
-          size: 'S',
-          quantity: 1,
->>>>>>> f03e769ceedb332d6dd2ec6aa8182ff6aeaa7927
         });
       }
     }

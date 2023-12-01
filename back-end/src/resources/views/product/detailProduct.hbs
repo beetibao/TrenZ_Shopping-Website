@@ -148,33 +148,12 @@
         
     </div>
 <script>
-<<<<<<< HEAD
         //Tương tác với size và số lượng của size tương ứng
         const sizeElements = document.querySelectorAll('.product-info-detail-size-list-item');
         const total_amount = document.querySelector('.product-info-detail-quantity-avai span');
         const amount = document.querySelector('.product-info-detail-quantity-avai span:nth-child(2)');
         const list_quantity = JSON.parse(amount.innerHTML)
         var curr_size, curr_quantity;
-=======
-    //show a noti when click on "thêm vào giỏ hàng"
-        var noti = document.querySelector('.cart_confirm');
-        var btnAdd = document.querySelector('.product-info-detail-button-add');
-        if(btnAdd) {
-            btnAdd.onclick = function () {
-            noti.style.display = 'block';
-            noti.style.color = 'green';
-            setTimeout(function () {
-                noti.style.display = 'none';
-                }, 3000);
-            }
-        }
-        
-
-        var sizeElements = document.querySelectorAll('.product-info-detail-size-list-item');
-        const total_amount = document.querySelector('.product-info-detail-quantity-avai span');
-        const amount = document.querySelector('.product-info-detail-quantity-avai span:nth-child(2)');
-        const list_quantity = JSON.parse(amount.innerHTML)
->>>>>>> f03e769ceedb332d6dd2ec6aa8182ff6aeaa7927
         const show_quantity = document.querySelector('.show_quantity');
 
         amount.classList.add('style');

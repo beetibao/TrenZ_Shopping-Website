@@ -10,7 +10,7 @@
                             <i class="fa fa-tasks fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Tình trạng đơn hàng</span>
                         </a></li>
-                        <li><a href="/admin/admin_listProduct" class="nav-active">
+                        <li><a href="/admin/admin_listProduct" class="nav-admin-active">
                             <i class="fa fa-list-alt fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Danh mục sản phẩm</span>
                         </a></li>
@@ -67,7 +67,7 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("click", function() {
     const logoutButton = document.querySelector('.btn-logout');
     if (logoutButton) {
         logoutButton.addEventListener('click', function() {
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("click", function() {
     const logoutButton = document.querySelector('.btn-add');
     if (logoutButton) {
         logoutButton.addEventListener('click', function() {

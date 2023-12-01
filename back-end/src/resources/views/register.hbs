@@ -1,0 +1,60 @@
+<div class="page-content-account">
+    <div class="container">
+        <div class="d-group">
+            <!-- <div class="right-col"> -->
+            <div class="group-reg group-log">
+                <div class="mb page-signup-text">
+                    Chào mừng bạn đến với Tren<span class="page-signup-title page-signup-title-blue">Z</span>!
+                </div>
+                <h1 class="d-block">
+                    <span class="page-signup-title page-signup-title-darkblue">ĐĂNG</span>
+                    <span class="page-signup-title page-signup-title-blue">KÝ</span>
+                </h1>
+                <form method="post" action="/register/checksign" id="customer-register" accept-charset="UTF-8">
+                    <input name="FormType" type="hidden" value="customer-register">
+                    <input name="UTF-8" type="hidden" value="true">
+                    
+                    <fieldset class="form-group">
+                        <input type="text" class="form-control form-control-lg" value="" name="username"
+                            id="username" placeholder="Họ và tên" required>
+                        <div class="page-signup-error mb">
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input type="text" class="form-control form-control-comment form-control-lg" value="" name="phone"
+                            id="phone" placeholder="Số điện thoại" required>
+                        <div class="page-signup-error mb">
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input type="text" class="form-control form-control-lg" value="" name="email" id="iptEmail"
+                            placeholder="Địa chỉ email">
+                        <div class="page-signup-error mb" required>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input type="password" class="form-control form-control-lg" value name="password" id="password"
+                            placeholder="Mật khẩu" oninput="inputFunctionPass" required>
+                        <span class="showpass"></span>
+                        <span class="hidded"></span>
+                        <div class="page-signup-error mb">
+                        </div>
+                    </fieldset>
+                    <div class="sign-up-actions">
+                        <button id="btnSubmit" class="btn-login btn-reg" value="Đăng ký" type="submit">Đăng
+                            ký</button>
+                    </div>
+                </form>
+                <div class="regi-log">
+                    <span>Bạn đã có tài khoản?</span>
+                    <a href="/pages/login.html">Đăng nhập ngay!</a>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>
+
+<script>
+   
+</script>

@@ -12,7 +12,7 @@ const registerRouter = require("./register");
 function route(myWeb) {
   myWeb.use("/login", loginRouter);
   myWeb.use("/register", registerRouter);
-  myWeb.use("/changePassword", changePasswordRouter)
+  // myWeb.use("/changePassword", changePasswordRouter)
   myWeb.use("/admin", adminRouter);
   myWeb.use("/cart", cartRouter);
   myWeb.use("/about", aboutRouter);

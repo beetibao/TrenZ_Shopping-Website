@@ -12,6 +12,7 @@ const config = {
 // Kiểm tra tài khoản mật khẩu có tồn tại trong database hay không
 async function checkAuth(logInfo) {
     try {
+        console.log(global.username);
         await mssql.connect(config);
         const request = new mssql.Request();
         const result = await request.query(`SELECT * FROM [dbo].[user] WHERE username ='${logInfo.username}'`);
@@ -20,7 +21,7 @@ async function checkAuth(logInfo) {
         {   
             console.log(user[0].password.length,logInfo.password.length);
             if (user[0].password === logInfo.password)
-                return 0;
+                return 0,logInfo.username;
             else {
                 return 2;
             }

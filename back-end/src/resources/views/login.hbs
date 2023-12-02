@@ -22,10 +22,9 @@
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <input type="password" class="form-control form-control-lg" name="password" id="password"
-                            placeholder="Mật khẩu" required>
-                        <span class="showpass"></span>
-                        <span class="hidded"></span>
+                            <input type="password" class="form-control form-control-lg" name="password" id="password"
+                                placeholder="Mật khẩu" required>
+                            <span class="showpass" id="controlPass"></span>
                         <div class="page-signup-error mb">
                         </div>
                     </fieldset>
@@ -48,4 +47,26 @@
 </div>
 
 <script>
+    const pass = document.querySelector('#controlPass');
+    const password = document.querySelector('#password');
+    pass.addEventListener('click', function (e) {
+        // Check that the class of id ControlPas contain showpass or not
+        if (this.classList.contains('showpass')) {
+            this.classList.remove('showpass');
+            this.classList.add('hidded');
+        } else {
+            this.classList.remove('hidded');
+            this.classList.add('showpass');
+        }
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+    });
+    /* const username = document.querySelector(".login_user");
+    const navbar_login_signup = document.querySelector(".navbar_login_signup");
+    username.style.display = 'none';
+    if(username.textContent != 'undefined' && username.textContent != ''){
+        console.log(username.innerHTML);
+        username.style.display = 'block';
+        navbar_login_signup.style.display = 'none';
+    } */
 </script>

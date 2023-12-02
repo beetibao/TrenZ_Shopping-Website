@@ -7,11 +7,13 @@ class loginController{
     }
     SignIn(req, res) {
         const loginInfo = req.body; 
-        Account.checkAuth(loginInfo).then(function (check){
+        Account.checkAuth(loginInfo).then(function (check,name){
             console.log(check);
             if (check==0)
             {
-                res.render('home');}
+                res.render('home',{
+                    username: name
+                });}
             else if (check == 1) {
                 res.render('admin/admin_statusOrder');
             }

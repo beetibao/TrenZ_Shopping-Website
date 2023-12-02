@@ -3,7 +3,7 @@ div {
   display: block;
 }
 /* decorate page content*/
-h1 {
+.d-block h1, .d-block h2  {
   font-family: 'Kanit',sans-serif;
 }
 .page-content-account{
@@ -58,9 +58,9 @@ h1 {
   padding-right: 10px;
 }
 /* decorate form box*/
-form {
+.group-log form, .group-reg form {
   display: block;
-  margin-top: 0em;
+  margin-top: 2em;
 }
 .form-group {
   margin: 0;
@@ -85,6 +85,7 @@ form {
 }
 fieldset {
   display: block;
+  position: relative;
   margin-inline-start: 2px;
   margin-inline-end: 2px;
   padding-block-start: 0.35em;
@@ -97,28 +98,27 @@ fieldset {
   border-color: rgb(192, 192, 192);
   border-image: initial;
 }
-.page-content-account .group-reg fieldset .showpass {
+.page-content-account fieldset .showpass {
   position: absolute;
   width: 24px;
   height: 24px;
   top: 14px;
   right: 20px;
-  background: url("/assets/css/icon/fontawesome-free-6.4.2-web/svgs/regular/eye-slash.svg") center no-repeat;
+  background-image: url('/icon/fontawesome-free-6.4.2-web/svgs/regular/eye-slash.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
-.page-content-account .group-reg fieldset .hidded {
+.page-content-account fieldset .hidded {
   position: absolute;
   width: 24px;
   height: 24px;
   top: 14px;
   right: 20px;
-  background: url("/assets/css/icon/fontawesome-free-6.4.2-web/svgs/regular/eye.svg") center no-repeat;
+  background-image: url('/icon/fontawesome-free-6.4.2-web/svgs/regular/eye.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
   cursor: pointer;
-}
-.page-content-account .group-reg fieldset{
-  margin: 0;
-  padding: 0;
-  position: relative;
 }
 .page-content-account .group-log .forgot-pass{
   margin-top: 12px;

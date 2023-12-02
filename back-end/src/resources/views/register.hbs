@@ -33,10 +33,9 @@
                         </div>
                     </fieldset>
                     <fieldset class="form-group">
-                        <input type="password" class="form-control form-control-lg" value name="password" id="password"
-                            placeholder="Mật khẩu" oninput="inputFunctionPass" required>
-                        <span class="showpass"></span>
-                        <span class="hidded"></span>
+                            <input type="password" class="form-control form-control-lg" value name="password" id="password"
+                                placeholder="Mật khẩu" oninput="inputFunctionPass" required>
+                            <i class="showpass" id="controlPass"></i>
                         <div class="page-signup-error mb">
                         </div>
                     </fieldset>
@@ -56,5 +55,18 @@
 </div>
 
 <script>
-   
+    const pass = document.querySelector('#controlPass');
+    const password = document.querySelector('#password');
+    pass.addEventListener('click', function (e) {
+        // Check that the class of id ControlPas contain showpass or not
+        if (this.classList.contains('showpass')) {
+            this.classList.remove('showpass');
+            this.classList.add('hidded');
+        } else {
+            this.classList.remove('hidded');
+            this.classList.add('showpass');
+        }
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+    });
 </script>

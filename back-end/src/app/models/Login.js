@@ -21,7 +21,7 @@ async function checkAuth(logInfo) {
         {   
             console.log(user[0].password.length,logInfo.password.length);
             if (user[0].password === logInfo.password)
-                return 0,logInfo.username;
+                return 0;
             else {
                 return 2;
             }

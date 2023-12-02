@@ -19,7 +19,6 @@ function route(myWeb) {
   myWeb.use("/childrenProduct", childrenRouter);
   myWeb.use("/womenProduct", womenRouter);
   myWeb.use("/product", productRouter);
-  myWeb.use("/payment", paymentRouter);
   myWeb.use("/", siteRouter);
 }
 

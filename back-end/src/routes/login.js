@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const loginController = require("../app/controllers/loginController");
 
-router.get("/checklog", loginController.check);
-router.use("/", loginController.index);
-
+router.post('/checklog',loginController.SignIn);
+router.get('/', loginController.index);
 module.exports = router;

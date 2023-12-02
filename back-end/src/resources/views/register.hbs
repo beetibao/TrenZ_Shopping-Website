@@ -8,37 +8,45 @@
                 </div>
                 <h1 class="d-block">
                     <span class="page-signup-title page-signup-title-darkblue">ĐĂNG</span>
-                    <span class="page-signup-title page-signup-title-blue">NHẬP</span>
+                    <span class="page-signup-title page-signup-title-blue">KÝ</span>
                 </h1>
-                <form method="post" action="/login/checklog" id="customer-login" accept-charset="UTF-8">
-                    <input name="FormType" type="hidden" value="customer-login">
+                <form method="post" action="/register/checksign" id="customer-register" accept-charset="UTF-8">
+                    <input name="FormType" type="hidden" value="customer-register">
                     <input name="UTF-8" type="hidden" value="true">
-
+                    
                     <fieldset class="form-group">
-                        <input type="text" class="form-control form-control-comment form-control-lg" name="username"
-                            id="username" placeholder="Tên tài khoản" required> 
+                        <input type="text" class="form-control form-control-lg" value="" name="username"
+                            id="username" placeholder="Họ và tên" required>
                         <div class="page-signup-error mb">
                         </div>
                     </fieldset>
-
                     <fieldset class="form-group">
-                            <input type="password" class="form-control form-control-lg" name="password" id="password"
-                                placeholder="Mật khẩu" required>
-                            <span class="showpass" id="controlPass"></span>
+                        <input type="text" class="form-control form-control-comment form-control-lg" value="" name="phone"
+                            id="phone" placeholder="Số điện thoại" required>
+                        <div class="page-signup-error mb">
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input type="text" class="form-control form-control-lg" value="" name="email" id="iptEmail"
+                            placeholder="Địa chỉ email">
+                        <div class="page-signup-error mb" required>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                            <input type="password" class="form-control form-control-lg" value name="password" id="password"
+                                placeholder="Mật khẩu" oninput="inputFunctionPass" required>
+                            <i class="showpass" id="controlPass"></i>
                         <div class="page-signup-error mb">
                         </div>
                     </fieldset>
                     <div class="sign-up-actions">
-                        <button id="btnSubmit" class="btn-login btn-reg" value="Đăng nhập" type="submit">Đăng
-                            nhập</button>
+                        <button id="btnSubmit" class="btn-login btn-reg" value="Đăng ký" type="submit">Đăng
+                            ký</button>
                     </div>
-                    <p class="forgot">
-                        <a class="forgot-pass" href="#">Quên mật khẩu</a>
-                    </p>
                 </form>
                 <div class="regi-log">
-                    <span>Bạn chưa có tài khoản?</span>
-                    <a href="/pages/register.html">Đăng ký ngay!</a>
+                    <span>Bạn đã có tài khoản?</span>
+                    <a href="/pages/login.html">Đăng nhập ngay!</a>
                 </div>
             </div>
             <!-- </div> -->
@@ -61,12 +69,4 @@
         const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
         password.setAttribute('type', type);
     });
-    /* const username = document.querySelector(".login_user");
-    const navbar_login_signup = document.querySelector(".navbar_login_signup");
-    username.style.display = 'none';
-    if(username.textContent != 'undefined' && username.textContent != ''){
-        console.log(username.innerHTML);
-        username.style.display = 'block';
-        navbar_login_signup.style.display = 'none';
-    } */
 </script>

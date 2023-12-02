@@ -26,11 +26,11 @@
             <li><a href="/about">Về TrenZ</a></li>
         </ul>
         <div class="navbar_user">
-            <!-- <a href=""><i class="navbar_btn fas fa-user"></i></a>
-            <p class="login_user">khoalee</p> -->
+            {{!-- <a href=""><i class="navbar_btn fas fa-user"></i></a> --}}
+            <p class="login_user">{{username}}</p>
             <p class="navbar_login_signup"> 
-                <a class="navbar_login" href="">Đăng nhập</a>
-                <a class="navbar_signup" href="">Đăng ký</a>
+                <a class="navbar_login" href="/login">Đăng nhập</a>
+                <a class="navbar_signup" href="/register">Đăng ký</a>
             </p>
         </div>
         <div class="navbar_cart">
@@ -46,5 +46,12 @@
         window.addEventListener("scroll", () => {
             header.classList[window.scrollY > 100 ? "add" : "remove"]("active");
         });
-
+        const username = document.querySelector(".login_user");
+        const navbar_login_signup = document.querySelector(".navbar_login_signup");
+        username.style.display = 'none';
+        if(username.textContent != 'undefined' && username.textContent != ''){
+            console.log(username.innerHTML);
+            username.style.display = 'block';
+            navbar_login_signup.style.display = 'none';
+        }
 </script>

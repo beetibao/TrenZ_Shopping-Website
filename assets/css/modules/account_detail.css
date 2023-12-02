@@ -1,179 +1,205 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4; 
-    color: #333; 
-    line-height: 1.8;
-    margin: 0;
-    font-size: 18px; 
-  }
-  .main-content {
-    width: 80%;
-    margin: 0 auto;
-    background: #fff; /* White background for container */
-    padding: 20px; /* Padding around the content */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    transition: all 0.3s ease;
-    width: 100%;
-    max-width: 1000px;
+
+.container {
+    font-size: 1.6rem; 
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
-.order-steps {
+
+.address-title {
+    font-size: 2.4rem; 
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem; 
+    color: #0056b3; 
+}
+
+.address-title .icon {
+    margin-right: 15px;
+    font-size: 2.2rem; 
+    color: #28a745; 
+}
+
+.address-detail {
+    margin: 10px 0; 
+    font-size: 1.8rem; 
+    color: #6c757d; 
+}
+
+
+.progress-tracker {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .address, .order-details, .shipping-payment, .order-summary {
-    border: 1px solid #ccc; /* Lighter border as per screenshot */
-    margin-bottom: 20px; 
-    padding: 20px;
-    background: #fff;
-  } 
-.address {
-background-color: #f4f4f4; /* Adjust the background color as needed */
-border-left: 4px solid #007bff; /* A blue left border as an accent */
-padding: 16px;
-margin-bottom: 20px; /* Spacing below the address block */
-}
-.address-title,.section-title {
-display: flex;
-align-items: center;
-color: #007bff; /* Adjust the color to match your theme */
-margin-bottom: 20px;
-}
-.address-title .icon {
-font-size: 24px; 
-margin-right: 8px;
-}
-.address-detail {
-    margin: 4px 0;
-    line-height: 1.4;
-    }
-.address-detail strong {
-font-weight: bold;
-}
-.order-steps div:last-child::after, .progress-tracker .step:last-child::after {
-    content: none; /* No line after the last step */
-    }
-.order-details, .shipping-payment, .order-summary {
-border-top: 1px solid #ccc;
-border-bottom: 1px solid #ccc;
-padding: 20px 0;
-background: #fff; /* White background for sections */
-}
-.order-details img {
-width: 100px;
-height: auto;
-margin-right: 10px;
-}
-h3 {
-margin: 5px 0;
-color: #007bff; /* Highlight color for headers */
-}
-.progress-tracker {
-    display: flex;
-    justify-content: space-around; /* Điều chỉnh này để giảm khoảng cách */
-    flex-wrap: wrap; /* Thêm này nếu muốn các bước xuống dòng khi không đủ chỗ */
-    align-items: center;
-
-    }
-.progress-tracker .step {
-    margin: 0 10px; /* Thêm hoặc giảm giá trị này để điều chỉnh khoảng cách */
-    padding: 10px;
-  }
-.progress-tracker .step .icon {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 24px;
-    color: #007bff;
-    }
-.progress-tracker .step .text {
-font-size: 16px;
-}
-.progress-tracker .step .checkmark {
-color: #28a745;
-font-size: 16px;
-}
-.progress-tracker .step.completed .icon, 
-.progress-tracker .step.completed .text {
-color: #28a745; 
-}   
-.order-details img, .progress-tracker .step .icon {
-    font-size: 18px; 
-}
-.progress-tracker .step .text {
-    font-size: 18px; 
-}
-.progress-tracker .step::after {
-    width: 50%; /* Shorter lines for smaller screens */
-}
-.order-section {
     margin-bottom: 20px;
-    overflow-x: auto;
-    }
-    .section-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-    }
-    .order-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        }
-    
-.product-image {
-    width: 100px;
-    height: auto; 
-    margin-right: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #f8f9fa; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
-.item-details {
-    flex-grow: 1;
 
- }
- .item-price {
+.step {
+    width: 20%;
+    text-align: center;
+    position: relative; 
+}
+
+.step::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    width: 20%;
+    height: 3px;
+    background: #ddd; 
+    z-index: -1;
+}
+
+.step:last-child::after {
+    display: none; 
+}
+
+.step.completed {
+    color: #28a745; 
+}
+
+.step.completed::after {
+    background: #28a745; 
+}
+
+.step.completed .checkmark {
+    display: inline-block; 
+}
+
+.step .icon {
+    font-size: 28px; 
+    margin-bottom: 10px;
+}
+
+.step .text {
+    font-size: 1.4rem; 
+}
+
+.step .checkmark {
+    font-size: 24px;
+    color: #28a745; 
+}
+
+
+
+/* Order section styling */
+.order-section {
+    font-size: 1.6rem;
+    background-color: #f8f9fa;
+    padding: 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 10px; 
+}
+
+
+.section-title {
+    color: black; 
+}
+.order-item {
+    display: grid;
+    grid-template-columns: 120px 1fr auto; 
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    transition: background-color 0.3s; 
+}
+
+.order-item:hover {
+    background-color: #e9ecef; 
+}
+
+
+.product-image {
+    width: 120px; 
+    height: auto;
+    border-radius: 5px; 
+}
+
+.item-details {
+    margin-left: 20px;
+    color: #343a40; 
+}
+
+.item-details p {
+    margin: 5px 0;
+}
+
+.item-price {
     font-weight: bold;
-    margin-left: 8px;
+    font-size: 1.8rem; 
 }
-.shipping-payment, .order-summary {
-    padding: 10px 0;
-}
-.shipping-payment div, .order-summary div {
-margin-bottom: 5px;
-}
-.order-summary {
-    font-size: 16px; /* Larger font size for the summary */
-    font-weight: bold; /* Bold font for emphasis */
-    border-top: 1px solid #ccc; 
-}
+
+
 .detail-section {
     display: flex;
     justify-content: space-between;
-    align-items: start;
-    padding: 20px;
-    background-color: #f4f4f4; 
-    border-top: 2px solid #007bff; 
-    border-bottom: 2px solid #007bff;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 40px;
+    flex-wrap: wrap; 
+    border: 1px solid #ccc;
+    background-color: #f8f9fa; 
 }
-    .detail-section > div {
-        padding: 12px;
-    }
-    .section-subtitle {
-        font-size: 16px; 
-        color: #333; 
-        margin-bottom: 5px; 
-    }
-    p {
-        font-size: 16px; 
-        color: #333; /* Màu chữ */
-        margin: 5px 0; /* Khoảng cách giữa các đoạn văn */
-    }
-    .total-price {
-        color: #007bff; 
-        font-weight: bold; 
-        font-size: 20px; 
-    }
-    
-    
-      
-    
-    
-    
+
+.info-section {
+    flex: 1 1 300px; 
+    padding-right: 20px; 
+}
+
+.info-block {
+    margin-bottom: 10px;
+    display: flex; 
+    align-items: center; 
+    transition: box-shadow 0.3s ease;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-right: 10px; 
+    min-width: 150px; 
+    text-align: left;
+    color: #007bff;
+}
+
+.info-content {
+    overflow-wrap: break-word; 
+    text-align: left; 
+    flex-grow: 1; 
+}
+
+.payment-info {
+    flex: 1 1 auto; 
+    text-align: right;
+    padding-left: 20px; 
+    align-self: center;
+    justify-content: center;
+}
+
+.section-subtitle {
+    margin: 0;
+    text-align: left; 
+}
+
+.total-price {
+    font-weight: bold;
+    color: #000;
+    font-size: 1.5rem;
+    margin-left: 10px; 
+}
+.total-price1 {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.5rem;
+    margin-left: 10px; 
+}
+
+.payment-info .section-subtitle,
+.payment-info .total-price {
+    display: inline-block; 
+    margin-bottom: 10px; 
+}

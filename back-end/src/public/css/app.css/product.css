@@ -6,7 +6,7 @@
     max-width: 1800px;
     margin: auto;
 }
-.row {
+.product_row {
     display: flex !important;
     /* flex-wrap: wrap; */
     justify-content: space-around;

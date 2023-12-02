@@ -4,20 +4,29 @@ class PaymentController {
   //[GET] /home
 
   index(req, res, next) {
-    Cart.showToCart(global.carts, global.cart_total).then(function (listsProduct) {
-      const total = listsProduct[0].reduce((sum, item) => sum + item.totalprice, 0);
+    Cart.showToCart(global.carts, global.cart_total).then(function (
+      listsProduct
+    ) {
+      const total = listsProduct[0].reduce(
+        (sum, item) => sum + item.totalprice,
+        0
+      );
       const discount = 25000;
 
-      res.render("payment", { products: listsProduct[0], total, discount, finalPrice: total - discount });
+      res.render("payment", {
+        products: listsProduct[0],
+        total,
+        discount,
+        finalPrice: total - discount,
+      });
     });
   }
 
   addPayment(req, res, next) {
-    Payment.addPayment(req.body).then(function(order) {
-
+    Payment.addPayment(req.body).then(function (order) {
       global.carts = [];
       global.cart_total = 0;
-      res.json({ success: true });
+      res.redirect("/");
     });
   }
 }

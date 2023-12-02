@@ -9,9 +9,12 @@ h1, h2{
 
 .payment-title {
     margin-bottom: 2rem;
+    font-size: 3.5rem;
+    font-family: 'Kanit', sans-serif;
 }
 .title{
-    margin: 2rem 0;
+    font-family: 'Kanit', sans-serif;
+    margin: 2rem 3rem;
 }
 /*list product*/
 .heading {
@@ -20,6 +23,8 @@ h1, h2{
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
+    font-family: 'Kanit', sans-serif;   
+    margin: 5rem 0;;
 }
 .heading div {
     display: inline-block;
@@ -29,7 +34,7 @@ h1, h2{
 }
 .c1 {
     display: flex;
-    width: 39%;
+    width: 30%;
 }
 .c2 {
     width: 20%;
@@ -38,23 +43,28 @@ h1, h2{
     width: 20%;
 }
 .c4 {
-    width: 10%;
+    width: 20%;
 }
 .list-product {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-top: 3.5rem;
 }
-.payment-container .product{
+.product_payment p {
+    font-size: 2rem;
+    line-height: 1;
+}
+.payment-container .product_payment{
     display: flex;
     padding: 1rem 0;
     border-bottom: 1px groove;
     align-items: center;
 }
-.payment-container .product div div{
+.payment-container .product_payment div div{
     display: block;
 }
-.payment-container .product div div p{
+.payment-container .product_payment div div p{
     margin-left: 2rem;
 }
 
@@ -64,7 +74,7 @@ h1, h2{
 }
 /* Payment Information*/
 .payment-info-wrapper {
-    border-bottom: 1px solid;
+    border-bottom: 1px groove;
 }
 .payment-info{
     margin: 0 4rem;
@@ -75,6 +85,7 @@ h1, h2{
 .payment-info .info{
     margin-left: 1rem;
     width: 90%;
+    line-height: 1;
 }
 .payment-info .info p{
     margin: 1rem 0;
@@ -85,12 +96,14 @@ h1, h2{
     
 }
 /* Transport information*/
+.transport_wrap {
+    border-bottom: 1px groove;
+}
 .transport{
     display: flex;
     width: 95%;
     align-items: center;
     margin: 0 4rem;
-    border-bottom: 1px solid;
 }
 .transport div {
     display: block;
@@ -102,6 +115,7 @@ h1, h2{
 }
 .t2{
     width: 30%;
+    text-align: center;
 }
 .t3{
     width: 40%;
@@ -123,20 +137,32 @@ h1, h2{
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .btn-change:hover, .btn-change1:hover{
-    background-color: red;
+    opacity: 50% ;
 }
 .btn-change:active, .btn-change1:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+}
+.pred span{
+    font-size: 1.5rem;
 }
 
 /* Payment Method Selection */
 .payment-method {
     width: 95%;
     margin: 0 4rem;
-    border-bottom: 1px solid;
+}
+.payment-method .payment-method-icon{
+    height: 40px;
+    width: 40px;
+    margin-left: 1.5rem;
+}
+.checkbox-group .methods-option{
+    display: flex;
+    align-items: center;
 }
 .payment-method input{
     margin: 2rem 1rem;
@@ -183,8 +209,9 @@ h1, h2{
     border: none;
     padding: 13px 30px;
     margin-top: 2rem;
+    cursor: pointer;
 }
-.btn-acpt:hover {opacity: 1}
+.btn-acpt:hover {opacity: 50%}
 .btn-acpt:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
@@ -219,6 +246,13 @@ h1, h2{
     border-radius: 10px;
     border: 1px solid #888;
     width: 50%;
+}
+.info-content h2 {
+    margin: 0 0 0.5rem;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+
 }
 .info-content form{
     padding-left: 40px;
@@ -278,11 +312,12 @@ h1, h2{
 }
 
 .info-content input.btn {
-    padding: 12px 30px;
-    font-size: 15px;
+    padding: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
+    text-align: center;
     border: none;
-    border-radius: 4px;
+    border-radius: 1.2rem;
     cursor: pointer;
 }
 
@@ -306,15 +341,28 @@ h1, h2{
     border-radius: 10px;
     margin: 10% auto !important;
     padding: 20px;
-    width: 40%;
+    width: 35%;
     display: flex !important;
     flex-direction: column;
+    text-align: center;
+}
+.trans-content h2 {
+    margin: 0 0 0.5rem;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+}
+.trans-content .row input {
+    margin-top: 0.5rem;
 }
 .trans-content .opt {
     width: 90%;
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.075);
     margin: 10px 0 10px 20px;
+}
+.trans-content .row input + input{
+    margin-left: 2rem;
 }
 /* radio custom*/
 .trans-content input[type="radio"]{
@@ -329,6 +377,7 @@ h1, h2{
    float: right;
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    background-color: var(--primary-color);
+   cursor: pointer;
 }
 
 .trans-content input[type="radio"]:checked {
@@ -337,15 +386,16 @@ h1, h2{
   padding: 0;
   content: none;
   border: none;
+  cursor: pointer;
 }
 
 .trans-content input[type="radio"]:checked::before{
   position: absolute;
   color: white !important;
   content: "\00A0\2713\00A0" !important;
-  border: 1px solid #d3d3d3;
   font-weight: bolder;
   font-size: 21px;
+  cursor: pointer;
 }
 .trans-content label{
     position: relative;
@@ -365,7 +415,7 @@ h1, h2{
 .trans-content .transTime {
     padding-left: 5%;
     margin-top: 4%;
-    font-size: 17px;
+    font-size: 15px;
     color: rgba(0, 0, 0, 0.544);
 }
 
@@ -398,14 +448,18 @@ h1, h2{
     background-color: var(--primary-color);
     color: white;
     font-weight: bold;
-    padding: 12px 30px;
-    font-size: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 1.2rem;
     cursor: pointer;
 }
-.trans-content input[type=submit]:hover, .info-content input[type=submit]:hover {
-    background-color: #45a049;
+.trans-content input[value="Lưu"]:hover, .info-content input[type=submit]:hover {
+    opacity: 50%;
+}
+.info-content input[value="Hủy"]:hover, .trans-content .closeTransBtn:hover {
+    background-color: red;
 }
 
 .btn {
@@ -416,4 +470,5 @@ h1, h2{
     font-size: 2rem;
     color: #fff;
     text-decoration: none;
+    margin-top: 2rem;
 }

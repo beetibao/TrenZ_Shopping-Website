@@ -49,6 +49,16 @@ class CartController {
     for (let i = 0; i < carts.length; i++) {
       if (global.carts[i].id == product_id) {
         switch (action) {
+          case "plus":
+            carts[i].quantity += 1;
+            carts[i].totalprice = Number(carts[i].price) * carts[i].quantity;
+            cart_total += Number(carts[i].price);
+            break;
+          case "minus":
+            carts[i].quantity -= 1;
+            carts[i].totalprice = Number(carts[i].price) * carts[i].quantity;
+            cart_total -= Number(carts[i].price);
+            break;
           case "clear":
             console.log("Đã xóa sản phẩm");
             cart_total -= Number(carts[i].totalprice);

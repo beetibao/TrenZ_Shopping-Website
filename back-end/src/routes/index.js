@@ -8,8 +8,10 @@ const paymentRouter = require("./payment");
 const adminRouter = require("./admin");
 const loginRouter = require("./login");
 const registerRouter = require("./register");
+const accountController = require("./account");
 
 function route(myWeb) {
+  myWeb.use("/account", accountController);
   myWeb.use("/payment", paymentRouter);
   myWeb.use("/login", loginRouter);
   myWeb.use("/register", registerRouter);

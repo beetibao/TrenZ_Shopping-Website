@@ -95,9 +95,8 @@
     padding: 12px 20px;
     margin: 0 0 2% 0;
     border-radius: 5px;
-    font-size: 2rem;
     border: 1px solid #ccc;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 .account-information-container aside .change-account-information .row .Accpt-change-btn{
     background-color: var(--primary-color);
@@ -120,6 +119,7 @@
     border: none;
     margin: 2% 10% 1% 29%;
     border-radius: 4px;
+    font-weight: bold;
     cursor: pointer;
 }
 .account-information-container aside .change-account-information .row .Cancel-btn:hover{
@@ -160,9 +160,8 @@
     padding: 12px 20px;
     margin: 0 0 2% 0;
     border-radius: 5px;
-    font-size: 2rem;
     border: 1px solid #ccc;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 .account-information-container aside .changing-account-password .row .Accpt-change-btn{
     background-color: var(--primary-color);
@@ -180,6 +179,7 @@
     font-size: 2rem;
     float: right;
     border: none;
+    font-weight: bold;
     margin: 2% 10% 1% 29%;
     border-radius: 4px;
     cursor: pointer;

@@ -252,8 +252,8 @@
 
         //Truyền dữ liệu qua /cart/add/
         const addCart = document.querySelector('.product-info-detail-button-add');
+        const addBuy = document.querySelector('.product-info-detail-button-buy');
         const id_product = document.querySelector('.product_info_id').textContent;
-        console.log(id_product);
         addCart.addEventListener('click', function () {
             if (curr_size == undefined) {
                 alert('Vui lòng chọn kích thước');
@@ -263,6 +263,17 @@
                 window.location.href = '/cart/add/' + id_product + '?size=' + curr_size + '&quantity=' + curr_quantity;
             }
         });
+
+        addBuy.addEventListener('click', function () {
+            if (curr_size == undefined) {
+                alert('Vui lòng chọn kích thước');
+            }
+            else {
+                addBuy.setAttribute('href', '/payment/' + id_product + '?size=' + curr_size + '&quantity=' + curr_quantity);
+            }
+        });
+
+
         
 
 </script>

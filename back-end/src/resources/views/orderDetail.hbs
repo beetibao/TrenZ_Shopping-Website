@@ -1,0 +1,104 @@
+<div id="order-page-container">
+    <div class="order-info">
+        <div class="order-info-heading">
+            <i class="fa-solid fa-location-dot"></i>
+            <h2>Địa chỉ nhận hàng</h2>
+        </div>
+        <div class="order-info-contents">
+            <p>Họ và tên: <span id="customer-name"></span>{{order_info.name}}</p>
+            <p>Số điện thoại: <span id="customer-phone">{{order_info.phone}}</span></p>
+            <p>Địa chỉ: <span id="customer-address"></span>{{order_info.address}}</p>
+        </div>
+    </div>
+
+    <div class="order-tracking">
+        <h3>Mã đơn hàng: {{order_info.order_id}}</h3>
+        <div class="order-status" style="display:none">{{order_info.status}}</div>
+        <div class="order-tracking-content">
+            <div class="order-tracking-items">
+                <i class="fa-solid fa-file-lines"></i>
+                <p>Đơn hàng đã đặt</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right-long"></i>
+            <div class="order-tracking-items">
+                <i class="fa-solid fa-truck-fast"></i>
+                <p>Đang vận chuyển</p>
+            </div>
+            
+            <i class="fa-solid fa-arrow-right-long"></i>
+            <div class="order-tracking-items">
+                <i class="fa-regular fa-circle-check"></i>
+                <p>Đã giao</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-product-details">
+        <h2>Đơn mua</h2>
+        <table class="order-detail-table">
+            <tr class="order-detail-table-heading">
+                <th>STT</th>
+                <th>Sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Tổng tiền</th>
+            </tr>
+            {{#each products_order as |item index|}}
+            <tr class="products_cart">
+                <td>
+                    <div class="order-index">{{indexAddOne index}}</div>
+                </td>
+                <td>
+                    <div class="order-list-item">
+                        <img src="{{this.image}}" alt="item" class="cart_list_item_img">
+                        <div class="order-list-item-info">
+                            <p class="order-list-item-name">{{this.name}}</p>
+                            <p class="order-list-item-size">Size: {{this.size}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="order-product-quantity">{{this.quantity}}</div>
+                </td>
+                <td class="order-product-total-price">{{totalprice}}đ</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    <div class="order-trans-payments">
+        <div class="order-transport">
+            <div class="order-trans-method-content">
+                <p style="color: var(--primary-color)">Đơn vị vận chuyển: </p>
+                <span>{{order_info.transport}}</span>
+            </div>
+        </div>
+        <div class="order-payment">
+            <div class="order-trans-method-content">
+                <p style="color: var(--primary-color)">Phương thức thanh toán: </p>
+                <span>{{order_info.payment_method}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-total-payment-info">
+        <div class="total-order-product">
+            Tổng tiền hàng:
+        </div>
+        <span>{{total_product}}đ</span>
+    
+        <div class="total-order-trans-fee">
+            Phí vận chuyển: 
+        </div>
+        <span>{{transport_price}}đ</span>
+    
+        <div class="total-order-voucher">
+            Voucher của shop: 
+        </div>
+        <span>-25000đ</span>
+    
+        <div class="total-order-payment">
+            Thành tiền:
+        </div>
+        <span style="color: var(--primary-color); font-size: 3.5rem">{{final_price}}đ</span>
+    </div>
+</div>

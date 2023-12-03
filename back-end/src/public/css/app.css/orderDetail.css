@@ -1,0 +1,110 @@
+#order-page-container h2 {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+}
+.order-info {
+    margin: 2rem 3rem;
+    padding: 1rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.order-product-details, .order-tracking{
+    margin: 2rem 3rem;
+    padding: 0 1rem;
+}
+.order-info-heading{
+    display: flex;
+    font-size: 2.5rem;
+    align-items: center;
+    font-family: 'Kanit', sans-serif;
+}
+.order-info-heading .fa-location-dot {
+    margin-right: 1rem;
+    color: var(--primary-color);
+}
+.order-info-contents{
+    margin: 1.5rem 2.5rem;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+.order-detail-table {
+    margin: 2rem 0;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+}
+.order-detail-table-heading th {
+    font-size: 2.5rem;
+    font-family: 'Kanit', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 2rem;
+}
+.order-list-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+}
+.order-list-item-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    align-items: flex-start;
+    line-height: 1.5;
+}
+.order-trans-payments {
+    margin: 2rem 3rem;
+    padding: 0 1rem;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+.order-trans-method-content {
+    display: flex;
+    align-items: center;
+}
+.order-trans-method-content p {
+    width: 30%;
+}
+
+/*Payment*/
+.order-total-payment-info{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 2rem 3rem;
+    padding: 2rem;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+.order-total-payment-info div {
+    display: inline-block;
+    width: 60%;
+    text-align: right;
+}
+.order-total-payment-info span {
+    display: inline-block;
+    width: 39%;
+    text-align: right;
+}
+.total-order-payment {
+    margin-top: 2rem;
+}
+.order-tracking h3 {
+    font-size: 2.5rem;
+}
+.order-tracking-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.order-tracking-items i{
+    font-size: 5rem;
+    color: var(--primary-color);
+}
+.order-tracking-items p {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+.order-tracking-content .fa-arrow-right-long{
+    font-size: 4rem;
+    color: var(--primary-color);
+}

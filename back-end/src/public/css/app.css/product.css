@@ -7,7 +7,7 @@
     margin: auto;
 }
 .product_row {
-    display: flex !important;
+    display: flex;
     /* flex-wrap: wrap; */
     justify-content: space-around;
     
@@ -33,14 +33,16 @@
 .filter {
     padding: 30px 30px;
 }
-.filter_left {
+ .filter_left {
     width: 30%;
+    margin-right: 5rem;
 }
-.filter_right{
+/* .filter_right{
     width: 70%;
-} 
+}   */
 .filter_right_items {
     padding: 0 12px;
+    
 
 }
 .filter_right_items label {

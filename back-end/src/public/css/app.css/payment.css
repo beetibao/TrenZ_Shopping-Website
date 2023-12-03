@@ -2,7 +2,7 @@
     margin: 0 15px;
     font-size: 2rem;
 }
-h1, h2{
+.payment h1, .payment h2{
     font-size: 3rem;
     margin-left: 3rem;
 }
@@ -455,10 +455,10 @@ h1, h2{
     border-radius: 1.2rem;
     cursor: pointer;
 }
-.trans-content input[value="Lưu"]:hover, .info-content input[type=submit]:hover {
+.trans-content input[value="Lưu"]:hover, .info-content input[type=submit]:hover, .confirmOrder:hover, #orderConfirmed .row:hover {
     opacity: 50%;
 }
-.info-content input[value="Hủy"]:hover, .trans-content .closeTransBtn:hover {
+.info-content input[value="Hủy"]:hover, .trans-content .closeTransBtn:hover, .trans-content .cancelOrder:hover {
     background-color: red;
 }
 

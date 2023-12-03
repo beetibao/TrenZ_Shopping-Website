@@ -87,29 +87,81 @@ async function addPayment(params) {
     );
 
     const products = global.carts.map((item) => item.id);
-    const detail = global.carts.map((item) => [
+    const detail_order = global.carts.map((item) => [
       item.id,
       item.size || "S",
       item.quantity,
       item.totalprice,
     ]);
-    console.log(params.user_id, typeof params.user_id);
+
+    const total_product = global.carts.reduce(
+      (sum, item) => sum + item.totalprice,
+      0
+    );
+    var transport_price;
+    if (params.detail == "Giao hàng nhanh") {
+      transport_price = 50100;
+    } else {
+      transport_price = 60000;
+    }
+    var final_price = total_product + transport_price - 25000;
+
     request.input("order_id", mssql.Int, maxId + 1);
     request.input("user_id", mssql.NVarChar(50), String(params.user_id));
     request.input("name", mssql.NVarChar(50), params.name);
-    request.input("address", mssql.NVarChar(50), params.address);
-    request.input("total", mssql.Int, params.total);
-    request.input("phone", mssql.Int, params.phone);
-    request.input("detail", mssql.NVarChar(50), JSON.stringify(detail));
+    request.input("address", mssql.NVarChar(500), params.address);
+    request.input("total", mssql.Int, final_price);
+    request.input("phone", mssql.NVarChar(15), params.phone);
+    request.input("detail", mssql.NVarChar(500), JSON.stringify(detail_order));
     request.input("payment_method", mssql.NVarChar(50), params.payment_method);
+    request.input("transport", mssql.NVarChar(50), params.detail);
     request.input("status", mssql.NVarChar(50), params.status);
     request.input("created_at", mssql.Date, params.created_at);
 
     const result = await request.query(
-      `INSERT INTO [dbo].[order] (order_id, user_id, name, address, total, phone, detail, payment_method, status, created_at) 
-      VALUES (@order_id, @user_id, @name, @address, @total, @phone, @detail, @payment_method, @status, @created_at)`
+      `INSERT INTO [dbo].[order] (order_id, user_id, name, address, total, phone, detail, payment_method,transport, status, created_at) 
+      VALUES (@order_id, @user_id, @name, @address, @total, @phone, @detail, @payment_method,@transport, @status, @created_at)`
     );
     return result;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function showPayment(id, size, quantity) {
+  try {
+    await mssql.connect(config);
+    const request = new mssql.Request();
+    const result = await request.query(
+      `SELECT * FROM [dbo].[product] WHERE id = '${id}'`
+    );
+
+    global.carts = [
+      {
+        id: result.recordset[0].id,
+        name: result.recordset[0].name,
+        price: result.recordset[0].price,
+        image: result.recordset[0].img,
+        size: size,
+        quantity: quantity,
+        totalprice: result.recordset[0].price * quantity,
+        total: result.recordset[0].price * quantity,
+      },
+    ];
+    return global.carts;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function detailPayment() {
+  try {
+    await mssql.connect(config);
+    const request = new mssql.Request();
+    const result = await request.query(
+      `SELECT TOP 1 * FROM [dbo].[order] ORDER BY [order_id] DESC`
+    );
+    return result.recordset[0];
   } catch (error) {
     console.log(error);
   }
@@ -117,4 +169,6 @@ async function addPayment(params) {
 module.exports = {
   getPayment,
   addPayment,
+  showPayment,
+  detailPayment,
 };

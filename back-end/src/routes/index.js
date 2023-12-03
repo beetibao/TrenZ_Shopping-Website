@@ -10,6 +10,7 @@ const loginRouter = require("./login");
 const registerRouter = require("./register");
 
 function route(myWeb) {
+  myWeb.use("/payment", paymentRouter);
   myWeb.use("/login", loginRouter);
   myWeb.use("/register", registerRouter);
   // myWeb.use("/changePassword", changePasswordRouter)

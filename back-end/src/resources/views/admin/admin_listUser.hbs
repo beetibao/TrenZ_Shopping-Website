@@ -1,5 +1,5 @@
-<div class="admin-body">
-        <div class="account-section">
+<div id="admin-body">
+        <div id="account-section">
             <div class="account-avatar">
                 <img src="https://imgtrenz.blob.core.windows.net/blob/avatar.png" alt="Avatar" class="avatar-image">
             </div>
@@ -21,35 +21,45 @@
                     </ul>
                 </div>
                 <div>
-                    <button class="btn-logout">Đăng xuất</button>
+                    <button id="btn-admin-logout">Đăng xuất</button>
                 </div>
             </nav>
         </div>
-        <div class= "border">
-            <div class="account-table">
-                <div class="table-wapper">
-                    <table class="table-block">
+        <div id="admin-table-section">
+            <div id="admin-table-wapper">
+                <table id="admin-table-content">
                     <thead>
-                        <th class="table-header">Mã khách hàng</th>
-                        <th class="table-header">Tên khách hàng</th>
-                        <th class="table-header">Giới tính</th>
-                        <th class="table-header">Địa chỉ</th>
-                        <th class="table-header">Liên lạc</th>
-                        <th class="table-header">Email</th>
+                        <th class="admin-table-header">Mã khách hàng</th>
+                        <th class="admin-table-header">Tên khách hàng</th>
+                        <th class="admin-table-header">Giới tính</th>
+                        <th class="admin-table-header">Địa chỉ</th>
+                        <th class="admin-table-header">Liên lạc</th>
+                        <th class="admin-table-header">Email</th>
                     </thead>
                     <tbody>
                         {{#each users}}
                             <tr>
-                                <td class="table-content-col">{{this.id}}</td>
-                                <td class="table-content-col">{{this.name}}</td>
-                                <td class="table-content-col">{{this.gender}}</td>
-                                <td class="table-content-col">{{this.phone}}</td>
-                                <td class="table-content-col">{{this.address}}</td>
-                                <td class="table-content-col">{{this.email}}</td>
+                                <td class="admin-table-td">{{this.id}}</td>
+                                <td class="admin-table-td">{{this.name}}</td>
+                                <td class="admin-table-td">{{this.gender}}</td>
+                                <td class="admin-table-td">{{this.phone}}</td>
+                                <td class="admin-table-td">{{this.address}}</td>
+                                <td class="admin-table-td">{{this.email}}</td>
                             </tr>
                         {{/each}}
-                    </table>
-                </div>
+                </table>
             </div>
         </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const logoutButton = document.getElementById('btn-admin-logout');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function() {
+            window.location.href = '/login'; 
+        });
+    }
+});
+
+</script>

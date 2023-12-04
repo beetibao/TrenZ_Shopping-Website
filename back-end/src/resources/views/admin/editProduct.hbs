@@ -1,34 +1,34 @@
 <div id="admin-container-form">
-  <h1 id="form-name">THÊM SẢN PHẨM</h1>
+  <h1 id="form-name">SỬA THÔNG TIN SẢN PHẨM</h1>
   <br>
-  <form id= "admin-form" method="post" action="/admin/storeProduct" enctype="multipart/form-data">
+  <form id= "admin-form" method="post" action="/admin/updateProduct?_method=PUT" enctype="multipart/form-data">
     <div class="form-row">
       <label class="form-admin-label" for="id">Id sản phẩm</label>
-      <input type="text" id="id" placeholder="Nhập id sản phẩm" name="id" class="admin-input-text" required>
+      <input type="text" id="id" placeholder="Nhập id sản phẩm" value = "{{product.id}}" name="id" class="admin-input-text" required readonly>
     </div>
 
     <div class="form-row">
       <label class="form-admin-label" for="nameform">Tên sản phẩm</label>
-      <input type="text" id="nameform" placeholder="Nhập tên sản phẩm" name="name" class="admin-input-text" required>
+      <input type="text" id="nameform" placeholder="Nhập tên sản phẩm" value = "{{product.name}}" name="name" class="admin-input-text" required>
     </div>
 
     <div class="form-row">
       <label class="form-admin-label" for="categoryform">Loại</label>
       <div class="radio-options">
-        <input type="radio" id="nam" name="categoryform" value="Nam">
+        <input type="radio" id="category" name="category" value="Nam" {{isChecked 'Nam' product.category}} disabled>
         <label class="form-admin-label" for="male">Nam</label>
 
-        <input type="radio" id="nu" name="categoryform" value="Nữ">
+        <input type="radio" id="category" name="category" value="Nữ" {{isChecked 'Nữ' product.category}} disabled>
         <label class="form-admin-label" for="female">Nữ</label>
 
-        <input type="radio" id="treem" name="categoryform" value="Trẻ em">
+        <input type="radio" id="category" name="category" value="Trẻ em" {{isChecked 'Trẻ em' product.category}} disabled>
         <label class="form-admin-label" for="child">Trẻ em</label>
       </div>
     </div>
 
     <div class="form-row">
       <label class="form-admin-label" for="price">Giá sản phẩm</label>
-      <input type="number" placeholder="Nhập giá sản phẩm" id="price" name="price" class="admin-input-number" required>
+      <input type="number" placeholder="Nhập giá sản phẩm" value = "{{product.price}}" id="price" name="price" class="admin-input-number" required>
     </div>
 
     <div class="form-row">
@@ -36,27 +36,27 @@
         <div class="size-row">
           <div class="size-item">
             <label class="form-admin-label" for="sizeS">Số lượng Size S</label>
-            <input type="number" placeholder="Size S" id="sizeS" name="sizeS" class="admin-input-number" required>
+            <input type="number" placeholder="Size S" id="sizeS" value = "{{product.sizeS}}" name="sizeS" class="admin-input-number" required>
           </div>
 
           <div class="size-item">
             <label class="form-admin-label" for="sizeM">Số lượng Size M</label>
-            <input type="number" placeholder="Size M" id="sizeM" name="sizeM" class="admin-input-number" required>
+            <input type="number" placeholder="Size M" id="sizeM" value = "{{product.sizeM}}" name="sizeM" class="admin-input-number" required>
           </div>
 
           <div class="size-item">
             <label class="form-admin-label" for="sizeL">Số lượng Size L</label>
-            <input type="number" placeholder="Size L" id="sizeL" name="sizeL" class="admin-input-number" required>
+            <input type="number" placeholder="Size L" id="sizeL" value = "{{product.sizeL}}" name="sizeL" class="admin-input-number" required>
           </div>
 
           <div class="size-item">
             <label class="form-admin-label" for="sizeXL">Số lượng Size XL</label>
-            <input type="number" placeholder="Size XL" id="sizeXL" name="sizeXL" class="admin-input-number" required>
+            <input type="number" placeholder="Size XL" id="sizeXL" value = "{{product.sizeXL}}" name="sizeXL" class="admin-input-number" required>
           </div>
 
           <div class="size-item">
             <label class="form-admin-label" for="sizeXXL">Số lượng Size XXL</label>
-            <input type="number" placeholder="Size XXL" id="sizeXXL" name="sizeXXL" class="admin-input-number" required>
+            <input type="number" placeholder="Size XXL" id="sizeXXL" value = "{{product.sizeXXL}}" name="sizeXXL" class="admin-input-number" required>
           </div>
         </div>
       </div> 
@@ -64,16 +64,9 @@
 
     <div class="form-row">
       <label class="form-admin-label" for="description">Mô tả sản phẩm</label>
-      <textarea type="text" id="description" name="description" placeholder="Nhập mô tả cho sản phẩm" class="admin-input-text" required></textarea>
+      <textarea type="text" id="description" name="description" placeholder="Nhập mô tả cho sản phẩm" class="admin-input-text" required>{{product.description}}</textarea>
     </div>
 
-    <div class="form-row">
-      <label class="form-admin-label" for="img">Hình sản phẩm</label>
-      <input id="img" placeholder="Chọn hình sản phẩm" type="file" name="img[]" class="admin-input-file" multiple>
-      <div class="help-text" style="color: red;">
-        * Chọn 4 tấm hình cho sản phẩm muốn thêm.
-      </div>
-    </div>
     <div class="form-row">
       <button id="form-submit" type="submit">Hoàn tất</button>
     </div>
@@ -85,11 +78,20 @@
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('admin-form').addEventListener('submit', function (event) {
     event.preventDefault();
-    const formData = new FormData(this);
 
-    fetch('/admin/storeProduct', {
-      method: 'POST',
-      body : formData
+   const formData = new FormData(this);
+
+    const jsonData = {};
+    formData.forEach((value, key) => {
+      jsonData[key] = value;
+    });
+
+    fetch(`/admin/updateProduct`, {
+      method: 'PUT',
+      headers:{
+            "Content-Type":"application/json"
+        },
+      body: JSON.stringify(jsonData)
     })
       .then(response => response.json())
       .then(data => {

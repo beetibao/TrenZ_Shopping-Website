@@ -1,5 +1,5 @@
-<div class="admin-body">
-        <div class="account-section">
+<div id="admin-body">
+        <div id="account-section">
             <div class="account-avatar">
                 <img src="https://imgtrenz.blob.core.windows.net/blob/avatar.png" alt="Avatar" class="avatar-image">
             </div>
@@ -7,7 +7,7 @@
                 <div class="menu-items">
                     <ul class = "nav-links">
                         <li>
-                        <a href="/admin/statusorder" class="nav-active">
+                        <a href="/admin/admin_statusOrder" class="nav-admin-active">
                             <i class="fa fa-tasks fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Tình trạng đơn hàng</span>
                         </a>
@@ -23,52 +23,79 @@
                     </ul>
                 </div>
                 <div>
-                    <button class="btn-logout">Đăng xuất</button>
+                    <button id="btn-admin-logout">Đăng xuất</button>
                 </div>
             </nav>
         </div>
-        <div class= "border">
-        <div class="account-table">
-            <div class="table-wapper">
-                <table class="table-block">
+
+        <div id= "admin-table-section">
+            <div id="admin-table-wapper">
+                <table id="admin-table-content">
                     <thead>
-                        <th class="table-header">Mã đơn</th>
-                        <th class="table-header">Khách hàng</th>
-                        <th class="table-header">Ngày mua</th>
-                        <th class="table-header">Tổng tiền</th>
-                        <th class="table-header">Liên lạc</th>
-                        <th class="table-header">Tình trạng</th>
-                        <th class="table-header">Chỉnh sửa</th> 
+                        <th class="admin-table-header">Mã đơn</th>
+                        <th class="admin-table-header">Khách hàng</th>
+                        <th class="admin-table-header">Ngày mua</th>
+                        <th class="admin-table-header">Tổng tiền</th>
+                        <th class="admin-table-header">Liên lạc</th>
+                        <th class="admin-table-header">Tình trạng</th>
+                        <th class="admin-table-header">Địa chỉ</th>
+                        <th class="admin-table-header">Chỉnh sửa</th> 
                     </thead>
                     <tbody>
                         {{#each orders}}
                             <tr>
-                                <td class="table-content-col">{{this.order_id}}</td>
-                                <td class="table-content-col">{{this.name}}</td>
-                                <td class="table-content-col">{{this.created_at}}</td>
-                                <td class="table-content-col">{{this.total}}</td>
-                                <td class="table-content-col">{{this.phone}}</td>
-                                <td class="table-content-col">{{this.status}}</td>
-                                <td class="table-content-col">
+                                <td class="admin-table-td">{{this.order_id}}</td>
+                                <td class="admin-table-td">{{this.name}}</td>
+                                <td class="admin-table-td">{{this.created_at}}</td>
+                                <td class="admin-table-td">{{this.total}}</td>
+                                <td class="admin-table-td">{{this.phone}}</td>
+                                <td class="admin-table-td">{{this.status}}</td>
+                                <td class="admin-table-td">{{this.address}}</td>
+                                <td class="admin-table-td">
+                                <a class="update-data" href="/admin/editOrder/{{this.order_id}}">
                                     <i class="fa-solid fa-pen-to-square fa-xl btn-admin-change"></i>
+                                </a>
+                                <a class="update-data"> 
                                     <i class="fa-solid fa-trash fa-xl btn-admin-del"></i>
+                                </a>
                                 </td>
                             </tr>
                         {{/each}}
                 </table>
-            </div>
             </div>
         </div>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const logoutButton = document.querySelector('.btn-logout');
+    const logoutButton = document.getElementById('#btn-admin-logout');
     if (logoutButton) {
         logoutButton.addEventListener('click', function() {
-            window.location.href = '/'; 
+            window.location.href = '/login'; 
         });
     }
 });
 
+document.addEventListener("click", function(event) {
+  if (event.target.classList.contains('btn-admin-del')) {
+    const parentRow = event.target.closest('tr');
+    const orderId = parentRow.querySelector('.admin-table-td').textContent;
+
+    const confirmation = confirm(`Bạn có muốn xóa đơn hàng ${orderId} không ?`);
+
+    if (confirmation) {
+      fetch(`/admin/deleteOrder/${orderId}`, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+        window.location.reload();
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  }
+});
+
 </script>
+

@@ -21,6 +21,53 @@ const config = {
   },
 };
 
+async function getOrderById(id) {
+  try {
+    await mssql.connect(config);
+    const request = new mssql.Request();
+    const result = await request.input('orderID', mssql.NVarChar(50), id)
+                                .query(`SELECT * FROM [dbo].[order] WHERE order_id = @orderID`);
+ 
+    const order = result.recordset[0];
+    //console.log('test',order);
+    return order;
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function changeOrderById(changeInfo) {
+  try {
+
+    const newInfo = {
+      id: changeInfo.id,
+      name: changeInfo.name,
+      status: changeInfo.status,
+      address: changeInfo.address
+    }
+    //console.log('tedt',newInfo);
+    await mssql.connect(config);
+    const request = new mssql.Request();
+
+    request.input('id', mssql.Int, newInfo.order_id);
+    request.input('name', mssql.NVarChar(50), newInfo.name);
+    request.input('status', mssql.NVarChar(50), newInfo.status);
+    request.input('address', mssql.NVarChar(500), newInfo.address);
+    
+    const result = await request.query(`
+      UPDATE [dbo].[order] 
+      SET name = @name,
+        status = @status, 
+        address = @address 
+      WHERE order_id = @id`);
+    
+      return result;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function getOrders() {
   try {
     await mssql.connect(config);
@@ -58,7 +105,7 @@ async function getUsers() {
   try {
     await mssql.connect(config);
     const request = new mssql.Request();
-    const result = await request.query("SELECT * FROM [dbo].[user]");
+    const result = await request.query(`SELECT * FROM [dbo].[user]`);
 
     const users = result.recordset;
     
@@ -70,8 +117,7 @@ async function getUsers() {
 
 async function insertProduct(dataform) {
   try {
-    // Lấy những data cần thiết và xử lý dữ liệu nhập
-    //console.log(dataform.description);
+
     const sizeS = parseInt(dataform.sizeS);
     const sizeM = parseInt(dataform.sizeM);
     const sizeL = parseInt(dataform.sizeL);
@@ -101,8 +147,6 @@ async function insertProduct(dataform) {
       img: img,
       sub_img: sub_img
     }
-    
-    console.log(newProduct);
 
     await mssql.connect(config);
     const request = new mssql.Request();
@@ -122,18 +166,125 @@ async function insertProduct(dataform) {
     VALUES (@id, @name, @category, @price, @amount, @size, @modified_at, @description, @img, @sub_img)
     `);
     
-    /* 
-    const result = await request.query(`
-      INSERT INTO [dbo].[product] (id, name, category, price, amount, size, modified_at, description, img, sub_img)
-      VALUES ('${newProduct.id}', '${newProduct.name}', '${newProduct.category}', '${newProduct.price}', '${newProduct.amount}', 
-      '${newProduct.size}', '${new Date().toLocaleDateString()}', '${newProduct.description}', '${newProduct.img}', '${newProduct.sub_img}')`), {
-      });*/
-    
     return result;
 
   } catch (error) {
     console.log(error);
     throw error;
+  }
+}
+
+async function deleteProduct(productId) {
+  try {
+    await mssql.connect(config);
+    const request = new mssql.Request();
+    
+    const result = await request.query(`
+      DELETE FROM [dbo].[product] WHERE id = '${productId}'`);
+
+    return true;
+  } catch (error) {
+    throw new Error('Không thể xóa sản phẩm !');
+  }
+}
+
+async function deleteOrder(orderId) {
+  try {
+    await mssql.connect(config);
+    const request = new mssql.Request();
+    
+    const result = await request.query(`
+      DELETE FROM [dbo].[order] WHERE order_id = '${orderId}'`);
+    
+    return true;
+  } catch (error) {
+    throw new Error('Không thể xóa sản phẩm !');
+  }
+}
+
+async function getProductById(id) {
+  try {
+    await mssql.connect(config);
+    const request = new mssql.Request();
+    //console.log('test',id);
+    const result = await request.input('productId', mssql.NVarChar(50), id)
+                                .query(`SELECT * FROM [dbo].[product] WHERE id = @productId`);
+    console.log(result);
+    if (result.recordset.length > 0) {
+      const product = result.recordset[0];
+      const size_parse = JSON.parse(product.size);
+
+      product.sizeS = size_parse.S;
+      product.sizeM = size_parse.M;
+      product.sizeL = size_parse.L;
+      product.sizeXL = size_parse.XL;
+      product.sizeXXL = size_parse.XXL;
+
+      console.log(product);
+      return product;
+
+    } else {
+      console.log(`Không tìm thấy sản phẩm: ${id}`);
+      return null; 
+    }
+  } catch (error) {
+    console.log('Không thể truy cập', error);
+    throw error; 
+  }
+}
+
+async function changeProductById(changeInfo) {
+  try {
+    const sizeS = parseInt(changeInfo.sizeS);
+    const sizeM = parseInt(changeInfo.sizeM);
+    const sizeL = parseInt(changeInfo.sizeL);
+    const sizeXL = parseInt(changeInfo.sizeXL);
+    const sizeXXL = parseInt(changeInfo.sizeXXL);
+
+    const amount = sizeS + sizeM + sizeL + sizeXL + sizeXXL;
+    const size = {
+      "S": sizeS,
+      "M": sizeM,
+      "L": sizeL,
+      "XL": sizeXL,
+      "XXL": sizeXXL
+    };
+
+    const newInfo = {
+      id: changeInfo.id, 
+      name: changeInfo.name, 
+      price: parseInt(changeInfo.price), 
+      amount: amount, 
+      size: JSON.stringify(size), 
+      modified_at: new Date().toLocaleDateString(), 
+      description: changeInfo.description 
+    };
+    console.log('test',newInfo);
+    await mssql.connect(config);
+    const request = new mssql.Request();
+  
+    request.input('id', mssql.NVarChar(50), newInfo.id);
+    request.input('name', mssql.NVarChar(100), newInfo.name);
+    request.input('price', mssql.Int, newInfo.price);
+    request.input('amount', mssql.Int, newInfo.amount);
+    request.input('size', mssql.NVarChar(50), newInfo.size);
+    request.input('modified_at', mssql.Date, newInfo.modified_at);
+    request.input('description', mssql.NVarChar(650), newInfo.description);
+    
+    const result = await request.query(`
+      UPDATE [dbo].[product] 
+      SET name = @name,
+        price = @price, 
+        amount = @amount,
+        size = @size,
+        modified_at = @modified_at,
+        description = @description 
+      WHERE id = @id`);
+
+    return result;
+
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -175,7 +326,6 @@ async function uploadImagetoAzure(folderImage) {
 
         await blockBlobClient.uploadFile(filePath, options);
 
-        //console.log(`Đã upload ${file} thành công.`);
       }
     }
   } catch (error) {
@@ -183,11 +333,18 @@ async function uploadImagetoAzure(folderImage) {
   }
 }
 
+  
 module.exports = {
+  getProductById,
   getOrders,
   getProducts,
   getUsers,
   getMulterStorage,
   insertProduct,
-  uploadImagetoAzure
+  uploadImagetoAzure,
+  changeProductById,
+  deleteProduct,
+  getOrderById,
+  changeOrderById,
+  deleteOrder
 }

@@ -52,6 +52,35 @@ class User {
       throw error;
     }
   }
+  static async updateUserProfile(username, profileDetails) {
+    try {
+      await mssql.connect(config);
+      const request = new mssql.Request();
+      request.input('username', mssql.VarChar, username);
+      
+      // Bạn cần chỉ định các trường cụ thể bạn muốn cập nhật, ví dụ như name, phone, etc.
+      // Đảm bảo rằng bạn đã thêm các trường này vào cơ sở dữ liệu của bạn
+      request.input('name', mssql.VarChar, profileDetails.name);
+      request.input('phone', mssql.VarChar, profileDetails.phone);
+      request.input('address', mssql.VarChar, profileDetails.address);
+      request.input('email', mssql.VarChar, profileDetails.email);
+
+      await request.query(`
+        UPDATE [dbo].[user] 
+        SET 
+          name = @name, 
+          phone = @phone, 
+          address = @address, 
+          email = @email
+        WHERE username = @username
+      `);
+
+      return true;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
 }  
 
 module.exports = User;

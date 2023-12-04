@@ -9,7 +9,7 @@
     </div>
     <div class="list-product">
         {{#each products as |item index|}}
-        <div class="product">
+        <div class="product_payment">
             <div class="c0">{{indexAddOne index}}</div>
             <div class="c1">
                 <img class="cart_list_item_img" src="{{this.image}}" alt="Áo thun">
@@ -73,8 +73,9 @@
                             </div>
                         </div>
                         <div class="row">
+                            <input class="closeBtn btn" value="Hủy">                            
                             <input class="saveBtn btn" type="submit" value="Lưu">
-                            <input class="closeBtn btn" value="Hủy">
+
                         </div>
                     </form>
                 </div>
@@ -82,16 +83,18 @@
         </div>
     </div>
     <h2 class="title">Vận chuyển</h2>
-    <div class="transport">
-        <div class="t1"><span class="trans-comp">Đơn vị vận chuyển: </span></div>
-        <div class="t2">
-            <div id="trans-comp-name"></div>
-            <div class="pred">
-                <span id="trans-expect-delivery"></span>
+    <div class="transport_wrap">
+        <div class="transport">
+            <div class="t1"><span class="trans-comp">Đơn vị vận chuyển: </span></div>
+            <div class="t2">
+                <div id="trans-comp-name"></div>
+                <div class="pred">
+                    <span id="trans-expect-delivery"></span>
+                </div>
             </div>
+            <div class="t3" id="trans-price"></div>
+            <div class="t4"><button class="btn-change1" id="changeTransBtn">Thay đổi</button></div>
         </div>
-        <div class="t3" id="trans-price"></div>
-        <div class="t4"><button class="btn-change1" id="changeTransBtn">Thay đổi</button></div>
     </div>
     <form id="changeTrans" class="trans-info">
         <!-- Modal content -->
@@ -110,8 +113,8 @@
                 <div class="transTime">(Dự kiến 1-2 ngày)</div>
             </div>
             <div class="row">
+                <input class="closeTransBtn" type="submit" value="Huỷ">                
                 <input class="saveTransBtn" type="submit" value="Lưu">
-                <input class="closeTransBtn" type="submit" value="Huỷ">
             </div>
         </div>
     </form>
@@ -121,32 +124,97 @@
         <!-- Modal content -->
         <div class="trans-content">
             <h2>Đặt hàng thành công</h2>
-            <label style="margin: 20px 0"> Đơn hàng đã được đặt thành công. Hãy chú ý điện thoại để nhận hàng </label>
+            {{!-- <label style="margin: 20px 0"> Đơn hàng đã được đặt thành công. Hãy chú ý điện thoại để nhận hàng </label> --}}
             <div class="row">
-                <a href="/" class="btn">OK</a>
+                <a href="/payment/detail/" class="btn">OK</a>
             </div>
         </div>
     </form>
 
-    <h2 class="title">Phương thức thanh toán</h2>
-    <div class="payment-method">
-        <div class="checkbox-group">
-            <input type="radio" id="COD" name="payment_method" value="COD">
-            <label for="COD"> Thanh toán khi nhận hàng (COD)
-                <img class='icon' src="/assets/css/icon/fontawesome-free-6.4.2-web/svgs/regular/money-bill-1.svg"
-                    width=40 height=25>
-            </label><br>
-            <input type="radio" id="Credit-card" name="payment_method" value="Credit-card">
-            <label for="Credit-card"> Thanh toán qua thẻ ngân hàng
-                <img class='icon' src="/assets/css/icon/fontawesome-free-6.4.2-web/svgs/regular/credit-card.svg"
-                    width=40 height=25>
-            </label><br>
-            <input type="radio" id="MoMo-EWallet" name="payment_method" value="MoMo-EWallet">
-            <label for="MoMo-EWallet"> Thanh toán qua ví MoMo
-                <img class='icon'
-                    src="https://developers.momo.vn/v3/assets/images/square-logo-f8712a4d5be38f389e6bc94c70a33bf4.png"
-                    width=45 height=40>
-            </label><br><br>
+    <div class="payment_method_wrap">
+        <h2 class="title">Phương thức thanh toán</h2>
+        <div class="payment-method">
+            <div class="checkbox-group">
+                <div class="methods-option">
+                    <input type="radio" id="COD" name="payment_method" value="COD">
+                    <label for="COD"> Thanh toán khi nhận hàng (COD)</label>
+                    <svg class="payment-method-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <title>70 Basic icons by Xicons.co</title>
+                        <rect x="1" y="7" width="46" height="32" rx="2" ry="2" fill="#4dbe86" />
+                        <path d="M24,15a7,7,0,1,0,7,7A7,7,0,0,0,24,15Zm0,10a3,3,0,1,1,3-3A3,3,0,0,1,24,25Z" fill="#b7e4ce" />
+                        <path d="M42,14H34a1,1,0,0,1,0-2h8A1,1,0,0,1,42,14Z" fill="#b7e4ce" />
+                        <path d="M42,35H34a1,1,0,0,1,0-2h8A1,1,0,0,1,42,35Z" fill="#b7e4ce" />
+                        <path d="M14,14H6a1,1,0,0,1,0-2h8A1,1,0,0,1,14,14Z" fill="#b7e4ce" />
+                        <path d="M14,35H6a1,1,0,0,1,0-2h8A1,1,0,0,1,14,35Z" fill="#b7e4ce" />
+                    </svg>
+                </div>
+        
+                <div class="methods-option">
+                    <input type="radio" id="Credit-card" name="payment_method" value="Credit-card">
+                    <label for="Credit-card"> Thanh toán qua thẻ ngân hàng</label>
+                    <svg class="payment-method-icon" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                        xml:space="preserve">
+                        <g>
+                            <rect x="2" y="20" fill="#506C7F" width="60" height="8" />
+                            <g>
+                                <path fill="#B4CCB9" d="M2,52c0,1.104,0.896,2,2,2h56c1.104,0,2-0.896,2-2V30H2V52z" />
+                                <path fill="#B4CCB9" d="M60,10H4c-1.104,0-2,0.895-2,2v6h60v-6C62,10.895,61.104,10,60,10z" />
+                            </g>
+                            <path fill="#394240" d="M60,8H4c-2.211,0-4,1.789-4,4v40c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V12C64,9.789,62.211,8,60,8z
+                                		 M62,52c0,1.104-0.896,2-2,2H4c-1.104,0-2-0.896-2-2V30h60V52z M62,28H2v-8h60V28z M62,18H2v-6c0-1.105,0.896-2,2-2h56
+                                		c1.104,0,2,0.895,2,2V18z" />
+                            <path fill="#394240"
+                                d="M11,40h14c0.553,0,1-0.447,1-1s-0.447-1-1-1H11c-0.553,0-1,0.447-1,1S10.447,40,11,40z" />
+                            <path fill="#394240"
+                                d="M29,40h6c0.553,0,1-0.447,1-1s-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1S28.447,40,29,40z" />
+                            <path fill="#394240"
+                                d="M11,46h10c0.553,0,1-0.447,1-1s-0.447-1-1-1H11c-0.553,0-1,0.447-1,1S10.447,46,11,46z" />
+                            <path fill="#394240" d="M45,46h8c0.553,0,1-0.447,1-1v-6c0-0.553-0.447-1-1-1h-8c-0.553,0-1,0.447-1,1v6C44,45.553,44.447,46,45,46
+                                		z M46,40h6v4h-6V40z" />
+                            <rect x="46" y="40" fill="#F9EBB2" width="6" height="4" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="methods-option">
+                    <input type="radio" id="MoMo-EWallet" name="payment_method" value="MoMo-EWallet">
+                    <label for="MoMo-EWallet"> Thanh toán qua ví MoMo</label>
+                    <svg class="payment-method-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="jsx-265efa4f963d66f6 mx-auto block h-9 w-9">
+                        <path
+                            d="M0 8C0 3.58172 3.58172 0 8 0H64C68.4183 0 72 3.58172 72 8V64C72 68.4183 68.4183 72 64 72H8C3.58172 72 0 68.4183 0 64V8Z"
+                            fill="#A50064" class="jsx-265efa4f963d66f6"></path>
+                        <path
+                            d="M51.859 10C45.6394 10 40.5057 15.0349 40.5057 21.3533C40.5057 27.5729 45.5407 32.7065 51.859 32.7065C58.0786 32.7065 63.2123 27.6716 63.2123 21.3533C63.2123 15.1337 58.1774 10 51.859 10ZM51.859 26.1908C49.1935 26.1908 47.0215 24.0188 47.0215 21.3533C47.0215 18.6877 49.1935 16.5158 51.859 16.5158C54.5246 16.5158 56.6965 18.6877 56.6965 21.3533C56.6965 24.0188 54.5246 26.1908 51.859 26.1908Z"
+                            fill="white" class="jsx-265efa4f963d66f6"></path>
+                        <path
+                            d="M28.7576 10C26.8818 10 25.1048 10.5923 23.6239 11.6783C22.2418 10.5923 20.4648 10 18.4903 10C13.7515 10 10 13.8502 10 18.4903V32.7065H16.5158V18.4903C16.5158 17.4043 17.4043 16.6145 18.3915 16.6145C19.4775 16.6145 20.2673 17.503 20.2673 18.4903V32.7065H26.7831V18.4903C26.7831 17.4043 27.6716 16.6145 28.6589 16.6145C29.7448 16.6145 30.5346 17.503 30.5346 18.4903V32.7065H37.0504V18.589C37.2479 13.8502 33.4963 10 28.7576 10Z"
+                            fill="white" class="jsx-265efa4f963d66f6"></path>
+                        <path
+                            d="M51.859 37.6427C45.6394 37.6427 40.5057 42.6776 40.5057 48.996C40.5057 55.2156 45.5407 60.3492 51.859 60.3492C58.0786 60.3492 63.2123 55.3143 63.2123 48.996C63.2123 42.6776 58.1774 37.6427 51.859 37.6427ZM51.859 53.7347C49.1935 53.7347 47.0215 51.5628 47.0215 48.8972C47.0215 46.2317 49.1935 44.0598 51.859 44.0598C54.5246 44.0598 56.6965 46.2317 56.6965 48.8972C56.6965 51.6615 54.5246 53.7347 51.859 53.7347Z"
+                            fill="white" class="jsx-265efa4f963d66f6"></path>
+                        <path
+                            d="M28.7576 37.6427C26.8818 37.6427 25.1048 38.235 23.6239 39.321C22.2418 38.235 20.4648 37.6427 18.4903 37.6427C13.7515 37.6427 10 41.4929 10 46.133V60.3492H16.5158V46.0342C16.5158 44.9483 17.4043 44.1585 18.3915 44.1585C19.4775 44.1585 20.2673 45.047 20.2673 46.0342V60.2505H26.7831V46.0342C26.7831 44.9483 27.6716 44.1585 28.6589 44.1585C29.7448 44.1585 30.5346 45.047 30.5346 46.0342V60.2505H37.0504V46.133C37.2479 41.3942 33.4963 37.6427 28.7576 37.6427Z"
+                            fill="white" class="jsx-265efa4f963d66f6"></path>
+                        <path
+                            d="M0 8C0 3.58172 3.58172 0 8 0H64C68.4183 0 72 3.58172 72 8V64C72 68.4183 68.4183 72 64 72H8C3.58172 72 0 68.4183 0 64V8Z"
+                            fill="#A50064" class="jsx-265efa4f963d66f6"></path>
+                        <path
+                            d="M51.859 10C45.6394 10 40.5057 15.0349 40.5057 21.3533C40.5057 27.5729 45.5407 32.7065 51.859 32.7065C58.0786 32.7065 63.2123 27.6716 63.2123 21.3533C63.2123 15.1337 58.1774 10 51.859 10ZM51.859 26.1908C49.1935 26.1908 47.0215 24.0188 47.0215 21.3533C47.0215 18.6877 49.1935 16.5158 51.859 16.5158C54.5246 16.5158 56.6965 18.6877 56.6965 21.3533C56.6965 24.0188 54.5246 26.1908 51.859 26.1908Z"
+                            fill="white" class="jsx-265efa4f963d66f6"></path>
+                        <path
+                            d="M28.7576 10C26.8818 10 25.1048 10.5923 23.6239 11.6783C22.2418 10.5923 20.4648 10 18.4903 10C13.7515 10 10 13.8502 10 18.4903V32.7065H16.5158V18.4903C16.5158 17.4043 17.4043 16.6145 18.3915 16.6145C19.4775 16.6145 20.2673 17.503 20.2673 18.4903V32.7065H26.7831V18.4903C26.7831 17.4043 27.6716 16.6145 28.6589 16.6145C29.7448 16.6145 30.5346 17.503 30.5346 18.4903V32.7065H37.0504V18.589C37.2479 13.8502 33.4963 10 28.7576 10Z"
+                            fill="white" class="jsx-265efa4f963d66f6"></path>
+                        <path
+                            d="M51.859 37.6427C45.6394 37.6427 40.5057 42.6776 40.5057 48.996C40.5057 55.2156 45.5407 60.3492 51.859 60.3492C58.0786 60.3492 63.2123 55.3143 63.2123 48.996C63.2123 42.6776 58.1774 37.6427 51.859 37.6427ZM51.859 53.7347C49.1935 53.7347 47.0215 51.5628 47.0215 48.8972C47.0215 46.2317 49.1935 44.0598 51.859 44.0598C54.5246 44.0598 56.6965 46.2317 56.6965 48.8972C56.6965 51.6615 54.5246 53.7347 51.859 53.7347Z"
+                            fill="white" class="jsx-265efa4f963d66f6"></path>
+                        <path
+                            d="M28.7576 37.6427C26.8818 37.6427 25.1048 38.235 23.6239 39.321C22.2418 38.235 20.4648 37.6427 18.4903 37.6427C13.7515 37.6427 10 41.4929 10 46.133V60.3492H16.5158V46.0342C16.5158 44.9483 17.4043 44.1585 18.3915 44.1585C19.4775 44.1585 20.2673 45.047 20.2673 46.0342V60.2505H26.7831V46.0342C26.7831 44.9483 27.6716 44.1585 28.6589 44.1585C29.7448 44.1585 30.5346 45.047 30.5346 46.0342V60.2505H37.0504V46.133C37.2479 41.3942 33.4963 37.6427 28.7576 37.6427Z"
+                            fill="white" class="jsx-265efa4f963d66f6"></path>
+        
+                    </svg>
+                </div>
+            </div>
         </div>
     </div>
     <div class="total">
@@ -176,7 +244,7 @@
             <div class="trans-content">
                 <h2>Xác nhận đặt hàng</h2>
                 <div class="col-30">
-                    <label>Xác nhận rằng bạn muốn đặt đơn hàng này</label>
+                    {{!-- <label>Xác nhận rằng bạn muốn đặt đơn hàng này</label> --}}
                 </div>
                 <div class="row">
                     <input class="confirmOrder" type="submit" value="Xác nhận">

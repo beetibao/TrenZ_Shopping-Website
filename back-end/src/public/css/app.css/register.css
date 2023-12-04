@@ -1,0 +1,223 @@
+*{box-sizing: border-box}
+div {
+  display: block;
+}
+/* decorate page content*/
+.d-block h1, .d-block h2  {
+  font-family: 'Kanit',sans-serif;
+}
+.page-content-account{
+  font-family: 'Lato',sans-serif;
+  color: black;
+  background-image: linear-gradient(to bottom,lightblue ,aqua);
+  background-size: cover;
+  padding: 50px 0;
+  height: 750px;
+}
+.page-content-account .d-group {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  padding: 40px 0;
+  background: #FFF;
+  max-width: 100%;
+  font-size: 16px;
+  font-family: 'Kanit',sans-serif;
+}
+
+.page-content-account .group-reg{
+  background: #fff ;
+  height: 600px;
+  width: 100%;
+  padding: 0 80px;
+    padding-top: 0px;
+    padding-left: 80px;
+    padding-bottom: 0px;
+    padding-right: 80px;
+  border-right: 1px solid #dde1ef;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(221,225,239);
+  text-align: center;
+}
+
+
+/* decorate register container */
+.container {
+  max-width: 720px;
+  width: 100%;
+  display: block;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container, .container-fluid {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* decorate form box*/
+.group-log form, .group-reg form {
+  display: block;
+  margin-top: 2em;
+}
+.form-group {
+  margin: 0;
+  padding: 0 10px 8px;
+  border: 0;
+}
+.form-group .form-control {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
+  background-image: none;
+  margin-bottom: 15px;
+  border: 1px solid #EAEBF3;
+  box-shadow: none;
+  border-radius: 3px;
+}
+fieldset {
+  display: block;
+  position: relative;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  padding-block-start: 0.35em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-block-end: 0.625em;
+  min-inline-size: min-content;
+  border-width: 2px;
+  border-style: groove;
+  border-color: rgb(192, 192, 192);
+  border-image: initial;
+}
+.page-content-account fieldset .showpass {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 14px;
+  right: 20px;
+  background-image: url('/icon/fontawesome-free-6.4.2-web/svgs/regular/eye-slash.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.page-content-account fieldset .hidded {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 14px;
+  right: 20px;
+  background-image: url('/icon/fontawesome-free-6.4.2-web/svgs/regular/eye.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.page-content-account .group-log .forgot-pass{
+  margin-top: 12px;
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.page-content-account .group-log .forgot >a:hover{
+  text-decoration: underline;
+}
+.page-content-account .group-reg  .btn-login, .page-content-account .group-reg  .btn-reg{
+  display: inline;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  color: white;
+  background: var(--primary-color);
+  border: none;
+  font-family: 'Lato',sans-serif;
+  font-size: 20px;
+  border-radius: 25px;
+}
+button, input[type="submit"] {
+  cursor: pointer;
+}
+.mb {
+  margin-bottom: 3rem !important;
+}
+.page-signup-text {
+  color: #595959;
+  font-size: 20px;
+}
+.page-signup-title {
+  font-weight: 700;
+  font-family: 'Lato Bold',sans-serif;
+  padding: 10px 0;
+}
+
+.page-signup-title-blue {
+  color: var(--primary-color) !important;
+}
+
+.page-signup-title-darkblue {
+  color: #151560 !important;
+}
+
+.page-signup-error {
+  margin-bottom: 24px !important;
+  text-align: left;
+}
+
+.page-signup-field-error {
+  border: 1px solid #F5222D !important;
+}
+
+.page-signup-error * {
+  color: #F5222D !important;
+}
+
+.page-signup-actions {
+  margin-bottom: 36px;
+}
+
+.bg-white{
+  background-color: #FFF;
+}
+
+.page-content-account .regi-log {
+  margin: 30px;
+  color: var(--primary-color);
+  font-weight: 300;
+  font-size: 20px;
+}
+.page-content-account .regi-log > a {
+  color: var(--primary-color) !important;
+  font-weight: 500;
+  height: unset !important;
+  text-decoration: none;
+}
+
+.page-content-account .regi-log > a:hover {
+  text-decoration: underline;
+} 
+
+.page-content-account .regi-log > span {
+  color: var(--black-color);
+  font-weight: 400;
+}
+
+.page-signup-loading {
+  position: fixed;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}

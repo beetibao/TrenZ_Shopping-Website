@@ -16,19 +16,19 @@ const transPrice = document.getElementById("trans-price");
 const DISCOUNT = 25000;
 
 let transportComp = {
-  id: 'ghn',
-  name: 'Giao hàng nhanh',
-  expectDelivery: '(Dự kiến 3-5 ngày)',
+  id: "ghn",
+  name: "Giao hàng nhanh",
+  expectDelivery: "(Dự kiến 3-5 ngày)",
   price: 50100,
-}
+};
 
-if(transName) {
+if (transName) {
   transName.innerText = transportComp.name;
 }
-if(transDelivery) {
+if (transDelivery) {
   transDelivery.innerText = transportComp.expectDelivery;
 }
-if(transPrice) {
+if (transPrice) {
   transPrice.innerText = `${transportComp.price} đ`;
 }
 
@@ -36,181 +36,182 @@ let userInfo = {
   fullName: null,
   phone: null,
   address: null,
-}
+};
 
-if(changeBtn) {
-  changeBtn.onclick = function() {
+if (changeBtn) {
+  changeBtn.onclick = function () {
     modalInfo.style.display = "block";
-  }
+  };
 }
 
-if(closeBtn) {
-  closeBtn.onclick = function() {
+if (closeBtn) {
+  closeBtn.onclick = function () {
     modalInfo.style.display = "none";
-  }
+  };
 }
 
-if(paymentInfoForm) {
-  paymentInfoForm.addEventListener('submit', (e) => {
+if (paymentInfoForm) {
+  paymentInfoForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const fullName = document.getElementById('fullName').value;
-    const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
-    const email = document.getElementById('email').value;
+    const fullName = document.getElementById("fullName").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+    const email = document.getElementById("email").value;
 
     userInfo = {
       fullName,
       phone,
       address,
-      email
-    }
+      email,
+    };
 
     cusName.innerText = fullName;
     cusPhone.innerText = phone;
     cusAddress.innerText = address;
     modalInfo.style.display = "none";
-  })
+  });
 }
 
-if(changeTransForm) {
-  changeTransForm.addEventListener('submit', (e) => {
+if (changeTransForm) {
+  changeTransForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    
-    const ghn = document.getElementById('GHN');
-    const ghtk = document.getElementById('GHTK');
 
-    if(ghn.checked) {
+    const ghn = document.getElementById("GHN");
+    const ghtk = document.getElementById("GHTK");
+
+    if (ghn.checked) {
       transportComp = {
-        id: 'ghn',
-        name: 'Giao hàng nhanh',
-        expectDelivery: '(Dự kiến 3-5 ngày)',
+        id: "ghn",
+        name: "Giao hàng nhanh",
+        expectDelivery: "(Dự kiến 3-5 ngày)",
         price: 50100,
-      }
+      };
     }
 
-    if(ghtk.checked) {
+    if (ghtk.checked) {
       transportComp = {
-        id: 'ghtk',
-        name: 'Giao hàng tiết kiệm',
-        expectDelivery: '(Dự kiến 2-3 ngày)',
+        id: "ghtk",
+        name: "Giao hàng tiết kiệm",
+        expectDelivery: "(Dự kiến 2-3 ngày)",
         price: 60000,
-      }
+      };
     }
 
-    if(transName) {
+    if (transName) {
       transName.innerText = transportComp.name;
     }
-    if(transDelivery) {
+    if (transDelivery) {
       transDelivery.innerText = transportComp.expectDelivery;
     }
-    if(transPrice) {
+    if (transPrice) {
       transPrice.innerText = `${transportComp.price} đ`;
     }
 
-    if(transFeeEl) {
-      transFeeEl.innerText = `${transportComp.price}đ`
+    if (transFeeEl) {
+      transFeeEl.innerText = `${transportComp.price}đ`;
     }
 
-    const discountEl = document.getElementById('discount');
-    if(discountEl) {
+    const discountEl = document.getElementById("discount");
+    if (discountEl) {
       discountEl.innerText = `-${DISCOUNT}đ`;
     }
-    const sumOfProductsEl = document.getElementById('sum-of-prod');
-    const finalTotalEl = document.getElementById('sum');
-    const sumOfProducts = parseInt(sumOfProductsEl.innerText.split('đ')[0]);
-    if(!isNaN(sumOfProducts)) {
-      const finalTotal = sumOfProducts - transportComp.price - DISCOUNT;
+    const sumOfProductsEl = document.getElementById("sum-of-prod");
+    const finalTotalEl = document.getElementById("sum");
+    const sumOfProducts = parseInt(sumOfProductsEl.innerText.split("đ")[0]);
+    if (!isNaN(sumOfProducts)) {
+      const finalTotal = sumOfProducts + transportComp.price - DISCOUNT;
 
       finalTotalEl.innerText = `${finalTotal} đ`;
     }
 
     transInfo.style.display = "none";
-  })
+  });
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modalInfo) {
     modalInfo.style.display = "none";
   }
-}
+};
 // Change transport company
 var transInfo = document.getElementById("changeTrans");
 var changeTransBtn = document.getElementById("changeTransBtn");
 var closeTransBtn = document.getElementsByClassName("closeTransBtn")[0];
-if(changeTransBtn) {
-  changeTransBtn.onclick = function() {
+if (changeTransBtn) {
+  changeTransBtn.onclick = function () {
     transInfo.style.display = "block";
-  }
+  };
 }
 
-if(closeTransBtn) {
-  closeTransBtn.onclick = function() {
+if (closeTransBtn) {
+  closeTransBtn.onclick = function () {
     transInfo.style.display = "none";
-  }
+  };
 }
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == transInfo) {
     transInfo.style.display = "none";
   }
-}
+};
 
 // Confirm Order
 var confirmOrder = document.getElementById("confirmPlaceOrder");
 var cancelOrderBtn = document.getElementsByClassName("cancelOrder")[0];
 const orderConfirmedForm = document.getElementById("orderConfirmed");
-const closeOrderConfirmedBtn = document.getElementById("closeOrderConfirmedBtn");
+const closeOrderConfirmedBtn = document.getElementById(
+  "closeOrderConfirmedBtn"
+);
 
-if(closeOrderConfirmedBtn) {
+if (closeOrderConfirmedBtn) {
   closeOrderConfirmedBtn.addEventListener((e) => {
     e.preventDefault();
     orderConfirmedForm.style.display = "none";
 
     window.location.href = location.hostname;
-  })
-  
+  });
 }
 let selectedMethod = null;
 
 const acceptOrder = () => {
   confirmOrder.style.display = "block";
-}
+};
 
-if(cancelOrderBtn) {
-  cancelOrderBtn.addEventListener('click', (e) => {
+if (cancelOrderBtn) {
+  cancelOrderBtn.addEventListener("click", (e) => {
     e.preventDefault();
     confirmOrder.style.display = "none";
-  })
+  });
 }
 
-if(confirmOrder) {
-  confirmOrder.addEventListener('submit', (e) => {
+if (confirmOrder) {
+  confirmOrder.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const cod = document.getElementById('COD');
-    const creditCard = document.getElementById('Credit-card');
-    const momo = document.getElementById('MoMo-EWallet');
+    const cod = document.getElementById("COD");
+    const creditCard = document.getElementById("Credit-card");
+    const momo = document.getElementById("MoMo-EWallet");
 
-    if(cod.checked) {
-      selectedMethod = 'cod';
+    if (cod.checked) {
+      selectedMethod = "Thanh toán khi nhận hàng (COD)";
     }
-    if(creditCard.checked) {
-      selectedMethod = 'creditCard';
+    if (creditCard.checked) {
+      selectedMethod = "Thanh toán qua thẻ ngân hàng";
     }
-    if(momo.checked) {
-      selectedMethod = 'momo';
+    if (momo.checked) {
+      selectedMethod = "Thanh toán qua ví MoMo";
     }
 
-    if(!cod.checked && !creditCard.checked && !momo.checked) {
+    if (!cod.checked && !creditCard.checked && !momo.checked) {
       return;
     }
 
-    const missingValue = Object.keys(userInfo).find(el => !userInfo[el]);
-    if(missingValue) {
+    const missingValue = Object.keys(userInfo).find((el) => !userInfo[el]);
+    if (missingValue) {
       return;
     }
 
-    const sumOfProductsEl = document.getElementById('sum-of-prod');
-    const sumOfProducts = parseInt(sumOfProductsEl.innerText.split('đ')[0]);
+    const sumOfProductsEl = document.getElementById("sum-of-prod");
+    const sumOfProducts = parseInt(sumOfProductsEl.innerText.split("đ")[0]);
 
     fetch("http://localhost:3000/payment/addPayment", {
       method: "POST",
@@ -222,36 +223,36 @@ if(confirmOrder) {
         phone: userInfo.phone,
         detail: transportComp.name,
         payment_method: selectedMethod,
-        status: "Đang vận chuyển",
+        status: "Đơn hàng đã đặt",
         created_at: new Date(),
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-    }).then(response => {
-      if(response.status === 200) { 
+    }).then((response) => {
+      if (response.status === 200) {
         confirmOrder.style.display = "none";
         orderConfirmedForm.style.display = "block";
       }
-    }) ;
+    });
   });
 }
 
 // Order
-const discountEl = document.getElementById('discount');
-if(discountEl) {
-  discountEl.innerText = `-${DISCOUNT}đ`
+const discountEl = document.getElementById("discount");
+if (discountEl) {
+  discountEl.innerText = `-${DISCOUNT}đ`;
 }
 
-const transFeeEl = document.getElementById('tranp-fee');
-if(transFeeEl) {
-  transFeeEl.innerText = `${transportComp.price}đ`
+const transFeeEl = document.getElementById("tranp-fee");
+if (transFeeEl) {
+  transFeeEl.innerText = `${transportComp.price}đ`;
 }
-const sumOfProductsEl = document.getElementById('sum-of-prod');
-const finalTotalEl = document.getElementById('sum');
-if(sumOfProductsEl) {
-  const sumOfProducts = parseInt(sumOfProductsEl.innerText.split('đ')[0]);
-  if(!isNaN(sumOfProducts)) {
+const sumOfProductsEl = document.getElementById("sum-of-prod");
+const finalTotalEl = document.getElementById("sum");
+if (sumOfProductsEl) {
+  const sumOfProducts = parseInt(sumOfProductsEl.innerText.split("đ")[0]);
+  if (!isNaN(sumOfProducts)) {
     const finalTotal = sumOfProducts - transportComp.price - DISCOUNT;
 
     finalTotalEl.innerText = `${finalTotal} đ`;

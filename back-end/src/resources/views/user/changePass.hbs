@@ -1,0 +1,50 @@
+<div class="account-information-container">
+    <section class="account-menu">
+        <div class="account-menu-header">
+            <i class="fa-solid fa-user" style="color: var(--primary-color); font-size: 10rem; padding-top: 10%; padding-bottom: 1%"></i>
+            <p style="font-weight: bold;">Lê Văn Khoa</p>
+        </div>
+        <div class="account-menu-detail">
+            <a href="/account"><i class="fa-regular fa-user" style="padding-right: 3%; font-size:2.5rem;"></i>Tài khoản của tôi</a>
+            <a href="/account/orderHistory"><i class="fa-regular fa-file-lines" style="padding-right: 3%; font-size:2.5rem;"></i>Lịch sử đơn hàng</a>
+            <a href="/account/changePassword"><i class="fa-solid fa-key" style="padding-right: 3%; font-size:2.5rem;"></i>Đổi mật khẩu</a>
+            <button class="btn-logout-acc">Đăng xuất</button>
+        </div>
+    </section>
+
+    <aside>
+        <h2 style="color: var(--primary-color)">Đổi mật khẩu</h2>
+        <div class="changing-account-password">
+            <form>
+                <div class="row">
+                    <div class="col-30">
+                        <label for="currPassword">Mật khẩu hiện tại:</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="password" id="currPassword" name="currPassword" placeholder="Mật khẩu hiện tại" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-30">
+                        <label for="newPassword">Mật khẩu mới:</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="password" id="newPassword" name="newPassword" placeholder="Mật khẩu mới" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-30">
+                        <label for="confirmNewPassword">Xác nhận mật khẩu mới:</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="Xác nhận mật khẩu mới" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <input class="Cancel-btn" value="Hủy">
+                    <input class="Accpt-change-btn" type="submit" value="Lưu">
+                </div>
+            </form>
+        </div>
+    </aside>
+</div>

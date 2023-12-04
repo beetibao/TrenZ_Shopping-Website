@@ -33,6 +33,10 @@
 .header_search{
     margin-left: 5rem;
 }
+.header_search form {
+    display: flex;
+    align-items: center;
+}
 .header_search_input{
     width: 500px;
     height: 40px;
@@ -46,6 +50,7 @@
     height: 40px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    margin-left: 0.2rem;
     background-color: var(--primary-color);
     cursor: pointer;
 }
@@ -65,7 +70,7 @@
     /* margin-bottom: 2rem;
     margin-right: 4rem;
     margin-left: 2rem; */
-    margin: 1.5rem 3rem;
+    margin: 0 3rem;
     padding-bottom: 1.5rem;
 }
 .navbar_menu_list{

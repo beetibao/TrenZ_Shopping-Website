@@ -29,9 +29,9 @@
                                 <td class="product_price">{{this.price}}đ</td>
                                 <td>
                                     <div class="cart_list_item_quantity">
-                                        <button class="cart_list_item_quantity_minus_btn">-</button>
+                                        <a href="/cart/update/{{this.id}}?action=minus" class="cart_list_item_quantity_minus_btn">-</a>
                                         <p class="cart_list_item_quantity_input">{{this.quantity}}</p>
-                                        <button class="cart_list_item_quantity_plus_btn">+</button>
+                                        <a href="/cart/update/{{this.id}}?action=plus" class="cart_list_item_quantity_plus_btn">+</a>
                                     </div>
                                 </td>
                                 <td class="product_total_price">{{this.totalprice}}đ</td>

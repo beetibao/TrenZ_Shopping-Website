@@ -1,0 +1,224 @@
+.account-information-container h2{
+    font-family: Kanit, sans-serif;
+}
+.account-information-container {
+    display: flex;
+    margin: 2rem;
+}
+/* Account menu setting */
+.account-information-container .account-menu{
+    display: block;
+    width: 22%;
+    font-size: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 1% 2%;
+    line-height: 2.5;
+}
+.account-menu .account-menu-detail a{
+    padding: 2% 0;
+    display: block;
+    margin: 0 3rem;
+    text-decoration: none;
+    color: black;
+}
+.account-menu .account-menu-detail a:hover{
+    border-radius: 5px;
+    color: var(--primary-color);
+    background-color: rgba(37, 150, 190,0.1);
+
+}
+.account-menu .account-menu-detail .btn-logout-acc{
+    margin: 30% 3rem 5%;
+    padding: 13px 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: 2rem;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+}
+.account-menu .account-menu-detail .btn-logout-acc:hover{
+    opacity: 50%;
+}
+/* Account aside setting */
+.account-information-container aside{
+    display: block;
+    width: 78%;
+    margin: 1% 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    line-height: 2;
+    font-size: 2rem;
+    padding: 0 3rem 0;
+}
+
+.account-information-container aside .btn-account-change{
+    float: right;
+    margin: 2rem 3rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+.account-information-container aside .btn-account-change:hover{
+    opacity: 50%;
+}
+
+/* edit account setting */
+.account-information-container aside .change-account-information{
+    display: block;
+    margin: 2rem;
+    align-items: center;
+}
+.account-information-container .change-account-information .row{
+    display: flex;
+    margin: 1% 0 2% 5%;
+    width: 100;
+}
+.account-information-container .change-account-information .row .col-30{
+    float: left;
+    width: 30%;
+}
+.account-information-container .change-account-information .row .col-70 {
+    float: left;
+    width: 70%;
+}
+
+.account-information-container aside .change-account-information .row .col-70 input{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 0 0 2% 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.8rem;
+}
+.account-information-container aside .change-account-information .row .Accpt-change-btn{
+    background-color: var(--primary-color);
+    color: white;
+    float: right;
+    width: 20%;
+    margin: 2% 10% 1% 0;
+    cursor: pointer;
+}
+.Accpt-change-btn:hover{    
+    opacity: 50%;
+}
+.account-information-container aside .change-account-information .row .Cancel-btn{
+    width: 20%;
+    background-color: rgba(0,112,192,.4);
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2rem;
+    float: right;
+    border: none;
+    margin: 2% 10% 1% 29%;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.account-information-container aside .change-account-information .row .Cancel-btn:hover{
+    background-color: red;
+}
+.account-information-container aside .change-account-information .row input[type=submit] {
+    padding: 12px 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* change password setting */
+.account-information-container aside .changing-account-password{
+    display: block;
+    border-top: 1px solid #ccc;
+    align-items: center;
+    padding-top: 3%;
+}
+.account-information-container .changing-account-password .row{
+    display: flex;
+    margin: 1% 0 2% 5%;
+    width: 100;
+}
+.account-information-container .changing-account-password .row .col-30{
+    float: left;
+    width: 30%;
+}
+.account-information-container .changing-account-password .row .col-70 {
+    float: left;
+    width: 70%;
+}
+
+.account-information-container aside .changing-account-password .row .col-70 input{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 0 0 2% 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.8rem;
+}
+.account-information-container aside .changing-account-password .row .Accpt-change-btn{
+    background-color: var(--primary-color);
+    color: white;
+    float: right;
+    width: 20%;
+    margin: 2% 10% 1% 0;
+    cursor: pointer;
+}
+.account-information-container aside .changing-account-password .row .Cancel-btn{
+    width: 20%;
+    background-color: rgba(0,112,192,.4);
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2rem;
+    float: right;
+    border: none;
+    font-weight: bold;
+    margin: 2% 10% 1% 29%;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.account-information-container aside .changing-account-password .row .Cancel-btn:hover{
+    background-color: red;
+}
+.account-information-container aside .changing-account-password .row input[type=submit] {
+    padding: 12px 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* order history setting */
+.account-information-container aside .order-history{
+    display: block;
+    border-top: 1px solid #ccc;
+    align-items: center;
+    padding-top: 3%;
+}
+.order-history-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.order-history-table tr th{
+    text-align: center;
+    padding: 1% 0;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    border-left: 2px solid white;
+}
+.oh-content td{
+    text-align: center;
+    padding: 1% 0;
+    font-size: 2rem;
+    border-left: 2px solid white;
+}

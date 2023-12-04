@@ -24,8 +24,7 @@
             <li><a href="/about">Về TrenZ</a></li>
         </ul>
         <div class="navbar_user">
-            {{!-- <a href=""><i class="navbar_btn fas fa-user"></i></a> --}}
-            <p class="login_user">{{username}}</p>
+            <p class="login_user"><a href="/account"><i class="navbar_btn fas fa-user"></i></a>  {{username}}</p>
             <p class="navbar_login_signup"> 
                 <a class="navbar_login" href="/login">Đăng nhập</a>
                 <a class="navbar_signup" href="/register">Đăng ký</a>
@@ -47,7 +46,7 @@
         const username = document.querySelector(".login_user");
         const navbar_login_signup = document.querySelector(".navbar_login_signup");
         username.style.display = 'none';
-        if(username.textContent != 'undefined' && username.textContent != ''){
+        if(username.textContent != 'undefined' && username.textContent != '  '){
             console.log(username.innerHTML);
             username.style.display = 'block';
             navbar_login_signup.style.display = 'none';

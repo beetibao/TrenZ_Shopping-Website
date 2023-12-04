@@ -13,7 +13,7 @@
     width: 100%;
     max-width: 300px;
     box-sizing: border-box;
-    border: 1px solid gray; 
+    border: 1px solid gray;
 }
 
 #admin-table-section{
@@ -23,6 +23,7 @@
     box-sizing: border-box;
     border: 1px solid gray; 
     border-radius: 8px;
+
 }
 
 .account-avatar {
@@ -168,6 +169,7 @@ nav .menu-items{
     text-align: center;
     width: max-content;
     /*white-space: nowrap;*/
+    line-height: 1.25;
     border: 1px solid #ffffff;
     font-size: 2rem;
     height: 60px;

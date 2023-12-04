@@ -33,8 +33,13 @@
 | 3 | [Lê Nguyễn Tiến Đạt](https://github.com/lenguyentiendat)| 20521167 | 20521167@gm.uit.edu.vn | Thành viên |
 | 4 | [Hoàng Đình Hữu](https://github.com/IvanDominis)| 20521384 | 20521384@gm.uit.edu.vn | Thành viên |
 | 5 | [Nguyễn Anh Dũng](https://github.com/NguyenDung278)| 20521209 | 20521209@gm.uit.edu.vn | Thành viên |
- 
+## HƯỚNG DẪN CÀI ĐẶT
+- Clone github này về bằng lệnh "git clone https://github.com/beetibao/TrenZ_Shopping-Website.git".
+- cd vào file back-end.
+- Ở terminal nhập lệnh "npm install nodemon".
+- Nhập lệnh "npm start" để chạy được lấy được link localhost "http://localhost:3000".
+- Sao chép đường dẫn "http://localhost:3000" và dán vào trình duyệt để chạy.
 ## ĐỒ ÁN MÔN HỌC
 <a name="doan"></a>
 + 📣**Đề tài**: TrenZ - Website bán sản phẩm thời trang.
-+ 📝**Báo cáo chi tiết**: [Report]()
++ 📝**Báo cáo chi tiết**: [Report](https://drive.google.com/file/d/1DRpnQ6fO9Vr57VV-qzwEjK8QKMlCSo38/view?usp=drive_link)

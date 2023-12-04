@@ -1,0 +1,87 @@
+<div id="admin-container-form">
+  <h1 id="form-name">SỬA THÔNG TIN ĐƠN HÀNG</h1>
+  <br>
+  <form id= "admin-form" method="post" action="/admin/updateOrder?_method=PUT" enctype="multipart/form-data">
+    <div class="form-row">
+      <label class="form-admin-label" for="id">Mã đơn</label>
+      <input type="text" id="id" placeholder="Nhập mã đơn" value = "{{order.order_id}}" name="id" class="admin-input-text" required readonly>
+    </div>
+                            
+    <div class="form-row">
+      <label class="form-admin-label" for="nameform">Tên khách hàng</label>
+      <input type="text" id="nameform" placeholder="Nhập tên khách hàng" value = "{{order.name}}" name="name" class="admin-input-text" required>
+    </div>
+
+    <div class="form-row">
+      <label class="form-admin-label" for="created_at">Ngày mua</label>
+      <input type="text" placeholder="Nhập ngày mua sản phẩm" value = "{{formatDate order.created_at}}" id="created_at" name="created_at" class="admin-input-text" required readonly>
+    </div>
+
+    <div class="form-row">
+      <label class="form-admin-label" for="total">Giá tiền</label>
+      <input type="number" placeholder="Nhập giá tiền" value = "{{order.total}}" id="total" name="total" class="admin-input-number" required readonly>
+    </div>
+
+    <div class="form-row">
+      <label class="form-admin-label" for="phone">Liên lạc</label>
+      <input type="text" placeholder="Nhập SĐT" value = "{{order.phone}}" id="phone" name="phone" class="admin-input-text" required>
+    </div>
+
+    <div class="form-row">
+      <label class="form-admin-label">Tình Trạng</label>
+      <div class="radio-options">
+        <input type="radio" name="status" id="ordered" value="Đơn hàng đã đặt" {{isChecked "Đơn hàng đã đặt" order.status}} >
+        <label class="form-admin-label" for="ordered">Đơn hàng đã đặt</label>
+
+      <input type="radio" name="status" id="delivery" value="Đang giao" {{isChecked "Đang giao" order.status}} >
+        <label class="form-admin-label" for="delivery">Đang giao</label>
+
+      <input type="radio" name="status" id="done" value="Đã giao" {{isChecked "Đã giao" order.status}} >
+        <label class="form-admin-label" for="done">Đã giao</label>
+
+      <input type="radio" name="status" id="cancel" value="Đã hủy" {{isChecked "Đã hủy" order.status}} >
+        <label class="form-admin-label" for="cancel">Đã hủy</label>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label class="form-admin-label" for="address">Địa chỉ</label>
+      <input type="text" id="address" name="address" placeholder="Nhập địa chỉ giao hàng" value = "{{order.address}}" class="admin-input-text" required>
+    </div>
+
+    <div class="form-row">
+      <button id="form-submit" type="submit">Hoàn tất</button>
+    </div>
+  </form>
+</div>
+<br>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('admin-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    const formData = new FormData(this);
+
+    const jsonData = {};
+    formData.forEach((value, key) => {
+      jsonData[key] = value;
+    });
+
+    fetch('/admin/updateOrder', {
+      method: 'PUT',
+      headers:{
+            "Content-Type":"application/json"
+        },
+      body: JSON.stringify(jsonData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+        window.location.href = '/admin/admin_statusOrder';
+      })
+      .catch(error => console.error('Error:', error));
+  });
+});
+</script>
+

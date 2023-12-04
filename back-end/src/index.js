@@ -4,7 +4,7 @@ const handlebars = require("express-handlebars");
 const bodyParser = require('body-parser');
 const route = require("./routes/index");
 const db = require("./config/db");
-
+const methodOverride = require('method-override')
 //Connect to DB
 db.Connect();
 
@@ -12,7 +12,7 @@ const hbs = handlebars.create({});
 
 const myWeb = express();
 const port = 3000;
-
+myWeb.use(express.urlencoded({ extended: true }));
 myWeb.use(express.static(path.join(__dirname, "public"))); //static file
 myWeb.use(bodyParser.urlencoded({ extended: true }));
 myWeb.use(bodyParser.json());
@@ -35,6 +35,18 @@ hbs.handlebars.registerHelper('indexAddOne', function(index) {
   return index + 1;
 })
 
+myWeb.use(methodOverride('_method'));
+
+hbs.handlebars.registerHelper('isChecked', (value, category) => {
+  return value === category ? 'checked' : '';
+});
+
+
+hbs.handlebars.registerHelper('formatDate', function(dateString) {
+  const date = new Date(dateString);
+  const newdate = date.toISOString().split('T')[0];;
+  return newdate;
+});
 //Routes init
 route(myWeb);
 

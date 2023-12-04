@@ -1,5 +1,5 @@
-<div class="admin-body">
-        <div class="account-section">
+<div id="admin-body">
+        <div id="account-section">
             <div class="account-avatar">
                 <img src="https://imgtrenz.blob.core.windows.net/blob/avatar.png" alt="Avatar" class="avatar-image">
             </div>
@@ -14,47 +14,45 @@
                             <i class="fa fa-list-alt fa-2xl icon-adminnav"> </i>
                             <span class = "link-name">Danh mục sản phẩm</span>
                         </a></li>
-                        <li><a href="/admin/admin_listUser icon-adminnav">
-                            <i class="fa fa-users fa-2xl icon-adminnav"> </i>
+                        <li><a href="/admin/admin_listUser">
+                            <i class="fa fa-users fa-2xl icon-adminnav icon-adminnav"> </i>
                             <span class = "link-name">Danh mục khách hàng</span>
                         </a></li>
                     </ul>
                 </div>
                 <div>
-                    <button class="btn-logout">Đăng xuất</button>
+                    <button id="btn-admin-logout">Đăng xuất</button>
                 </div>
             </nav>
         </div>
         
-        <div class= "border">
-            <button class="btn-add">Thêm sản phẩm</button>
-        <div class="account-table">
-            <br>
-            <div class="table-wapper">
-                <table class="table-block">
+        <div id="admin-table-section">
+            <button id="btn-admin-add">Thêm sản phẩm</button>
+            <div id="admin-table-wapper">
+                <table id="admin-table-content">
                     <thead>
-                        <th class="table-header">Mã sản phẩm</th>
-                        <th class="table-header">Sản phẩm</th>
-                        <th class="table-header">Loại</th>
-                        <th class="table-header">Giá</th>
-                        <th class="table-header">Số lượng</th>
-                        <th class="table-header">Chi tiết kích thước</th>
-                        <th class="table-header">Chỉnh sửa</th>
+                        <th class="admin-table-header">Mã sản phẩm</th>
+                        <th class="admin-table-header">Sản phẩm</th>
+                        <th class="admin-table-header">Loại</th>
+                        <th class="admin-table-header">Giá</th>
+                        <th class="admin-table-header">Số lượng</th>
+                        <th class="admin-table-header">Chi tiết kích thước</th>
+                        <th class="admin-table-header">Chỉnh sửa</th>
                     </thead>
                     <tbody>
                         {{#each products}}
                             <tr>
-                                <td class="table-content-col">{{this.id}}</td>
-                                <td class="table-content-col">{{this.name}}</td>
-                                <td class="table-content-col">{{this.category}}</td>
-                                <td class="table-content-col">{{this.price}}</td>
-                                <td class="table-content-col">{{this.amount}}</td>
-                                <td class="table-content-col">{{this.size}}</td>
-                                <td class="table-content-col">
-                                    <a class= "update-data" href="/admin/admin_statusOrder/edit/{{this.id}}">
+                                <td class="admin-table-td">{{this.id}}</td>
+                                <td class="admin-table-td">{{this.name}}</td>
+                                <td class="admin-table-td">{{this.category}}</td>
+                                <td class="admin-table-td">{{this.price}}</td>
+                                <td class="admin-table-td">{{this.amount}}</td>
+                                <td class="admin-table-td">{{this.size}}</td>
+                                <td class="admin-table-td">
+                                    <a class="update-data" href="/admin/editProduct/{{this.id}}">
                                         <i class="fa-solid fa-pen-to-square fa-xl btn-admin-change"></i>
                                     </a>
-                                    <a class= "update-data">
+                                    <a class="update-data"> 
                                         <i class="fa-solid fa-trash fa-xl btn-admin-del"></i>
                                     </a>
                                 </td>
@@ -63,25 +61,47 @@
                 </table>
             </div>
         </div>
-        </div>
 </div>
 
 <script>
 document.addEventListener("click", function() {
-    const logoutButton = document.querySelector('.btn-logout');
+    const logoutButton = document.getElementById('btn-admin-logout');
     if (logoutButton) {
         logoutButton.addEventListener('click', function() {
-            window.location.href = '/'; 
+            window.location.href = '/login'; 
         });
     }
 });
 
 document.addEventListener("click", function() {
-    const logoutButton = document.querySelector('.btn-add');
+    const logoutButton = document.getElementById('btn-admin-add');
     if (logoutButton) {
         logoutButton.addEventListener('click', function() {
             window.location.href = '/admin/createProduct'; 
         });
     }
 });
+
+document.addEventListener("click", function(event) {
+  if (event.target.classList.contains('btn-admin-del')) {
+    const parentRow = event.target.closest('tr');
+    const productId = parentRow.querySelector('.admin-table-td').textContent;
+
+    const confirmation = confirm(`Bạn có muốn xóa sản phẩm Mã ${productId} không ?`);
+
+    if (confirmation) {
+      fetch(`/admin/deleteProduct/${productId}`, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+        window.location.reload();
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  }
+});
+
 </script>
+

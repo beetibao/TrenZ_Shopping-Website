@@ -22,7 +22,14 @@
 <script>
     const searchInfo = document.querySelector('.search_info');
     const searchProductsGrid = document.querySelectorAll('.search_products_grid');
+    const searchProducts = document.querySelectorAll('.search_product');
 
     length_product = searchProductsGrid[0].childElementCount;
-    length_product === 0 ? searchInfo.innerHTML = `<h2>Không tìm thấy sản phẩm nào</h2>` : searchInfo.innerHTML = `<h2>Tìm thấy ${length_product} sản phẩm</h2>`;
+    if (length_product === 0) {
+        searchInfo.innerHTML = `<h2>Không tìm thấy sản phẩm nào</h2>`;
+        searchInfo.style.height = '15rem';
+    } else {
+        searchInfo.innerHTML = `<h2>Tìm thấy ${length_product} sản phẩm</h2>`;
+    }
+   // length_product === 0 ? searchInfo.innerHTML = `<h2>Không tìm thấy sản phẩm nào</h2>` searchProducts.style.height = '10rem' : searchInfo.innerHTML = `<h2>Tìm thấy ${length_product} sản phẩm</h2>`;
 </script>
